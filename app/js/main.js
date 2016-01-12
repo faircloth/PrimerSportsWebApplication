@@ -4,6 +4,61 @@
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+var AdminSigninController = function AdminSigninController($scope) {
+
+  console.log('admin sign in controller');
+};
+
+AdminSigninController.$inject = ['$scope'];
+
+exports['default'] = AdminSigninController;
+module.exports = exports['default'];
+
+},{}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var AdminSignupController = function AdminSignupController($scope) {
+
+  console.log('admin sign up controller');
+};
+
+AdminSignupController.$inject = ['$scope'];
+
+exports['default'] = AdminSignupController;
+module.exports = exports['default'];
+
+},{}],3:[function(require,module,exports){
+'use strict';
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+// CONTROLLERS
+
+var _controllersAdminSigninController = require('./controllers/admin-signin.controller');
+
+var _controllersAdminSigninController2 = _interopRequireDefault(_controllersAdminSigninController);
+
+var _controllersAdminSignupController = require('./controllers/admin-signup.controller');
+
+var _controllersAdminSignupController2 = _interopRequireDefault(_controllersAdminSignupController);
+
+// SERVICES
+
+_angular2['default'].module('app.admin', []).controller('AdminSigninController', _controllersAdminSigninController2['default']).controller('AdminSignupController', _controllersAdminSignupController2['default']);
+
+},{"./controllers/admin-signin.controller":1,"./controllers/admin-signup.controller":2,"angular":12}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
 var HomepageController = function HomepageController($scope) {
 
   console.log('HomepageController');
@@ -14,7 +69,7 @@ HomepageController.$inject = ['$scope'];
 exports['default'] = HomepageController;
 module.exports = exports['default'];
 
-},{}],2:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -33,7 +88,7 @@ var _controllersHomepageController2 = _interopRequireDefault(_controllersHomepag
 
 _angular2['default'].module('app.content', []).controller('HomepageController', _controllersHomepageController2['default']);
 
-},{"./controllers/homepage.controller":1,"angular":9}],3:[function(require,module,exports){
+},{"./controllers/homepage.controller":4,"angular":12}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -66,7 +121,16 @@ var config = function config($urlRouterProvider, $stateProvider) {
     url: '/admin-signin',
     views: {
       content: {
+        controller: 'AdminSigninController as vm',
         templateUrl: 'templates/app-admin/admin-signin.tpl.html'
+      }
+    }
+  }).state('root.admin-signup', {
+    url: '/create-new-admin',
+    views: {
+      content: {
+        controller: 'AdminSignupController as vm',
+        templateUrl: 'templates/app-admin/admin-signup.tpl.html'
       }
     }
   });
@@ -77,7 +141,7 @@ config.$inject = ['$urlRouterProvider', '$stateProvider'];
 exports['default'] = config;
 module.exports = exports['default'];
 
-},{}],4:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 // Angular modules
 'use strict';
 
@@ -99,7 +163,7 @@ var _config2 = _interopRequireDefault(_config);
 
 _angular2['default'].module('app.core', ['ui.router', 'mm.foundation']).config(_config2['default']);
 
-},{"./config":3,"angular":9,"angular-foundation":6,"angular-ui-router":7}],5:[function(require,module,exports){
+},{"./config":6,"angular":12,"angular-foundation":9,"angular-ui-router":10}],8:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -118,9 +182,11 @@ require('./app-core/index');
 
 require('./app-content/index');
 
-_angular2['default'].module('app', ['app.core', 'app.content']);
+require('./app-admin/index');
 
-},{"./app-content/index":2,"./app-core/index":4,"angular":9,"jquery":10}],6:[function(require,module,exports){
+_angular2['default'].module('app', ['app.core', 'app.content', 'app.admin']);
+
+},{"./app-admin/index":3,"./app-content/index":5,"./app-core/index":7,"angular":12,"jquery":13}],9:[function(require,module,exports){
 /*
  * angular-mm-foundation
  * http://pineconellc.github.io/angular-foundation/
@@ -3736,7 +3802,7 @@ angular.module("template/typeahead/typeahead-popup.html", []).run(["$templateCac
     "");
 }]);
 
-},{}],7:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.15
@@ -8107,7 +8173,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],8:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -37126,11 +37192,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],9:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":8}],10:[function(require,module,exports){
+},{"./angular":11}],13:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.0
  * http://jquery.com/
@@ -46963,7 +47029,7 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}]},{},[5])
+},{}]},{},[8])
 
 
 //# sourceMappingURL=main.js.map

@@ -5,6 +5,7 @@
 // CUSTOM COLORS
 $Navy: #082c38; 
 $BrightBlue: #39bced;
+$LightGrey: #F6F6F7;
 
 body {
   background: white;
@@ -18,3 +19,4 @@ body {
 
 // IMPORT STYLE SHEETS
 @import './structure/structure.scss';
+@import './forms/index.scss';

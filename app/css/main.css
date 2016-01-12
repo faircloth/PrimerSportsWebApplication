@@ -6397,4 +6397,14 @@ body {
   max-width: 800px;
   margin: 20px auto; }
 
+form {
+  background-color: #F6F6F7;
+  padding: 30px;
+  border: 2px solid #082c38; }
+  form button {
+    background-color: #082c38; }
+
+.admin-signin, .admin-signup {
+  max-width: 500px; }
+
 /*# sourceMappingURL=main.css.map */

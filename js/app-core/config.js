@@ -29,10 +29,21 @@ let config = function($urlRouterProvider, $stateProvider) {
       url: '/admin-signin',
       views: {
         content: {
+          controller: 'AdminSigninController as vm',
           templateUrl: 'templates/app-admin/admin-signin.tpl.html'
         }
       }
-    });
+    })
+    .state('root.admin-signup', {
+      url: '/create-new-admin',
+      views: {
+        content: {
+          controller: 'AdminSignupController as vm',
+          templateUrl: 'templates/app-admin/admin-signup.tpl.html'
+        }
+      }
+    })
+    ;
 
 
 };
