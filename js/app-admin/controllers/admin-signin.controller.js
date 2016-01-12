@@ -1,9 +1,10 @@
-let AdminSigninController = function($scope) {
+let AdminSigninController = function($scope, AdminService) {
   
-  console.log('admin sign in controller');
+  console.clear();
+  AdminService.signin();
 
 };
 
-AdminSigninController.$inject = ['$scope'];
+AdminSigninController.$inject = ['$scope', 'AdminService'];
 
 export default AdminSigninController; 
