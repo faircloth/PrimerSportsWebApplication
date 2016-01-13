@@ -15,6 +15,7 @@
     background-position: center;
     opacity: .9;
     z-index: -1;
+    @include box-shadow($light-box-shadows);
   }
 
   .over-background {
@@ -46,7 +47,7 @@
         max-width: 600px;
         margin: 0 auto;
         // OPACITY IDEA
-        background-color: black;
+        background-color: $Navy;
         opacity: 1;
       }
 
@@ -63,8 +64,8 @@
         max-width: 600px;
         margin: 0 auto;
         // OPACITY IDEA
-        background-color: black;
-        opacity: 1;
+        background-color: $Navy;
+        opacity: .9;
         z-index: 2;
 
         h3 {
@@ -112,8 +113,4 @@
     
   }
   
-}
-
-.landing-demo {
-  position: fixed;
 }

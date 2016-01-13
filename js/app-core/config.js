@@ -70,6 +70,18 @@ let config = function($urlRouterProvider, $stateProvider) {
         }
       }
     })
+    .state('root.archives', {
+      url: '/archives',
+      views: {
+        navigation: {
+          templateUrl: 'templates/app-layout/navigation.tpl.html'
+        },
+        content: {
+          controller: 'ArchivesController as vm',
+          templateUrl: 'templates/app-content/archives.tpl.html'
+        }
+      }
+    })
     ;
 
 
