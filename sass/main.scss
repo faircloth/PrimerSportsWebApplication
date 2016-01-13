@@ -8,6 +8,16 @@ $BrightBlue: #39bced;
 $LightGrey: #E7E7E4;
 $qzGrey: #3A3A3A;
 
+$box-shadows: 3px 3px 3px 3px $qzGrey;
+
+
+@mixin box-shadow ($box-shadows) {
+  -webkit-box-shadow: $box-shadows;
+  -moz-box-shadow:    $box-shadows;
+  -ms-box-shadow:     $box-shadows;
+  box-shadow:         $box-shadows;
+}
+
 body {
   background: white;
 }
@@ -20,3 +30,4 @@ body {
 @import './structure/index.scss';
 @import './forms/index.scss';
 @import './fonts/fonts.scss';
+@import './landing-pages/index.scss';

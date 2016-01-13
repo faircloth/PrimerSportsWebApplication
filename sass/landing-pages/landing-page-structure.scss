@@ -25,6 +25,15 @@
     // TEXT
     color: white;
 
+    img {
+      position: absolute;
+      display: block;
+      margin: 0 auto;
+      top: 5%;
+      left: 5%;
+      width: 150px;
+    }
+
     .top-text {
         position: absolute;
         top: 30%;
@@ -38,9 +47,53 @@
         margin: 0 auto;
         // OPACITY IDEA
         background-color: black;
-        opacity: .8;
+        opacity: 1;
       }
 
+    }
+
+    .top-form {
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 100%;
+
+      form {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        // OPACITY IDEA
+        background-color: black;
+        opacity: 1;
+        z-index: 2;
+
+        h3 {
+          font-size: 6.0em;
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+        input {
+          padding: 12px;
+          width: 80%;
+          max-width: 500px;
+          font-size: 2.5em;
+          display: block;
+          margin: 15px auto;
+          color: black;
+          background-color: white;
+          opacity: 1;
+        }
+
+        button {
+          background-color: $BrightBlue;
+          font-size: 2.5em;
+          font-weight: bold;
+          color: $Navy;
+          padding: 15px;
+        }
+
+      }
     }
 
     .fa {
@@ -52,6 +105,7 @@
       font-size: 6.0em;
       &:hover {
         cursor: pointer;
+        color: $BrightBlue;
       }
     }
 
