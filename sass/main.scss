@@ -8,8 +8,10 @@ $BrightBlue: #39bced;
 $LightGrey: #E7E7E4;
 $qzGrey: #3A3A3A;
 
-$light-box-shadows: 2px 2px 2px 2px $qzGrey;
-$box-shadows: 3px 3px 3px 3px $qzGrey;
+$shadowGrey: #C0C2C2;
+
+$light-box-shadows: 4px 4px 4px 4px $shadowGrey;
+$box-shadows: 5px 5px 5px 5px $shadowGrey;
 
 $standard-text-padding: 5px 20px 15px 20px;
 $standard-text-margin: 8px 0px;

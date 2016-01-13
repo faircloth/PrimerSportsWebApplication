@@ -1,6 +1,6 @@
 let ContentService = function($scope, $http) {
   
-  console.log('content service here')
+  console.log('content service here');
 
 };
 
