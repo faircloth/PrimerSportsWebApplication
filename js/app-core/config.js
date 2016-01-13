@@ -28,6 +28,9 @@ let config = function($urlRouterProvider, $stateProvider) {
     .state('root.admin-signin', {
       url: '/admin-signin',
       views: {
+        adminSidebar: {
+          templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
+        },
         content: {
           controller: 'AdminSigninController as vm',
           templateUrl: 'templates/app-admin/admin-signin.tpl.html'
@@ -37,9 +40,33 @@ let config = function($urlRouterProvider, $stateProvider) {
     .state('root.admin-signup', {
       url: '/create-new-admin',
       views: {
+        adminSidebar: {
+          templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
+        },
         content: {
           controller: 'AdminSignupController as vm',
           templateUrl: 'templates/app-admin/admin-signup.tpl.html'
+        }
+      }
+    })
+    .state('root.admin-new-article', {
+      url: '/admin-new-article',
+      views: {
+        adminSidebar: {
+          templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
+        },
+        content: {
+          controller: 'CreateArticleController as vm',
+          templateUrl: 'templates/app-admin/create-article.tpl.html'
+        }
+      }
+    })
+    .state('root.landing-a', {
+      url: '/landing-a',
+      views: {
+        content: {
+          controller: 'LandingPageAController as vm',
+          templateUrl: 'templates/app-landing/landing-page-a.tpl.html'
         }
       }
     })

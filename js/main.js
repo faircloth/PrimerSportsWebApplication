@@ -5,9 +5,10 @@ import angular from 'angular';
 import './app-core/index';
 import './app-content/index';
 import './app-admin/index';
+import './app-landing/index';
 
 
 angular
-  .module('app', ['app.core', 'app.content', 'app.admin']);
+  .module('app', ['app.core', 'app.content', 'app.admin', 'app.landing']);
 
 

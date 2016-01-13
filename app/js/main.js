@@ -34,6 +34,22 @@ module.exports = exports['default'];
 },{}],3:[function(require,module,exports){
 'use strict';
 
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var CreateArticleController = function CreateArticleController($scope) {
+
+  console.log('Create Article Controller');
+};
+
+CreateArticleController.$inject = ['$scope'];
+
+exports['default'] = CreateArticleController;
+module.exports = exports['default'];
+
+},{}],4:[function(require,module,exports){
+'use strict';
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _angular = require('angular');
@@ -50,6 +66,10 @@ var _controllersAdminSignupController = require('./controllers/admin-signup.cont
 
 var _controllersAdminSignupController2 = _interopRequireDefault(_controllersAdminSignupController);
 
+var _controllersCreateArticleController = require('./controllers/create-article.controller');
+
+var _controllersCreateArticleController2 = _interopRequireDefault(_controllersCreateArticleController);
+
 // SERVICES
 
 var _servicesAdminService = require('./services/admin.service');
@@ -58,9 +78,9 @@ var _servicesAdminService2 = _interopRequireDefault(_servicesAdminService);
 
 // RUN BLOCK ON HERE TO SET HEADERS
 
-_angular2['default'].module('app.admin', []).controller('AdminSigninController', _controllersAdminSigninController2['default']).controller('AdminSignupController', _controllersAdminSignupController2['default']).service('AdminService', _servicesAdminService2['default']);
+_angular2['default'].module('app.admin', []).controller('AdminSigninController', _controllersAdminSigninController2['default']).controller('AdminSignupController', _controllersAdminSignupController2['default']).controller('CreateArticleController', _controllersCreateArticleController2['default']).service('AdminService', _servicesAdminService2['default']);
 
-},{"./controllers/admin-signin.controller":1,"./controllers/admin-signup.controller":2,"./services/admin.service":4,"angular":16}],4:[function(require,module,exports){
+},{"./controllers/admin-signin.controller":1,"./controllers/admin-signup.controller":2,"./controllers/create-article.controller":3,"./services/admin.service":5,"angular":19}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -100,7 +120,7 @@ AdminService.$inject = ['$http', 'HEROKU', '$cookies', '$state'];
 exports['default'] = AdminService;
 module.exports = exports['default'];
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -116,7 +136,7 @@ HomepageController.$inject = ['$scope'];
 exports['default'] = HomepageController;
 module.exports = exports['default'];
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -135,7 +155,7 @@ var _controllersHomepageController2 = _interopRequireDefault(_controllersHomepag
 
 _angular2['default'].module('app.content', []).controller('HomepageController', _controllersHomepageController2['default']);
 
-},{"./controllers/homepage.controller":5,"angular":16}],7:[function(require,module,exports){
+},{"./controllers/homepage.controller":6,"angular":19}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -167,6 +187,9 @@ var config = function config($urlRouterProvider, $stateProvider) {
   }).state('root.admin-signin', {
     url: '/admin-signin',
     views: {
+      adminSidebar: {
+        templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
+      },
       content: {
         controller: 'AdminSigninController as vm',
         templateUrl: 'templates/app-admin/admin-signin.tpl.html'
@@ -175,9 +198,31 @@ var config = function config($urlRouterProvider, $stateProvider) {
   }).state('root.admin-signup', {
     url: '/create-new-admin',
     views: {
+      adminSidebar: {
+        templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
+      },
       content: {
         controller: 'AdminSignupController as vm',
         templateUrl: 'templates/app-admin/admin-signup.tpl.html'
+      }
+    }
+  }).state('root.admin-new-article', {
+    url: '/admin-new-article',
+    views: {
+      adminSidebar: {
+        templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
+      },
+      content: {
+        controller: 'CreateArticleController as vm',
+        templateUrl: 'templates/app-admin/create-article.tpl.html'
+      }
+    }
+  }).state('root.landing-a', {
+    url: '/landing-a',
+    views: {
+      content: {
+        controller: 'LandingPageAController as vm',
+        templateUrl: 'templates/app-landing/landing-page-a.tpl.html'
       }
     }
   });
@@ -188,7 +233,7 @@ config.$inject = ['$urlRouterProvider', '$stateProvider'];
 exports['default'] = config;
 module.exports = exports['default'];
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 "use strict";
 
 // export default {
@@ -200,7 +245,7 @@ module.exports = exports['default'];
 //   }
 // };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 // Angular modules
 'use strict';
 
@@ -228,7 +273,44 @@ var _constantsHerokuConstant2 = _interopRequireDefault(_constantsHerokuConstant)
 
 _angular2['default'].module('app.core', ['ui.router', 'mm.foundation', 'ngCookies']).config(_config2['default']).constant('HEROKU', _constantsHerokuConstant2['default']);
 
-},{"./config":7,"./constants/heroku.constant":8,"angular":16,"angular-cookies":12,"angular-foundation":13,"angular-ui-router":14}],10:[function(require,module,exports){
+},{"./config":8,"./constants/heroku.constant":9,"angular":19,"angular-cookies":15,"angular-foundation":16,"angular-ui-router":17}],11:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var LandingPageAController = function LandingPageAController($scope) {
+
+  console.log('Landing page a controller');
+};
+
+LandingPageAController.$inject = ['$scope'];
+
+exports['default'] = LandingPageAController;
+module.exports = exports['default'];
+
+},{}],12:[function(require,module,exports){
+'use strict';
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _angular = require('angular');
+
+var _angular2 = _interopRequireDefault(_angular);
+
+// CONTROLLERS
+
+var _controllersLandingPageAController = require('./controllers/landing-page-a.controller');
+
+var _controllersLandingPageAController2 = _interopRequireDefault(_controllersLandingPageAController);
+
+// SERVICES
+
+// RUN BLOCK ON HERE TO SET HEADERS
+
+_angular2['default'].module('app.landing', []).controller('LandingPageAController', _controllersLandingPageAController2['default']);
+
+},{"./controllers/landing-page-a.controller":11,"angular":19}],13:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -249,9 +331,11 @@ require('./app-content/index');
 
 require('./app-admin/index');
 
-_angular2['default'].module('app', ['app.core', 'app.content', 'app.admin']);
+require('./app-landing/index');
 
-},{"./app-admin/index":3,"./app-content/index":6,"./app-core/index":9,"angular":16,"jquery":17}],11:[function(require,module,exports){
+_angular2['default'].module('app', ['app.core', 'app.content', 'app.admin', 'app.landing']);
+
+},{"./app-admin/index":4,"./app-content/index":7,"./app-core/index":10,"./app-landing/index":12,"angular":19,"jquery":20}],14:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -574,11 +658,11 @@ angular.module('ngCookies').provider('$$cookieWriter', function $$CookieWriterPr
 
 })(window, window.angular);
 
-},{}],12:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 require('./angular-cookies');
 module.exports = 'ngCookies';
 
-},{"./angular-cookies":11}],13:[function(require,module,exports){
+},{"./angular-cookies":14}],16:[function(require,module,exports){
 /*
  * angular-mm-foundation
  * http://pineconellc.github.io/angular-foundation/
@@ -4194,7 +4278,7 @@ angular.module("template/typeahead/typeahead-popup.html", []).run(["$templateCac
     "");
 }]);
 
-},{}],14:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.15
@@ -8565,7 +8649,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],15:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -37584,11 +37668,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],16:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":15}],17:[function(require,module,exports){
+},{"./angular":18}],20:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.0
  * http://jquery.com/
@@ -47421,7 +47505,7 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}]},{},[10])
+},{}]},{},[13])
 
 
 //# sourceMappingURL=main.js.map
