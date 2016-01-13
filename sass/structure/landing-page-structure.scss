@@ -12,6 +12,7 @@
     width: 100%;
     height: 100%;
     background: url(http://b-i.forbesimg.com/jasonbelzer/files/2014/01/superbowl-xlvii-at-metlife-stadium_original1.jpg);
+    background-position: center;
     opacity: .9;
     z-index: -1;
   }
@@ -32,7 +33,8 @@
 
       h3 {
         font-size: 6.0em;
-        width: 60%;
+        width: 100%;
+        max-width: 600px;
         margin: 0 auto;
         // OPACITY IDEA
         background-color: black;
@@ -48,9 +50,16 @@
       bottom: 3%;
       width: 100%;
       font-size: 6.0em;
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     
   }
   
+}
+
+.landing-demo {
+  position: fixed;
 }

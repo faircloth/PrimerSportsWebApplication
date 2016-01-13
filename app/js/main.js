@@ -279,12 +279,23 @@ _angular2['default'].module('app.core', ['ui.router', 'mm.foundation', 'ngCookie
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var LandingPageAController = function LandingPageAController($scope) {
+var LandingPageAController = function LandingPageAController($scope, $anchorScroll, $location, $state, $rootScope) {
 
   console.log('Landing page a controller');
+
+  var vm = this;
+
+  // FUNCTIONS TO DEFINE
+  vm.goToDemo = goToDemo;
+
+  // FUNCTIONS
+  function goToDemo(id) {
+    $location.hash(id);
+    $anchorScroll();
+  }
 };
 
-LandingPageAController.$inject = ['$scope'];
+LandingPageAController.$inject = ['$scope', '$anchorScroll', '$location', '$state', '$rootScope'];
 
 exports['default'] = LandingPageAController;
 module.exports = exports['default'];
