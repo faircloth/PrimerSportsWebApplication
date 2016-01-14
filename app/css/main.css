@@ -2091,15 +2091,41 @@ body {
   max-width: 800px;
   margin: 20px auto; }
 
+.top-bar-outer {
+  background-color: #082c38; }
+
 .top-bar-nav {
   background-color: #082c38;
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   height: 60px;
-  padding: 5px; }
+  padding: 0px;
+  display: block; }
   .top-bar-nav .top-bar-logo {
     width: 60px;
     height: 60px;
-    padding: 0px; }
+    padding: 0px;
+    display: inline-block; }
+  .top-bar-nav ul {
+    display: inline-block;
+    list-style-type: none;
+    vertical-align: top;
+    height: 60px;
+    line-height: 60px;
+    float: right;
+    margin: 0px; }
+    .top-bar-nav ul li {
+      display: inline-block;
+      color: white;
+      width: 100px;
+      padding: 0px;
+      margin: 0px;
+      text-align: center;
+      vertical-align: top;
+      font-size: 1.6em; }
+      .top-bar-nav ul li:hover {
+        background-color: #39bced; }
 
 form {
   background-color: #E7E7E4;
@@ -2130,7 +2156,7 @@ h4 {
 p {
   font-size: 2.6em; }
 
-span {
+span, li, a {
   font-size: 1.8em; }
 
 .landing-top-a {
@@ -2252,14 +2278,21 @@ span {
         cursor: pointer;
         color: #39bced; }
 
+.archives-outer-container {
+  background: url(http://synthetic-turf.com/wp-content/uploads/2014/04/Augusta-National-HD-Wallpaper.jpg);
+  opacity: 1;
+  z-index: -1; }
+
 .archives-container {
   width: 100%;
   max-width: 800px;
   padding-bottom: 80px;
-  margin: 0px auto; }
+  margin: 0px auto;
+  z-index: 1; }
   .archives-container h1 {
     margin-top: 0px;
-    padding-top: 15px; }
+    padding-top: 15px;
+    color: white; }
   .archives-container .newsletter-block {
     -webkit-box-shadow: 4px 4px 4px 4px #C0C2C2;
     -moz-box-shadow: 4px 4px 4px 4px #C0C2C2;
@@ -2294,13 +2327,12 @@ span {
         .archives-container .newsletter-block .newsletter-subjects li button {
           background-color: grey;
           color: white;
-          padding: 10px;
-          font-size: 1.8em; }
+          padding: 10px; }
           .archives-container .newsletter-block .newsletter-subjects li button:hover {
             background-color: #39bced; }
     .archives-container .newsletter-block .read-more-newsletter {
       text-align: right;
-      font-size: 1.8em; }
+      font-size: 1.1em; }
       .archives-container .newsletter-block .read-more-newsletter a {
         color: #39bced;
         font-weight: bold;
