@@ -1,5 +1,6 @@
 .archives-outer-container {
-  background: url(http://synthetic-turf.com/wp-content/uploads/2014/04/Augusta-National-HD-Wallpaper.jpg);
+  // background: url(http://synthetic-turf.com/wp-content/uploads/2014/04/Augusta-National-HD-Wallpaper.jpg);
+  background-color: $LightGrey;
   opacity: 1;
   z-index: -1;
 }
@@ -14,12 +15,12 @@
   h1 {
     margin-top: 0px;
     padding-top: 15px;
-    color: white;
+    color: $Navy;
   }
 
   .newsletter-block {
-    // @include box-shadow($light-box-shadows);
-    background-color: $offWhite;
+    @include box-shadow($box-shadows);
+    background-color: white;
     margin-bottom: 80px;
     padding: 20px;
     border: 3px solid $Navy;
