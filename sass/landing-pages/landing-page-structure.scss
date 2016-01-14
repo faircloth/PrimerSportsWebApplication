@@ -13,7 +13,7 @@
     height: 100%;
     background: url(http://b-i.forbesimg.com/jasonbelzer/files/2014/01/superbowl-xlvii-at-metlife-stadium_original1.jpg);
     background-position: center;
-    opacity: .9;
+    opacity: 1;
     z-index: -1;
     @include box-shadow($light-box-shadows);
   }
@@ -37,7 +37,7 @@
 
     .top-text {
         position: absolute;
-        top: 30%;
+        top: 20%;
         display: block;
         width: 100%;
 
@@ -47,7 +47,7 @@
         max-width: 600px;
         margin: 0 auto;
         // OPACITY IDEA
-        background-color: $Navy;
+        // background-color: $Navy;
         opacity: 1;
       }
 
@@ -55,7 +55,7 @@
 
     .top-form {
         position: absolute;
-        top: 50%;
+        top: 35%;
         display: block;
         width: 100%;
 
@@ -64,7 +64,7 @@
         max-width: 600px;
         margin: 0 auto;
         // OPACITY IDEA
-        background-color: $Navy;
+        background-color: transparent;
         opacity: .9;
         z-index: 2;
 
@@ -92,6 +92,7 @@
           font-weight: bold;
           color: $Navy;
           padding: 15px;
+          z-index: 2;
         }
 
       }
