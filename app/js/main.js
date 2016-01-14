@@ -214,9 +214,6 @@ var config = function config($urlRouterProvider, $stateProvider) {
   }).state('root.home', {
     url: '/',
     views: {
-      transNav: {
-        templateUrl: 'templates/app-layout/trans-nav.tpl.html'
-      },
       content: {
         controller: 'HomepageController as vm',
         templateUrl: 'templates/app-content/homepage.tpl.html'

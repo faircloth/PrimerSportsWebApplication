@@ -2136,7 +2136,8 @@ body {
   display: block;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0px; }
 
 .trans-top-bar-nav {
   background-color: transparent;
@@ -2147,12 +2148,20 @@ body {
   padding: 0px;
   display: block; }
   .trans-top-bar-nav .top-bar-logo {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
     padding: 2px;
     display: inline-block;
-    float: right;
-    margin-top: -50px; }
+    position: absolute;
+    top: 5px;
+    right: 5px; }
+  .trans-top-bar-nav .top-bar-banner {
+    width: 500px;
+    padding: 2px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 0px; }
   .trans-top-bar-nav ul {
     list-style-type: none;
     vertical-align: top;
@@ -2160,13 +2169,15 @@ body {
     line-height: 65px; }
     .trans-top-bar-nav ul li, .trans-top-bar-nav ul a {
       color: white;
-      width: 100px;
+      width: 140px;
       padding: 0px;
+      padding-left: 10px;
       margin: 0px;
       text-align: left;
       vertical-align: top;
-      font-size: 1.3em;
-      text-decoration: none; }
+      font-size: 1.5em;
+      text-decoration: none;
+      font-weight: bold; }
       .trans-top-bar-nav ul li:hover, .trans-top-bar-nav ul a:hover {
         background-color: #39bced; }
 
@@ -2277,11 +2288,21 @@ h2 {
 h3 {
   font-size: 3.0em; }
 
+h2.top-story-tag {
+  font-size: 3.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #39bced;
+  margin-bottom: 0px;
+  padding-bottom: 0px; }
+
 h4 {
   font-size: 2.2em; }
 
 p {
-  font-size: 2.6em; }
+  font-size: 2.6em;
+  line-height: 1.8em;
+  padding-bottom: 8px; }
 
 span, li, a {
   font-size: 1.8em; }
@@ -2431,6 +2452,37 @@ input, label, button {
   max-width: 1000px;
   display: block;
   margin: 5px auto; }
+  .homepage-container .home-story-preview {
+    border-bottom: 3px solid #C0C2C2; }
+    .homepage-container .home-story-preview h4.subject-tag {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 2.4em;
+      color: #39bced; }
+
+.most-recent-bar {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 0px auto;
+  background-color: #E7E7E4;
+  padding: 4px;
+  padding-left: 2%;
+  color: #082c38; }
+  .most-recent-bar .most-recent-text {
+    width: 85%;
+    max-width: 1200px;
+    display: block;
+    margin: 5px auto;
+    padding: 0px; }
+    .most-recent-bar .most-recent-text i {
+      font-size: 2.4em;
+      margin: 0px;
+      padding-left: 0px; }
+    .most-recent-bar .most-recent-text p {
+      display: inline-block;
+      margin: 0px;
+      padding-left: 8px; }
 
 .archives-outer-container {
   background: url(http://synthetic-turf.com/wp-content/uploads/2014/04/Augusta-National-HD-Wallpaper.jpg);
@@ -2439,7 +2491,7 @@ input, label, button {
 
 .archives-container {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   padding-bottom: 80px;
   margin: 0px auto;
   z-index: 1; }

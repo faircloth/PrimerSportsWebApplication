@@ -18,12 +18,23 @@ h3 {
   font-size: 3.0em;
 }
 
+h2.top-story-tag {
+  font-size: 3.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $BrightBlue;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
 h4 {
   font-size: 2.2em;
 }
 
 p {
   font-size: 2.6em;
+  line-height: 1.8em;
+  padding-bottom: 8px;
 }
 
 span, li, a {
