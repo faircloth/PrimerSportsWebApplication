@@ -1,0 +1,31 @@
+.admin-sidebar {
+  display: inline-block;
+  background-color: $LightGrey;
+  height: 2500px;
+  margin: 0px;
+  width: 180px;
+  float: left;
+  border-right: 2px solid $qzGrey;
+
+  h4 {
+    margin-bottom: 2px;
+    font-weight: bold;
+  }
+
+  ul {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    list-style-type: none;
+
+    li {
+      margin: 10px;
+      a {
+        color: $Navy;
+        text-decoration: none;
+        font-size: 1.0em;
+        width: 80%;
+      }
+    }
+  }
+}

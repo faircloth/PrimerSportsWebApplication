@@ -18,9 +18,12 @@
   }
 
   .newsletter-block {
-    @include box-shadow($light-box-shadows);
-    background-color: white;
+    // @include box-shadow($light-box-shadows);
+    background-color: $offWhite;
     margin-bottom: 80px;
+    padding: 20px;
+    border: 3px solid $Navy;
+    border-radius: 5px;
 
     .newsletter-media {
       width: 100%;
@@ -43,7 +46,8 @@
     }
 
     .newsletter-date {
-      color: $BrightBlue;
+      color: $Navy;
+      text-align: center;
     }
 
     p {

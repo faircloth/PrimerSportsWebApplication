@@ -2084,7 +2084,7 @@ body {
 
 .content-container {
   width: 100%;
-  background-color: #ECECEC; }
+  background-color: white; }
 
 .page-container-large {
   width: 100%;
@@ -2099,23 +2099,23 @@ body {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  height: 60px;
+  height: 65px;
   padding: 0px;
   display: block; }
   .top-bar-nav .top-bar-logo {
     width: 60px;
     height: 60px;
-    padding: 0px;
+    padding: 2px;
     display: inline-block; }
   .top-bar-nav ul {
     display: inline-block;
     list-style-type: none;
     vertical-align: top;
-    height: 60px;
-    line-height: 60px;
+    height: 65px;
+    line-height: 65px;
     float: right;
     margin: 0px; }
-    .top-bar-nav ul li {
+    .top-bar-nav ul li, .top-bar-nav ul a {
       display: inline-block;
       color: white;
       width: 100px;
@@ -2123,9 +2123,34 @@ body {
       margin: 0px;
       text-align: center;
       vertical-align: top;
-      font-size: 1.6em; }
-      .top-bar-nav ul li:hover {
+      font-size: 1.3em;
+      text-decoration: none; }
+      .top-bar-nav ul li:hover, .top-bar-nav ul a:hover {
         background-color: #39bced; }
+
+.admin-sidebar {
+  display: inline-block;
+  background-color: #E7E7E4;
+  height: 2500px;
+  margin: 0px;
+  width: 180px;
+  float: left;
+  border-right: 2px solid #3A3A3A; }
+  .admin-sidebar h4 {
+    margin-bottom: 2px;
+    font-weight: bold; }
+  .admin-sidebar ul {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    list-style-type: none; }
+    .admin-sidebar ul li {
+      margin: 10px; }
+      .admin-sidebar ul li a {
+        color: #082c38;
+        text-decoration: none;
+        font-size: 1.0em;
+        width: 80%; }
 
 form {
   background-color: #E7E7E4;
@@ -2133,8 +2158,36 @@ form {
   form button {
     background-color: #082c38; }
 
-.admin-signin, .admin-signup {
-  max-width: 500px; }
+.admin-container {
+  display: inline-block;
+  width: 75%;
+  padding-left: 35px; }
+  .admin-container h3 {
+    display: inline-block; }
+  .admin-container .admin-signin, .admin-container .admin-signup {
+    width: 100%;
+    display: block;
+    max-width: 500px;
+    padding: 20px;
+    border: 2px solid #082c38;
+    border-radius: 4px; }
+    .admin-container .admin-signin input, .admin-container .admin-signup input {
+      display: block;
+      width: 80%;
+      margin: 15px auto;
+      font-size: 1.6em;
+      padding: 15px; }
+    .admin-container .admin-signin button, .admin-container .admin-signup button {
+      background-color: #082c38;
+      color: white;
+      font-size: 1.8em;
+      padding: 15px;
+      display: block;
+      margin: 15px auto;
+      width: 50%;
+      border: 2px solid white; }
+      .admin-container .admin-signin button:hover, .admin-container .admin-signup button:hover {
+        background-color: #39bced; }
 
 body {
   font-size: 62.5%;
@@ -2158,6 +2211,9 @@ p {
 
 span, li, a {
   font-size: 1.8em; }
+
+input, label, button {
+  font-size: 2.0em; }
 
 .landing-top-a {
   display: block;
@@ -2294,12 +2350,11 @@ span, li, a {
     padding-top: 15px;
     color: white; }
   .archives-container .newsletter-block {
-    -webkit-box-shadow: 4px 4px 4px 4px #C0C2C2;
-    -moz-box-shadow: 4px 4px 4px 4px #C0C2C2;
-    -ms-box-shadow: 4px 4px 4px 4px #C0C2C2;
-    box-shadow: 4px 4px 4px 4px #C0C2C2;
-    background-color: white;
-    margin-bottom: 80px; }
+    background-color: #F5F5F5;
+    margin-bottom: 80px;
+    padding: 20px;
+    border: 3px solid #082c38;
+    border-radius: 5px; }
     .archives-container .newsletter-block .newsletter-media {
       width: 100%;
       height: 400px;
@@ -2313,7 +2368,8 @@ span, li, a {
       margin: 8px 0px;
       font-weight: bold; }
     .archives-container .newsletter-block .newsletter-date {
-      color: #39bced; }
+      color: #082c38;
+      text-align: center; }
     .archives-container .newsletter-block p {
       padding: 5px 20px 15px 20px;
       margin: 8px 0px; }

@@ -7,14 +7,14 @@
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  height: 60px;
+  height: 65px;
   padding: 0px;
   display: block;
 
   .top-bar-logo {
     width: 60px;
     height: 60px;
-    padding: 0px;
+    padding: 2px;
     display: inline-block;
   }
 
@@ -22,12 +22,12 @@
     display: inline-block;
     list-style-type: none;
     vertical-align: top;
-    height: 60px;
-    line-height: 60px;
+    height: 65px;
+    line-height: 65px;
     float: right;
     margin: 0px;
 
-    li {
+    li, a {
       display: inline-block;
       color: white;
       width: 100px;
@@ -35,7 +35,8 @@
       margin: 0px;
       text-align: center;
       vertical-align: top;
-      font-size: 1.6em;
+      font-size: 1.3em;
+      text-decoration: none;
 
       &:hover {
         background-color: $BrightBlue;

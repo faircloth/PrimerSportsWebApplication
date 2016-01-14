@@ -1,3 +1,44 @@
-.admin-signin, .admin-signup {
- max-width: 500px;
+.admin-container {  
+  display: inline-block;
+  width: 75%;
+  padding-left: 35px;
+
+  h3 {
+    display: inline-block;
+  }
+
+  .admin-signin, .admin-signup {
+    width: 100%;
+    display: block;
+    max-width: 500px;
+    padding: 20px;
+    border: 2px solid $Navy;
+    border-radius: 4px;
+
+    input {
+        display: block;
+        width: 80%;
+        margin: 15px auto;
+        font-size: 1.6em;
+        padding: 15px;
+    }
+
+    button {
+      background-color: $Navy;
+      color: white;
+      font-size: 1.8em;
+      padding: 15px;
+      display: block;
+      margin: 15px auto;
+      width: 50%;
+      border: 2px solid white;
+
+      &:hover {
+        background-color: $BrightBlue;
+      }
+
+    }
+
+  }
+
 }

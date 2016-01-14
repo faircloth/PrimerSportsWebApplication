@@ -228,10 +228,13 @@ var config = function config($urlRouterProvider, $stateProvider) {
   }).state('root.admin-signin', {
     url: '/admin-signin',
     views: {
+      navigation: {
+        templateUrl: 'templates/app-layout/navigation.tpl.html'
+      },
       adminSidebar: {
         templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
       },
-      content: {
+      adminPage: {
         controller: 'AdminSigninController as vm',
         templateUrl: 'templates/app-admin/admin-signin.tpl.html'
       }
@@ -239,10 +242,13 @@ var config = function config($urlRouterProvider, $stateProvider) {
   }).state('root.admin-signup', {
     url: '/create-new-admin',
     views: {
+      navigation: {
+        templateUrl: 'templates/app-layout/navigation.tpl.html'
+      },
       adminSidebar: {
         templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
       },
-      content: {
+      adminPage: {
         controller: 'AdminSignupController as vm',
         templateUrl: 'templates/app-admin/admin-signup.tpl.html'
       }
@@ -250,10 +256,13 @@ var config = function config($urlRouterProvider, $stateProvider) {
   }).state('root.admin-new-article', {
     url: '/admin-new-article',
     views: {
+      navigation: {
+        templateUrl: 'templates/app-layout/navigation.tpl.html'
+      },
       adminSidebar: {
         templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
       },
-      content: {
+      adminPage: {
         controller: 'CreateArticleController as vm',
         templateUrl: 'templates/app-admin/create-article.tpl.html'
       }
