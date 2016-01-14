@@ -5,45 +5,63 @@
   top: 0px;
   display: block;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .trans-top-bar-nav {
   background-color: transparent;
   width: 100%;
-  max-width: 900px;
+  // min-width: 700px;
+  max-width: 1200px;
   margin: 0 auto;
   height: 65px;
   padding: 0px;
   display: block;
   // position: absolute;
+  // position: absolute;
   // top: 50px;
 
   .top-bar-logo {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     padding: 2px;
     display: inline-block;
+    // position: absolute;
+    float: right;
+    margin-top: -50px;
   }
 
   ul {
-    display: inline-block;
+    // display: inline-block;
     list-style-type: none;
     vertical-align: top;
     height: 65px;
     line-height: 65px;
-    float: right;
-    margin: 0px;
+    // float: right;
+
+    // &.left {
+    //   position: absolute;
+    //   left: 40%;
+    // }
+
+    // .right {
+    //   position: absolute;
+    //   right: 2px;
+    // }
+
 
     li, a {
-      display: inline-block;
+      // display: inline-block;
       color: white;
       width: 100px;
       padding: 0px;
       margin: 0px;
-      text-align: center;
+      text-align: left;
       vertical-align: top;
       font-size: 1.3em;
       text-decoration: none;
+
 
       &:hover {
         background-color: $BrightBlue;
