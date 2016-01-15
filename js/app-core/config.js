@@ -19,6 +19,18 @@ let config = function($urlRouterProvider, $stateProvider) {
         }
       }
     })
+    .state('root.about', {
+      url: '/about',
+      views: {
+        navigation: {
+          templateUrl: 'templates/app-layout/navigation.tpl.html'
+        },
+        content: {
+          templateUrl: 'templates/app-content/about.tpl.html',
+          controller: 'AboutController as vm'
+        }
+      }
+    })
     .state('root.admin-signin', {
       url: '/admin-signin',
       views: {

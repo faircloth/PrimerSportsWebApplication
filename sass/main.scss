@@ -8,23 +8,12 @@ $BrightBlue: #39bced;
 $LightGrey: #E7E7E4;
 $qzGrey: #3A3A3A;
 $offWhite: #F5F5F5;
-
 $shadowGrey: #C0C2C2;
 
+// SHADOWS
 $light-box-shadows: 4px 4px 4px 4px $shadowGrey;
+$light-box-shadows-no-top: 0px 4px 4px 4px $shadowGrey;
 $box-shadows: 5px 5px 5px 5px $shadowGrey;
-
-$standard-text-padding: 5px 20px 15px 20px;
-$standard-text-margin: 8px 0px;
-
-@mixin padding ($standard-text-padding) {
-  padding: $standard-text-padding;
-}
-
-@mixin margin ($standard-text-margin) {
-  margin: $standard-text-margin;
-}
-
 
 @mixin box-shadow ($box-shadows) {
   -webkit-box-shadow: $box-shadows;
@@ -40,7 +29,18 @@ $standard-text-margin: 8px 0px;
   box-shadow:         $light-box-shadows;
 }
 
+// TEXT PADDING/MARGIN
+$standard-text-padding: 5px 20px 15px 20px;
+$standard-text-margin: 8px 0px;
 
+@mixin padding ($standard-text-padding) {
+  padding: $standard-text-padding;
+}
+@mixin margin ($standard-text-margin) {
+  margin: $standard-text-margin;
+}
+
+// MAIN BODY STYLING
 body {
   background: white;
 }

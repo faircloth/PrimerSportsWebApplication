@@ -30,69 +30,82 @@
       position: absolute;
       display: block;
       margin: 0 auto;
-      top: 5%;
+      top: 2%;
       left: 5%;
-      width: 150px;
+      width: 120px;
     }
 
     .top-text {
         position: absolute;
-        top: 20%;
+        top: 25%;
         display: block;
         width: 100%;
+        font-weight: 800;
 
       h3 {
         font-size: 6.0em;
         width: 100%;
-        max-width: 600px;
+        max-width: 900px;
         margin: 0 auto;
         // OPACITY IDEA
-        // background-color: $Navy;
-        opacity: 1;
+        background-color: $Navy;
+        opacity: .7;
       }
 
     }
 
-    .top-form {
-        position: absolute;
-        top: 35%;
+    div.top-form {
+        // position: absolute;
         display: block;
         width: 100%;
+        max-width: 600px;
+        margin: 5px auto;
+        margin-top: -600px;
 
       form {
-        width: 100%;
-        max-width: 600px;
+        width: 80%;
+        display: block;
         margin: 0 auto;
         // OPACITY IDEA
         background-color: transparent;
-        opacity: .9;
         z-index: 2;
+        border: 4px solid $Navy;
+        border-radius: 8px;
+        background-color: $offWhite;
+        color: $Navy;
 
         h3 {
-          font-size: 6.0em;
+          font-size: 5.0em;
           width: 100%;
-          max-width: 600px;
           margin: 0 auto;
+          display: block;
         }
         input {
           padding: 12px;
           width: 80%;
-          max-width: 500px;
           font-size: 2.5em;
           display: block;
           margin: 15px auto;
           color: black;
           background-color: white;
           opacity: 1;
+          border: 2px solid $Navy;
+          border-radius: 4px;
         }
 
         button {
-          background-color: $BrightBlue;
-          font-size: 2.5em;
+          background-color: $Navy;
+          font-size: 2.2em;
           font-weight: bold;
-          color: $Navy;
+          color: white;
           padding: 15px;
           z-index: 2;
+          border: 3px solid $Navy;
+          border-radius: 6px;
+
+          &:hover {
+            background-color: $BrightBlue;
+          }
         }
 
       }
