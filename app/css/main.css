@@ -2611,11 +2611,75 @@ input, label, button {
 .page-container-share .action-block-share {
   background-color: #39bced;
   padding: 20px;
-  height: 500px; }
+  padding-bottom: 80px; }
   .page-container-share .action-block-share .action-block-container {
     max-width: 800px;
     display: block;
     margin: 20px auto; }
+    .page-container-share .action-block-share .action-block-container .share-form-block {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0px auto;
+      background-color: #082c38;
+      padding: 5px;
+      border-radius: 3px; }
+      .page-container-share .action-block-share .action-block-container .share-form-block form {
+        padding: 5px; }
+        .page-container-share .action-block-share .action-block-container .share-form-block form h4.form-text {
+          padding: 8px 0px;
+          padding-bottom: 6px;
+          margin: 0px; }
+        .page-container-share .action-block-share .action-block-container .share-form-block form h4.form-text-to {
+          padding: 2px;
+          padding-top: 18px;
+          margin: 0px; }
+        .page-container-share .action-block-share .action-block-container .share-form-block form .form-column {
+          display: inline-block;
+          width: 46%;
+          margin: 1.8%;
+          vertical-align: top; }
+          .page-container-share .action-block-share .action-block-container .share-form-block form .form-column button.btn-contacts {
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            margin: 5px 0px;
+            margin-top: 0px; }
+          .page-container-share .action-block-share .action-block-container .share-form-block form .form-column a {
+            margin-right: 5px;
+            margin-left: 5px; }
+          .page-container-share .action-block-share .action-block-container .share-form-block form .form-column p.import-text {
+            padding: 3px;
+            font-size: 1.8em;
+            display: inline-block;
+            margin: 0px; }
+          .page-container-share .action-block-share .action-block-container .share-form-block form .form-column input {
+            width: 96%;
+            padding: 8px;
+            border: 2px solid #C0C2C2;
+            border-radius: 4px; }
+          .page-container-share .action-block-share .action-block-container .share-form-block form .form-column textarea {
+            width: 96%;
+            padding: 8px;
+            border: none;
+            margin-top: 10px;
+            height: 200px;
+            border: 2px solid #C0C2C2;
+            border-radius: 4px;
+            font-size: 2.0em; }
+          .page-container-share .action-block-share .action-block-container .share-form-block form .form-column textarea.share-message {
+            width: 96%;
+            padding: 8px;
+            height: 200px;
+            border: 2px solid #C0C2C2;
+            border-radius: 4px;
+            margin: 0px; }
+        .page-container-share .action-block-share .action-block-container .share-form-block form button.btn-submit-share {
+          width: 80%;
+          display: block;
+          color: white;
+          padding: 20px;
+          margin: 25px auto; }
 
 .page-container-share .top-block-share .two-block {
   width: 40%;

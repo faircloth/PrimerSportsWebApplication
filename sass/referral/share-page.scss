@@ -3,12 +3,107 @@
   .action-block-share {
     background-color: $BrightBlue;
     padding: 20px;
-    height: 500px;
+    padding-bottom: 80px;
+    // height: 500px;
 
     .action-block-container {
       max-width: 800px;
       display: block;  
       margin: 20px auto;
+
+      .share-form-block {
+        width: 90%;
+        max-width: 1000px;
+        margin: 0px auto;
+        background-color: $Navy;
+        padding: 5px;
+        border-radius: 3px;
+
+        form {
+          // background-color: $LightGrey;
+          padding: 5px;
+
+          h4.form-text {
+            padding: 8px 0px;
+            padding-bottom: 6px;
+            margin: 0px;
+          }
+
+          h4.form-text-to {
+            padding: 2px;
+            padding-top: 18px;
+            margin: 0px;
+          }
+
+          .form-column {
+            display: inline-block;
+            width: 46%;
+            margin: 1.8%;
+            vertical-align: top;
+
+            button.btn-contacts {
+              display: inline-block;
+              text-align: center;
+              padding: 10px;
+              color: white;
+              margin: 5px 0px;
+              margin-top: 0px;
+            }
+
+            a {
+              margin-right: 5px;
+              margin-left: 5px;
+            }
+
+            p.import-text {
+              padding: 3px;
+              font-size: 1.8em;
+              display: inline-block;
+              margin: 0px;
+              // border-bottom: 1px dashed $qzGrey;
+            }
+
+            input {
+              width: 96%;
+              padding: 8px;
+              border: 2px solid $shadowGrey;
+              border-radius: 4px;
+            }
+
+            textarea {
+              width: 96%;
+              padding: 8px;
+              border: none;
+              margin-top: 10px;
+              height: 200px;
+              border: 2px solid $shadowGrey;
+              border-radius: 4px;
+              font-size: 2.0em;
+            }
+
+            textarea.share-message {
+              width: 96%;
+              padding: 8px;
+              height: 200px;
+              border: 2px solid $shadowGrey;
+              border-radius: 4px;
+              margin: 0px;
+            }
+
+
+          }
+
+          button.btn-submit-share {
+            width: 80%;
+            display: block;
+            color: white;
+            padding: 20px;
+            margin: 25px auto;
+          }
+        }
+
+      }
+
     }
   }
 
