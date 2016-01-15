@@ -31,6 +31,18 @@ let config = function($urlRouterProvider, $stateProvider) {
         }
       }
     })
+    .state('root.share', {
+      url: '/share',
+      views: {
+        navigation: {
+          templateUrl: 'templates/app-layout/navigation.tpl.html'
+        },
+        content: {
+          templateUrl: 'templates/app-referral/share-page.tpl.html',
+          controller: 'SharePageController as vm'
+        }
+      }
+    })
     .state('root.admin-signin', {
       url: '/admin-signin',
       views: {

@@ -1,0 +1,75 @@
+.page-container-share {
+
+  .action-block-share {
+    background-color: $BrightBlue;
+    padding: 20px;
+    height: 500px;
+
+    .action-block-container {
+      max-width: 800px;
+      display: block;  
+      margin: 20px auto;
+    }
+  }
+
+  .top-block-share {
+
+    .two-block {
+      width: 40%;
+      margin: 3%;
+      display: inline-block;
+      background-color: $LightGrey;
+      padding: 10px;
+      padding-bottom: 0px;
+      @include box-shadow($light-box-shadows);
+
+      h3 {
+        width: 90%;
+        display: block;
+        margin: 10px auto;
+      }
+      p {
+        padding-bottom: 3px;
+      }
+    }
+
+    img {
+      display: block;
+      margin: 5px auto;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    img.mail-icon {
+      display: block;
+      margin: 5px auto;
+      width: 100%;
+      max-width: 140px;
+    }
+
+    .process-map {
+      width: 100%;
+      display: block;
+      margin: 10px auto;
+      text-align: center;
+
+      .share-graphic-text {
+        display: inline-block;
+        width: 200px;
+        text-align: center;
+      }
+      img {
+        width: 80px;
+        display: inline-block;
+        margin: 10px;
+        vertical-align: top;
+        margin-top: 25px;
+      }
+    }
+  }
+
+}

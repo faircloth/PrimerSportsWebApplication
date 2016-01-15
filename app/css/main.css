@@ -2091,6 +2091,11 @@ body {
   max-width: 800px;
   margin: 20px auto; }
 
+.page-container-share {
+  width: 100%;
+  max-width: 1400px;
+  margin: 20px auto; }
+
 .top-bar-outer {
   background-color: #082c38; }
 
@@ -2567,8 +2572,7 @@ input, label, button {
   background-color: #082c38;
   margin: 0px auto;
   padding-top: 30px;
-  padding-bottom: 50px;
-  border-top: 2px solid #39bced; }
+  padding-bottom: 50px; }
   .top-about-block h1 {
     display: block;
     text-align: center;
@@ -2603,5 +2607,63 @@ input, label, button {
   .about-content-block iframe {
     display: block;
     margin: 80px auto; }
+
+.page-container-share .action-block-share {
+  background-color: #39bced;
+  padding: 20px;
+  height: 500px; }
+  .page-container-share .action-block-share .action-block-container {
+    max-width: 800px;
+    display: block;
+    margin: 20px auto; }
+
+.page-container-share .top-block-share .two-block {
+  width: 40%;
+  margin: 3%;
+  display: inline-block;
+  background-color: #E7E7E4;
+  padding: 10px;
+  padding-bottom: 0px;
+  -webkit-box-shadow: 4px 4px 4px 4px #C0C2C2;
+  -moz-box-shadow: 4px 4px 4px 4px #C0C2C2;
+  -ms-box-shadow: 4px 4px 4px 4px #C0C2C2;
+  box-shadow: 4px 4px 4px 4px #C0C2C2; }
+  .page-container-share .top-block-share .two-block h3 {
+    width: 90%;
+    display: block;
+    margin: 10px auto; }
+  .page-container-share .top-block-share .two-block p {
+    padding-bottom: 3px; }
+
+.page-container-share .top-block-share img {
+  display: block;
+  margin: 5px auto;
+  width: 100%;
+  max-width: 400px; }
+
+.page-container-share .top-block-share h3 {
+  text-align: center; }
+
+.page-container-share .top-block-share img.mail-icon {
+  display: block;
+  margin: 5px auto;
+  width: 100%;
+  max-width: 140px; }
+
+.page-container-share .top-block-share .process-map {
+  width: 100%;
+  display: block;
+  margin: 10px auto;
+  text-align: center; }
+  .page-container-share .top-block-share .process-map .share-graphic-text {
+    display: inline-block;
+    width: 200px;
+    text-align: center; }
+  .page-container-share .top-block-share .process-map img {
+    width: 80px;
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+    margin-top: 25px; }
 
 /*# sourceMappingURL=main.css.map */
