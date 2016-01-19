@@ -33,7 +33,7 @@ let CreateArticleController = function($scope, ContentMgmtService) {
     }); 
   }
 
-   function createArticle (article) {
+  function createArticle (article) {
     let newArticle = new Article (article);
     console.log(newArticle);
     ContentMgmtService.addArticle(newArticle).then( (response)=> {

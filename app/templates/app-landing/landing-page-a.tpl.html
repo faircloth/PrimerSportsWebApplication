@@ -1,5 +1,5 @@
 <div class="landing-top-a">
-  
+  <a id="top"></a>
   
   <div class="transparent-box"></div>
 
@@ -36,6 +36,7 @@
 <!-- BEG OF 2ND SCREEN -->
 
 <div class="landing-demo-block">
+<a id="demo"></a>
 
   <div class="demo-container">
     
@@ -43,11 +44,96 @@
 
     <img class="demo-gif" src="https://gallery.mailchimp.com/b6927a9ba9e73b00250360b96/images/5204c07e-a4af-40be-b56e-69f9b28304ba.gif?_ga=1.173346083.1888661367.1422410663">
     
-    <i ng-click="vm.goToDemo('demo')" class="fa fa-chevron-down"></i>
+    <i ng-click="vm.goToDemo('bottom')" class="fa fa-chevron-down"></i>
 
   </div>
 
 
 </div>
 
-<a id="demo"></a>
+
+<!-- END OF SECOND SCREEN -->
+
+<!-- --------- -->
+
+<!-- BEG OF THIRD SCREEN -->
+
+<div class="landing-third-block">
+
+  <div class="third-block-container">
+    
+    <h1>Learn more about us</h1> 
+
+    <div ng-click="vm.goToPage('root.home')" class="four-blocks">
+      <img src="http://i.imgur.com/zNfNTt8.png">
+      <h2>Home</h2>
+    </div>
+
+    <div ng-click="vm.goToPage('root.archives')" class="four-blocks">
+      <img class="archive-icon" src="http://i.imgur.com/xH26qJI.png">
+      <h2>Archives</h2>
+    </div>
+
+    <div ng-click="vm.goToPage('root.share')" class="four-blocks">
+      <img class="share-icon" src="http://i.imgur.com/A1BBQyc.png">
+      <h2>Share</h2>
+    </div>
+    
+
+    <div ng-click="vm.goToPage('root.about')" class="four-blocks">
+      <img class="founder-icon" src="http://i.imgur.com/hZHH2R9.png">
+      <h2>About us</h2>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<!-- END OF THIRD SCREEN -->
+
+
+<!-- -------- -->
+
+<!-- BEG OF 4TH SCREEN -->
+
+<div class="landing-fourth-block">
+
+  <div class="fourth-block-container">
+
+  <h1>Connect with us</h1> 
+
+    <div class="four-blocks-social">
+      <a href="https://twitter.com/PrimerSports"><img class="bigger-icon" src="http://i.imgur.com/iW1Z8y4.png">
+      <h2>Twitter</h2></a>
+    </div>
+
+    <div class="four-blocks-social">
+      <a href="https://www.facebook.com/PrimerSports"><img src="http://i.imgur.com/yet9rYK.png">
+      <h2>Facebook</h2></a>
+    </div>
+
+    <div class="four-blocks-social">
+      <a href="https://www.instagram.com/primersports/"><img src="http://i.imgur.com/HyoSGDX.png">
+      <h2>Instagram</h2></a>
+    </div>
+
+    <div class="four-blocks-social">
+      <a href="mailto:primerteam@primersports.com?subject=Reaching%20out%20to%20connect%20with%20Primer%20Team"><img class="bigger-icon" src="http://i.imgur.com/uFj6HuA.png">
+      <h2>Contact us</h2></a>
+    </div>
+    
+  </div>
+
+  <div class="top-click">
+    <h3 ng-click="vm.goToDemo('top')">Back to top</h3>
+  </div>
+    
+
+
+</div>
+
+
+<a id="bottom"></a>
+<!-- END OF 4TH SCREEN -->

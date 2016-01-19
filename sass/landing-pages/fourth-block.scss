@@ -1,0 +1,89 @@
+.landing-fourth-block {
+  background-color: $BrightBlue;
+  padding-bottom: 70px;
+
+  .top-click {
+    text-align: center;
+    color: white;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .fourth-block-container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 0px auto;
+    margin-top: 0px;
+    padding-bottom: 20px;
+
+    a {
+      font-size: inherit;
+      text-decoration: none;
+    }
+
+
+    h1 {
+      padding-top: 40px;
+      padding-bottom: 0px;
+      text-align: center;
+      color: $Navy;
+      margin-top: 0px;
+    }
+   
+    .four-blocks-social {
+      display: inline-block;
+      width: 21.15%;
+      margin: 1.7%;
+      margin-bottom: 5px;
+      // border: 1px solid white;
+      text-align: center;
+
+      &:hover {
+        background-color: white;
+        cursor: pointer;
+      }
+
+      img {
+        max-width: 50px;
+        padding-bottom: 5px;
+        margin-bottom: 0px;
+      }
+
+      img.bigger-icon {
+        max-width: 60px;
+      }
+
+      h2 {
+        color: $Navy;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        font-size: 2.8em;
+        padding-bottom: 30px;
+      }
+
+      img {
+        width: 90%;
+        padding-top: 30px;
+      }
+
+    }
+
+    .fa {
+      display: block;
+      width: 100%;
+      color: $Navy;
+      text-align: center;
+      margin: 20 auto;
+      width: 100%;
+      font-size: 6.0em;
+      &:hover {
+        cursor: pointer;
+        color: $BrightBlue;
+      }
+    }
+
+
+  }
+
+}

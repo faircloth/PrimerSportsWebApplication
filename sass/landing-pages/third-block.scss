@@ -1,0 +1,79 @@
+.landing-third-block {
+  background-color: $Navy;
+  padding-bottom: 20px;
+
+  .third-block-container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 5px auto;
+    margin-top: 0px;
+
+
+    h1 {
+      padding-top: 40px;
+      padding-bottom: 10px;
+      text-align: center;
+      color: white;
+    }
+   
+    .four-blocks {
+      display: inline-block;
+      width: 21.15%;
+      margin: 1.7%;
+      margin-bottom: 60px;
+      padding-bottom: 0px;
+      // border: 1px solid white;
+      text-align: center;
+      
+      &:hover {
+        cursor: pointer;
+        background-color: $BrightBlue;
+      }
+
+
+      h2 {
+        color: white;
+        margin-bottom: 10px;
+        padding-bottom: 15px;
+      }
+
+      img {
+        height: 180px;
+      }
+
+      img.archive-icon {
+        height: 150px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+      }
+      img.founder-icon {
+        height: 170px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+      }
+      img.share-icon {
+        height: 150px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+      }
+
+    }
+
+    .fa {
+      display: block;
+      width: 100%;
+      color: $Navy;
+      text-align: center;
+      margin: 20 auto;
+      width: 100%;
+      font-size: 6.0em;
+      &:hover {
+        cursor: pointer;
+        color: $BrightBlue;
+      }
+    }
+
+
+  }
+
+}

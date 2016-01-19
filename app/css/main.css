@@ -2346,7 +2346,7 @@ button.standalone-btn {
     height: 100%;
     background: url(http://b-i.forbesimg.com/jasonbelzer/files/2014/01/superbowl-xlvii-at-metlife-stadium_original1.jpg);
     background-position: center;
-    opacity: .95;
+    opacity: .98;
     z-index: -1;
     -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
     -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
@@ -2404,9 +2404,11 @@ button.standalone-btn {
           display: block;
           font-family: 'Biryani', sans-serif; }
         .landing-top-a .over-background div.top-form form input {
-          padding: 10px;
+          padding: 12px;
+          padding-left: 18px;
+          padding-right: 18px;
+          padding-top: 15px;
           z-index: 3;
-          width: 80%;
           font-size: 2.5em;
           display: block;
           margin: 15px auto;
@@ -2416,24 +2418,27 @@ button.standalone-btn {
           border: 4px solid #082c38;
           border-radius: 4px;
           font-family: 'Biryani', sans-serif;
-          font-weight: bold; }
+          font-weight: bold;
+          text-align: center; }
           .landing-top-a .over-background div.top-form form input::-webkit-input-placeholder {
-            color: #082c38;
+            color: #3A3A3A;
             font-family: 'Biryani', sans-serif;
             font-weight: bold; }
         .landing-top-a .over-background div.top-form form button {
           background-color: #39bced;
-          font-size: 2.8em;
+          font-size: 2.5em;
           font-weight: bold;
           color: #082c38;
-          padding: 15px;
-          z-index: 2;
+          padding: 10px;
+          padding-top: 13px;
           opacity: 1;
           border: 4px solid #082c38;
           border-radius: 6px;
           font-family: 'Biryani', sans-serif; }
           .landing-top-a .over-background div.top-form form button:hover {
-            background-color: #39bced; }
+            background-color: #082c38;
+            color: white;
+            font-size: 2.8em; }
     .landing-top-a .over-background .fa {
       position: absolute;
       display: block;
@@ -2456,23 +2461,137 @@ button.standalone-btn {
       display: block;
       width: 80%;
       margin: 20px auto;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
       -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
       -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
       box-shadow: 2px 2px 2px 2px #C0C2C2; }
     .landing-demo-block .demo-container h1 {
-      padding-top: 10px;
+      padding-top: 20px;
       padding-bottom: 10px;
-      text-align: center; }
+      text-align: center;
+      color: #082c38; }
     .landing-demo-block .demo-container .fa {
       display: block;
       width: 100%;
+      color: #082c38;
       text-align: center;
       margin: 20 auto;
       width: 100%;
       font-size: 6.0em; }
       .landing-demo-block .demo-container .fa:hover {
+        cursor: pointer;
+        color: #39bced; }
+
+.landing-third-block {
+  background-color: #082c38;
+  padding-bottom: 20px; }
+  .landing-third-block .third-block-container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 5px auto;
+    margin-top: 0px; }
+    .landing-third-block .third-block-container h1 {
+      padding-top: 40px;
+      padding-bottom: 10px;
+      text-align: center;
+      color: white; }
+    .landing-third-block .third-block-container .four-blocks {
+      display: inline-block;
+      width: 21.15%;
+      margin: 1.7%;
+      margin-bottom: 60px;
+      padding-bottom: 0px;
+      text-align: center; }
+      .landing-third-block .third-block-container .four-blocks:hover {
+        cursor: pointer;
+        background-color: #39bced; }
+      .landing-third-block .third-block-container .four-blocks h2 {
+        color: white;
+        margin-bottom: 10px;
+        padding-bottom: 15px; }
+      .landing-third-block .third-block-container .four-blocks img {
+        height: 180px; }
+      .landing-third-block .third-block-container .four-blocks img.archive-icon {
+        height: 150px;
+        padding-bottom: 15px;
+        padding-top: 15px; }
+      .landing-third-block .third-block-container .four-blocks img.founder-icon {
+        height: 170px;
+        padding-bottom: 15px;
+        padding-top: 15px; }
+      .landing-third-block .third-block-container .four-blocks img.share-icon {
+        height: 150px;
+        padding-bottom: 15px;
+        padding-top: 15px; }
+    .landing-third-block .third-block-container .fa {
+      display: block;
+      width: 100%;
+      color: #082c38;
+      text-align: center;
+      margin: 20 auto;
+      width: 100%;
+      font-size: 6.0em; }
+      .landing-third-block .third-block-container .fa:hover {
+        cursor: pointer;
+        color: #39bced; }
+
+.landing-fourth-block {
+  background-color: #39bced;
+  padding-bottom: 70px; }
+  .landing-fourth-block .top-click {
+    text-align: center;
+    color: white; }
+    .landing-fourth-block .top-click:hover {
+      cursor: pointer; }
+  .landing-fourth-block .fourth-block-container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 0px auto;
+    margin-top: 0px;
+    padding-bottom: 20px; }
+    .landing-fourth-block .fourth-block-container a {
+      font-size: inherit;
+      text-decoration: none; }
+    .landing-fourth-block .fourth-block-container h1 {
+      padding-top: 40px;
+      padding-bottom: 0px;
+      text-align: center;
+      color: #082c38;
+      margin-top: 0px; }
+    .landing-fourth-block .fourth-block-container .four-blocks-social {
+      display: inline-block;
+      width: 21.15%;
+      margin: 1.7%;
+      margin-bottom: 5px;
+      text-align: center; }
+      .landing-fourth-block .fourth-block-container .four-blocks-social:hover {
+        background-color: white;
+        cursor: pointer; }
+      .landing-fourth-block .fourth-block-container .four-blocks-social img {
+        max-width: 50px;
+        padding-bottom: 5px;
+        margin-bottom: 0px; }
+      .landing-fourth-block .fourth-block-container .four-blocks-social img.bigger-icon {
+        max-width: 60px; }
+      .landing-fourth-block .fourth-block-container .four-blocks-social h2 {
+        color: #082c38;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        font-size: 2.8em;
+        padding-bottom: 30px; }
+      .landing-fourth-block .fourth-block-container .four-blocks-social img {
+        width: 90%;
+        padding-top: 30px; }
+    .landing-fourth-block .fourth-block-container .fa {
+      display: block;
+      width: 100%;
+      color: #082c38;
+      text-align: center;
+      margin: 20 auto;
+      width: 100%;
+      font-size: 6.0em; }
+      .landing-fourth-block .fourth-block-container .fa:hover {
         cursor: pointer;
         color: #39bced; }
 

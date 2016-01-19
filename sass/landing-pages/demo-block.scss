@@ -11,19 +11,21 @@
       display: block;
       width: 80%;
       margin: 20px auto;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       @include box-shadow($light-box-shadows);
     }
 
     h1 {
-      padding-top: 10px;
+      padding-top: 20px;
       padding-bottom: 10px;
       text-align: center;
+      color: $Navy;
     }
    
     .fa {
       display: block;
       width: 100%;
+      color: $Navy;
       text-align: center;
       margin: 20 auto;
       width: 100%;

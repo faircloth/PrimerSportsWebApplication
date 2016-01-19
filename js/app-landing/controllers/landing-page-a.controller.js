@@ -6,14 +6,20 @@ let LandingPageAController = function($scope, $anchorScroll, $location, $state, 
 
 
   // FUNCTIONS TO DEFINE
+  vm.goToPage = goToPage;
   vm.goToDemo = goToDemo;
 
 
   // FUNCTIONS
+  function goToPage (root) {
+    $state.go(root);
+  }
+
   function goToDemo(id) {
     $location.hash(id);
     $anchorScroll();
   }
+
 
 };
 
