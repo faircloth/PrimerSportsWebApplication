@@ -7,7 +7,7 @@
 
 .archives-container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   padding-bottom: 80px;
   margin: 0px auto;
   z-index: 1;
@@ -26,18 +26,52 @@
     border: 3px solid $Navy;
     border-radius: 5px;
 
+    &:hover {
+      cursor: pointer;
+      background-color: $Navy;
+      color: white;
+
+    }
+
     .newsletter-media {
-      width: 100%;
-      height: 400px;
+      display: inline-block;
+      width: 40%;
       overflow: hidden;
+      vertical-align: top;
       // @include box-shadow($light-box-shadows);
+      max-height: 350px;
 
       img {
         display: block;
-        margin: 0px auto;
+        margin: 12px auto;
         width: 100%;
       }
 
+    }
+
+    .newsletter-preview {
+      display: inline-block;
+      width: 58%;
+      max-height: 350px;
+      overflow-y: scroll;
+
+      h2 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        vertical-align: top;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-size: 3.4em;
+        white-space: nowrap;
+      }
+
+      p {
+        margin-top: 3px;
+        overflow: hidden;
+        text-overflow-multiline: ellipsis;
+        text-overflow: '...';
+        font-size: 2.4em;
+      }
     }
 
     h2, h4 {
@@ -47,9 +81,15 @@
     }
 
     .newsletter-date {
-      color: $Navy;
-      text-align: center;
+      color: $BrightBlue;
+      text-align: left;
+      font-size: 2.2em;
+      margin: 0px auto;
+      margin-bottom: 10px;
+      padding: 0px;
+      font-weight: bold;
     }
+
 
     p {
       @include padding ($standard-text-padding);
@@ -60,6 +100,13 @@
     .newsletter-subjects {
       list-style-type: none;
       @include padding ($standard-text-padding);
+      padding: 10px 0px;
+      margin: 0px auto;
+
+      span {
+        padding-left: 5px;
+        padding-right: 10px;
+      }
 
       li {
         display: inline-block;
@@ -67,16 +114,18 @@
         margin-left: 0px;
 
         button {
-          background-color: $shadowGrey;
-          color: $qzGrey;
-          padding: 12px;
-          font-size: 1.1em;
+          background-color: $LightGrey;
+          color: $Navy;
+          padding: 15px;
+          font-size: 1.0em;
+          font-weight: bold;
           border: none;
           text-align: center;
           // @include box-shadow($light-box-shadows);
 
           &:hover {
             background-color: $BrightBlue;
+            color: white;
           }
         }
       }
@@ -85,6 +134,10 @@
     .read-more-newsletter {
       text-align: right;
       font-size: 1.1em;
+      margin: 0px;
+      padding: 0px;
+      padding-right: 5px;
+      text-align: right;
 
       a {
         color: $BrightBlue;

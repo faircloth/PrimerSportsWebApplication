@@ -5,16 +5,18 @@
 .top-bar-nav {
   background-color: $Navy;
   width: 100%;
-  max-width: 900px;
+  max-width: 1600px;
   margin: 0 auto;
   height: 65px;
   padding: 0px;
   display: block;
 
   .top-bar-logo {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     padding: 2px;
+    padding-top: 4px;
+    padding-left: 10px;
     display: inline-block;
   }
 
