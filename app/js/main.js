@@ -653,6 +653,17 @@ Object.defineProperty(exports, '__esModule', {
 var SharePageController = function SharePageController($scope) {
 
   console.log('share page controller');
+
+  var vm = this;
+
+  vm.enterContest = enterContest;
+  vm.contestEntered = false;
+
+  function enterContest(entry) {
+    console.log(entry);
+    vm.link = entry.name;
+    vm.contestEntered = true;
+  }
 };
 
 SharePageController.$inject = ['$scope'];

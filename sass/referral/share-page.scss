@@ -7,13 +7,34 @@
     // height: 500px;
 
     .action-block-container {
-      max-width: 800px;
+      max-width: 900px;
       display: block;  
       margin: 20px auto;
+      text-align: center;
+
+      .msg-btn {
+        display: inline-block;
+        background-color: $Navy;
+        color: white;
+        font-size: 2.2em;
+        padding: 15px;
+        border: none;
+        width: 28%;
+        margin: 1.5%;
+        margin-bottom: 25px;
+        min-height: 100px;
+        vertical-align: top;
+
+        &:hover {
+          background-color: white;
+          color: $Navy;
+          font-weight: bold;
+        }
+      }
 
       .share-form-block {
         width: 90%;
-        max-width: 1000px;
+        max-width: 1400px;
         margin: 0px auto;
         background-color: $Navy;
         padding: 5px;
@@ -27,12 +48,14 @@
             padding: 8px 0px;
             padding-bottom: 6px;
             margin: 0px;
+            text-align: left;
           }
 
           h4.form-text-to {
             padding: 2px;
             padding-top: 18px;
             margin: 0px;
+            text-align: left;
           }
 
           .form-column {
@@ -55,11 +78,20 @@
               margin-left: 5px;
             }
 
+
+
             p.import-text {
               padding: 3px;
               font-size: 1.8em;
               display: inline-block;
               margin: 0px;
+              text-align: left;
+
+              a {
+                color: $qzGrey;
+                font-size: 1.2em;
+                text-align: left;
+              }
               // border-bottom: 1px dashed $qzGrey;
             }
 
@@ -95,10 +127,12 @@
 
           button.btn-submit-share {
             width: 80%;
+            max-width: 400px;
             display: block;
             color: white;
             padding: 20px;
             margin: 25px auto;
+            border: none;
           }
         }
 
@@ -109,9 +143,46 @@
 
   .top-block-share {
 
+    .enter-contest-form {
+      display: block;
+      width: 95%;
+      max-width: 600px;
+      min-width: 350px;
+      margin: 80px auto;
+      background-color: $Navy;
+      padding: 5px;
+
+      h3 {
+        color: white;
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+        text-align: center;
+      }
+
+      input {
+        display: block;
+        width: 70%;
+        margin: 18px auto;
+        padding: 10px;
+      }
+
+      button {
+        display: block;
+        margin: 15px auto;
+        font-size: 2.4em;
+        color: $Navy;
+        background-color: $BrightBlue;
+        padding: 10px;
+        font-weight: bold;
+      }
+    }
+
     .two-block {
-      width: 40%;
-      margin: 3%;
+      width: 42.2%;
+      max-width: 550px;
+      min-height: 160px;
+      margin: 2.2%;
       display: inline-block;
       background-color: $LightGrey;
       padding: 10px;
@@ -119,7 +190,7 @@
       @include box-shadow($light-box-shadows);
 
       h3 {
-        width: 90%;
+        width: 98%;
         display: block;
         margin: 10px auto;
       }
@@ -158,11 +229,11 @@
         text-align: center;
       }
       img {
-        width: 80px;
+        width: 60px;
         display: inline-block;
-        margin: 10px;
+        margin: 20px;
         vertical-align: top;
-        margin-top: 25px;
+        margin-top: 40px;
       }
     }
   }

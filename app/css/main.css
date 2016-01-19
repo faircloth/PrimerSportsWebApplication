@@ -2094,7 +2094,6 @@ body {
 
 .page-container-share {
   width: 100%;
-  max-width: 1400px;
   margin: 20px auto; }
 
 .top-bar-outer {
@@ -2217,7 +2216,8 @@ form {
   background-color: #E7E7E4;
   padding: 30px; }
   form button {
-    background-color: #082c38; }
+    background-color: #082c38;
+    border: none; }
 
 .admin-container {
   display: inline-block;
@@ -2473,6 +2473,18 @@ button.standalone-btn {
       padding-bottom: 10px;
       text-align: center;
       color: #082c38; }
+    .landing-demo-block .demo-container h2 {
+      padding-top: 15px;
+      padding-bottom: 10px;
+      text-align: center;
+      color: #3A3A3A;
+      font-size: 3.6em; }
+    .landing-demo-block .demo-container h3 {
+      padding-top: 15px;
+      padding-bottom: 10px;
+      text-align: center;
+      color: #3A3A3A;
+      font-size: 3.4em; }
     .landing-demo-block .demo-container .fa {
       display: block;
       width: 100%;
@@ -2847,25 +2859,50 @@ button.standalone-btn {
   max-width: 900px;
   display: block;
   margin: 10px auto; }
+  .about-content-block h2 {
+    margin-bottom: 8px;
+    margin-top: 10px;
+    padding-top: 20px; }
+  .about-content-block p {
+    margin-top: 12px;
+    margin-bottom: 15px;
+    padding-bottom: 20px; }
   .about-content-block .about-list li {
     font-size: 2.6em;
     line-height: 1.6em;
     padding-bottom: 6px; }
   .about-content-block iframe {
     display: block;
-    margin: 80px auto; }
+    margin: 50px auto; }
 
 .page-container-share .action-block-share {
   background-color: #39bced;
   padding: 20px;
   padding-bottom: 80px; }
   .page-container-share .action-block-share .action-block-container {
-    max-width: 800px;
+    max-width: 900px;
     display: block;
-    margin: 20px auto; }
+    margin: 20px auto;
+    text-align: center; }
+    .page-container-share .action-block-share .action-block-container .msg-btn {
+      display: inline-block;
+      background-color: #082c38;
+      color: white;
+      font-size: 2.2em;
+      padding: 15px;
+      border: none;
+      width: 28%;
+      margin: 1.5%;
+      margin-bottom: 25px;
+      min-height: 100px;
+      vertical-align: top; }
+      .page-container-share .action-block-share .action-block-container .msg-btn:hover {
+        background-color: white;
+        color: #082c38;
+        font-weight: bold; }
     .page-container-share .action-block-share .action-block-container .share-form-block {
       width: 90%;
-      max-width: 1000px;
+      max-width: 1400px;
       margin: 0px auto;
       background-color: #082c38;
       padding: 5px;
@@ -2875,11 +2912,13 @@ button.standalone-btn {
         .page-container-share .action-block-share .action-block-container .share-form-block form h4.form-text {
           padding: 8px 0px;
           padding-bottom: 6px;
-          margin: 0px; }
+          margin: 0px;
+          text-align: left; }
         .page-container-share .action-block-share .action-block-container .share-form-block form h4.form-text-to {
           padding: 2px;
           padding-top: 18px;
-          margin: 0px; }
+          margin: 0px;
+          text-align: left; }
         .page-container-share .action-block-share .action-block-container .share-form-block form .form-column {
           display: inline-block;
           width: 46%;
@@ -2899,7 +2938,12 @@ button.standalone-btn {
             padding: 3px;
             font-size: 1.8em;
             display: inline-block;
-            margin: 0px; }
+            margin: 0px;
+            text-align: left; }
+            .page-container-share .action-block-share .action-block-container .share-form-block form .form-column p.import-text a {
+              color: #3A3A3A;
+              font-size: 1.2em;
+              text-align: left; }
           .page-container-share .action-block-share .action-block-container .share-form-block form .form-column input {
             width: 96%;
             padding: 8px;
@@ -2923,14 +2967,46 @@ button.standalone-btn {
             margin: 0px; }
         .page-container-share .action-block-share .action-block-container .share-form-block form button.btn-submit-share {
           width: 80%;
+          max-width: 400px;
           display: block;
           color: white;
           padding: 20px;
-          margin: 25px auto; }
+          margin: 25px auto;
+          border: none; }
+
+.page-container-share .top-block-share .enter-contest-form {
+  display: block;
+  width: 95%;
+  max-width: 600px;
+  min-width: 350px;
+  margin: 80px auto;
+  background-color: #082c38;
+  padding: 5px; }
+  .page-container-share .top-block-share .enter-contest-form h3 {
+    color: white;
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    text-align: center; }
+  .page-container-share .top-block-share .enter-contest-form input {
+    display: block;
+    width: 70%;
+    margin: 18px auto;
+    padding: 10px; }
+  .page-container-share .top-block-share .enter-contest-form button {
+    display: block;
+    margin: 15px auto;
+    font-size: 2.4em;
+    color: #082c38;
+    background-color: #39bced;
+    padding: 10px;
+    font-weight: bold; }
 
 .page-container-share .top-block-share .two-block {
-  width: 40%;
-  margin: 3%;
+  width: 42.2%;
+  max-width: 550px;
+  min-height: 160px;
+  margin: 2.2%;
   display: inline-block;
   background-color: #E7E7E4;
   padding: 10px;
@@ -2940,7 +3016,7 @@ button.standalone-btn {
   -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
   box-shadow: 2px 2px 2px 2px #C0C2C2; }
   .page-container-share .top-block-share .two-block h3 {
-    width: 90%;
+    width: 98%;
     display: block;
     margin: 10px auto; }
   .page-container-share .top-block-share .two-block p {
@@ -2971,10 +3047,10 @@ button.standalone-btn {
     width: 200px;
     text-align: center; }
   .page-container-share .top-block-share .process-map img {
-    width: 80px;
+    width: 60px;
     display: inline-block;
-    margin: 10px;
+    margin: 20px;
     vertical-align: top;
-    margin-top: 25px; }
+    margin-top: 40px; }
 
 /*# sourceMappingURL=main.css.map */
