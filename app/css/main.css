@@ -6,6 +6,7 @@
 /* FONT PATH
  * -------------------------- */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,300,700);
+@import url(https://fonts.googleapis.com/css?family=Exo+2:900|Biryani:800);
 @font-face {
   font-family: 'FontAwesome';
   src: url("../fonts/fontawesome-webfont.eot?v=4.5.0");
@@ -2229,6 +2230,20 @@ form {
     padding: 20px;
     border: 2px solid #082c38;
     border-radius: 4px; }
+    .admin-container .admin-content-form .form-dropdown-container {
+      display: block;
+      padding: 0px;
+      width: 100%;
+      margin: 10px auto;
+      text-align: center; }
+      .admin-container .admin-content-form .form-dropdown-container p.admin-article-label, .admin-container .admin-content-form .form-dropdown-container select, .admin-container .admin-content-form .form-dropdown-container option {
+        display: inline-block;
+        margin: 15px auto;
+        font-size: 1.6em;
+        padding: 20px; }
+      .admin-container .admin-content-form .form-dropdown-container select, .admin-container .admin-content-form .form-dropdown-container option {
+        width: 200px;
+        height: 40px; }
     .admin-container .admin-content-form input {
       display: block;
       width: 80%;
@@ -2315,6 +2330,12 @@ span, li, a {
 input, label, button {
   font-size: 2.0em; }
 
+button.standalone-btn {
+  display: block;
+  color: white;
+  background-color: #082c38;
+  padding: 10px; }
+
 .landing-top-a {
   display: block;
   height: 800px;
@@ -2325,12 +2346,12 @@ input, label, button {
     height: 100%;
     background: url(http://b-i.forbesimg.com/jasonbelzer/files/2014/01/superbowl-xlvii-at-metlife-stadium_original1.jpg);
     background-position: center;
-    opacity: 1;
+    opacity: .95;
     z-index: -1;
-    -webkit-box-shadow: 4px 4px 4px 4px #C0C2C2;
-    -moz-box-shadow: 4px 4px 4px 4px #C0C2C2;
-    -ms-box-shadow: 4px 4px 4px 4px #C0C2C2;
-    box-shadow: 4px 4px 4px 4px #C0C2C2; }
+    -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
+    -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
+    -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
+    box-shadow: 2px 2px 2px 2px #C0C2C2; }
   .landing-top-a .over-background {
     display: block;
     margin: 0px auto;
@@ -2359,44 +2380,58 @@ input, label, button {
     .landing-top-a .over-background div.top-form {
       display: block;
       width: 100%;
-      max-width: 600px;
+      max-width: 800px;
       margin: 5px auto;
       margin-top: -600px; }
       .landing-top-a .over-background div.top-form form {
-        width: 80%;
+        width: 90%;
         display: block;
         margin: 0 auto;
-        background-color: transparent;
-        z-index: 2;
-        border: 4px solid #082c38;
+        opacity: .95;
+        z-index: 1;
         border-radius: 8px;
-        background-color: #F5F5F5;
+        background-color: transparent;
         color: #082c38; }
         .landing-top-a .over-background div.top-form form h3 {
-          font-size: 5.0em;
+          font-size: 7.0em;
+          text-shadow: 5px 5px 5px #000, -1px -1px #000, 1px 1px #000;
           width: 100%;
+          z-index: 3;
+          opacity: 1;
           margin: 0 auto;
-          display: block; }
+          line-height: 1.2em;
+          color: white;
+          display: block;
+          font-family: 'Biryani', sans-serif; }
         .landing-top-a .over-background div.top-form form input {
-          padding: 12px;
+          padding: 10px;
+          z-index: 3;
           width: 80%;
           font-size: 2.5em;
           display: block;
           margin: 15px auto;
-          color: black;
+          color: #082c38;
           background-color: white;
           opacity: 1;
-          border: 2px solid #082c38;
-          border-radius: 4px; }
+          border: 4px solid #082c38;
+          border-radius: 4px;
+          font-family: 'Biryani', sans-serif;
+          font-weight: bold; }
+          .landing-top-a .over-background div.top-form form input::-webkit-input-placeholder {
+            color: #082c38;
+            font-family: 'Biryani', sans-serif;
+            font-weight: bold; }
         .landing-top-a .over-background div.top-form form button {
-          background-color: #082c38;
-          font-size: 2.2em;
+          background-color: #39bced;
+          font-size: 2.8em;
           font-weight: bold;
-          color: white;
+          color: #082c38;
           padding: 15px;
           z-index: 2;
-          border: 3px solid #082c38;
-          border-radius: 6px; }
+          opacity: 1;
+          border: 4px solid #082c38;
+          border-radius: 6px;
+          font-family: 'Biryani', sans-serif; }
           .landing-top-a .over-background div.top-form form button:hover {
             background-color: #39bced; }
     .landing-top-a .over-background .fa {
@@ -2411,29 +2446,25 @@ input, label, button {
         color: #39bced; }
 
 .landing-demo-block {
-  background-color: #E7E7E4; }
+  background-color: white; }
   .landing-demo-block .demo-container {
     width: 80%;
     max-width: 1000px;
     margin: 5px auto;
     margin-top: 0px; }
+    .landing-demo-block .demo-container .demo-gif {
+      display: block;
+      width: 80%;
+      margin: 20px auto;
+      margin-bottom: 40px;
+      -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
+      -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
+      -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
+      box-shadow: 2px 2px 2px 2px #C0C2C2; }
     .landing-demo-block .demo-container h1 {
-      margin: 0px;
-      padding: 20px 0px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       text-align: center; }
-    .landing-demo-block .demo-container .demo-card {
-      display: inline-block;
-      width: 44%;
-      margin: 2.8%;
-      margin-top: 0%;
-      text-align: center; }
-      .landing-demo-block .demo-container .demo-card img {
-        width: 100%;
-        border: 2px solid #3A3A3A;
-        -webkit-box-shadow: 5px 5px 5px 5px #C0C2C2;
-        -moz-box-shadow: 5px 5px 5px 5px #C0C2C2;
-        -ms-box-shadow: 5px 5px 5px 5px #C0C2C2;
-        box-shadow: 5px 5px 5px 5px #C0C2C2; }
     .landing-demo-block .demo-container .fa {
       display: block;
       width: 100%;
@@ -2458,10 +2489,10 @@ input, label, button {
     background-image: url(http://www.trbimg.com/img-54070b2c/turbine/bs-sp-bengals-hue-jackson-0907-20140906);
     opacity: 1;
     z-index: -1;
-    -webkit-box-shadow: 4px 4px 4px 4px #C0C2C2;
-    -moz-box-shadow: 4px 4px 4px 4px #C0C2C2;
-    -ms-box-shadow: 4px 4px 4px 4px #C0C2C2;
-    box-shadow: 4px 4px 4px 4px #C0C2C2; }
+    -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
+    -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
+    -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
+    box-shadow: 2px 2px 2px 2px #C0C2C2; }
 
 .homepage-container {
   width: 85%;
@@ -2516,10 +2547,10 @@ input, label, button {
     padding-top: 15px;
     color: #082c38; }
   .archives-container .newsletter-block {
-    -webkit-box-shadow: 5px 5px 5px 5px #C0C2C2;
-    -moz-box-shadow: 5px 5px 5px 5px #C0C2C2;
-    -ms-box-shadow: 5px 5px 5px 5px #C0C2C2;
-    box-shadow: 5px 5px 5px 5px #C0C2C2;
+    -webkit-box-shadow: 3px 3px 3px 3px #C0C2C2;
+    -moz-box-shadow: 3px 3px 3px 3px #C0C2C2;
+    -ms-box-shadow: 3px 3px 3px 3px #C0C2C2;
+    box-shadow: 3px 3px 3px 3px #C0C2C2;
     background-color: white;
     margin-bottom: 80px;
     padding: 20px;
@@ -2688,10 +2719,10 @@ input, label, button {
   background-color: #E7E7E4;
   padding: 10px;
   padding-bottom: 0px;
-  -webkit-box-shadow: 4px 4px 4px 4px #C0C2C2;
-  -moz-box-shadow: 4px 4px 4px 4px #C0C2C2;
-  -ms-box-shadow: 4px 4px 4px 4px #C0C2C2;
-  box-shadow: 4px 4px 4px 4px #C0C2C2; }
+  -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
+  -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
+  -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
+  box-shadow: 2px 2px 2px 2px #C0C2C2; }
   .page-container-share .top-block-share .two-block h3 {
     width: 90%;
     display: block;

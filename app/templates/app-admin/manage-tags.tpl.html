@@ -1,0 +1,16 @@
+
+<h3>Manage tags</h3>
+
+<form ng-submit="vm.addTag(tag)" class="admin-content-form">
+
+  <input ng-model="tag.tagName" placeholder="New tag name (e.g., College Football)">
+
+  <button>Add tag</button>
+
+</form>
+
+
+<h4>Current list of tags:</h4>
+<ul>
+  <li ng-repeat="tag in vm.currentTags">{{ tag.tagName }}</li>
+</ul>

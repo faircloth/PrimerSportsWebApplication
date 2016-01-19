@@ -7,6 +7,7 @@
     display: inline-block;
   }
 
+
   .admin-content-form {
     width: 95%;
     display: block;
@@ -14,6 +15,28 @@
     padding: 20px;
     border: 2px solid $Navy;
     border-radius: 4px;
+
+    .form-dropdown-container {
+      display: block;
+      padding: 0px;
+      width: 100%;
+      margin: 10px auto;
+      text-align: center;
+      
+      p.admin-article-label, select, option {
+        display: inline-block;
+        margin: 15px auto;
+        font-size: 1.6em;
+        padding: 20px;
+      }
+
+      select, option {
+        width: 200px;
+        height: 40px;
+      }
+    }
+
+
 
     input {
       display: block;

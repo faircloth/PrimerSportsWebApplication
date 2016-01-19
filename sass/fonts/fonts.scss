@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,300,700);
+@import url(https://fonts.googleapis.com/css?family=Exo+2:900|Biryani:800);
+
 
 body {
   font-size: 62.5%;
@@ -43,4 +45,11 @@ span, li, a {
 
 input, label, button {
   font-size: 2.0em;
+}
+
+button.standalone-btn {
+  display: block;
+  color: white;
+  background-color: $Navy;
+  padding: 10px;
 }

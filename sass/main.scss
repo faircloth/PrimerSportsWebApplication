@@ -11,9 +11,9 @@ $offWhite: #F5F5F5;
 $shadowGrey: #C0C2C2;
 
 // SHADOWS
-$light-box-shadows: 4px 4px 4px 4px $shadowGrey;
-$light-box-shadows-no-top: 0px 4px 4px 4px $shadowGrey;
-$box-shadows: 5px 5px 5px 5px $shadowGrey;
+$light-box-shadows: 2px 2px 2px 2px $shadowGrey;
+$light-box-shadows-no-top: 0px 2px 2px 2px $shadowGrey;
+$box-shadows: 3px 3px 3px 3px $shadowGrey;
 
 @mixin box-shadow ($box-shadows) {
   -webkit-box-shadow: $box-shadows;

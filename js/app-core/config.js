@@ -88,6 +88,36 @@ let config = function($urlRouterProvider, $stateProvider) {
         }
       }
     })
+    .state('root.admin-manage-tags', {
+      url: '/admin-manage-tags',
+      views: {
+        navigation: {
+          templateUrl: 'templates/app-layout/navigation.tpl.html'
+        },
+        adminSidebar: {
+          templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
+        },
+        adminPage: {
+          controller: 'ManageTagsController as vm',
+          templateUrl: 'templates/app-admin/manage-tags.tpl.html'
+        }
+      }
+    })
+    .state('root.admin-home', {
+      url: '/admin-home',
+      views: {
+        navigation: {
+          templateUrl: 'templates/app-layout/navigation.tpl.html'
+        },
+        adminSidebar: {
+          templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
+        },
+        adminPage: {
+          controller: 'AdminHomeController as vm',
+          templateUrl: 'templates/app-admin/admin-home.tpl.html'
+        }
+      }
+    })
     .state('root.landing-a', {
       url: '/landing-a',
       views: {

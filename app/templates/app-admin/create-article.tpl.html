@@ -1,13 +1,28 @@
 
 <h3>Create a new article</h3>
 
-<form class="admin-content-form">
+<form ng-submit="vm.createArticle(article)" class="admin-content-form">
 
-  <input placeholder="Tag">
-  <input placeholder="Title">
-  <textarea placeholder="Content"></textarea>
-  <input placeholder="Image URL">
+  <div class="form-dropdown-container">
+    <p class="admin-article-label">Tag</p>
+    <select ng-model="article.tagName">
+      <option value="">Choose a tag</option>
+      <option ng-repeat="tag in vm.currentTags">{{ tag.tagName }}</option>
+    </select>
 
-  <button>Sign in</button>
+    <p class="admin-article-label">Feature?</p>
+    <select ng-model="article.feature">
+      <option value="">Is this a top story?</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+  </div>
+
+  <input ng-model="article.title" placeholder="Title">
+  <textarea ng-model="article.content" placeholder="Content"></textarea>
+  <input ng-model="article.imgUrl" placeholder="Image URL">
+
+  <button>Create article</button>
 
 </form>

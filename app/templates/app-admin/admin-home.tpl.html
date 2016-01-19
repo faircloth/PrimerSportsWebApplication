@@ -1,0 +1,8 @@
+<h3>Admin Home</h3>
+
+<button ng-click="vm.goToTagManager()" class="standalone-btn">Manage tags</button>
+
+<h4>Current tags</h4>
+<ul>
+  <li ng-repeat="tag in vm.currentTags">{{ tag.tagName }}</li>
+</ul>
