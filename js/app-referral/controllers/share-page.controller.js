@@ -4,9 +4,55 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
 
   let vm = this;
 
-  vm.enterContest   = enterContest;
-  vm.contestEntered = true;
-  vm.goToUtm        = goToUtm;
+  vm.enterContest     = enterContest;
+  vm.contestEntered   = true;
+  vm.goToUtm          = goToUtm;
+  vm.getMessage       = getMessage;
+  vm.showFavorites    = showFavorites;
+  vm.favoriteOptions  = false;
+  vm.writeMyOwn       = writeMyOwn;
+  vm.select           = select;
+
+  vm.choices = [
+  'The Primer',
+  'Major stories',
+  'Quick hits',
+  'Highlight of the day',
+  'Graphics',
+  'ACC Basketball',
+  'One-hit wonders',
+  'Primer Nugget'
+  ]
+
+  let selectedChoice = {};
+
+  function select (choice) {
+    console.log(choice);
+    selectedChoice = {};
+    selectedChoice = choice;
+    if (selectedChoice === choice) {
+      vm.active = 'active';
+    } else {
+      vm.active = 'other';
+    }
+  }
+
+
+  function getMessage (type) {
+    console.log(type);
+    vm.favoriteOptions = false;
+  }
+
+  function showFavorites () {
+    console.log('show favorites function called');
+    vm.favoriteOptions = true;
+  }
+
+
+  function writeMyOwn () {
+    console.log('write my own message called');
+    vm.favoriteOptions = false;
+  }
 
 
   function goToUtm (url) {
@@ -23,7 +69,16 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   };
 
 
-  vm.linkSource     = pageInfo.source;
+  // http://primer-webapp.surge.sh/#/landing-a?utm_source=
+
+  let landingPages = {
+    A: 'http://primer-webapp.surge.sh/#/landing-a?utm_source=',
+    B: 'http://primer-webapp.surge.sh/#/landing-b?utm_source=',
+  }
+
+
+  vm.referrerEmail  = pageInfo.source;
+  vm.linkSource     = landingPages.A + pageInfo.source;
 
   registerPageVisit (pageInfo);
 

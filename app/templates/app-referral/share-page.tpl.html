@@ -36,11 +36,11 @@
 
       <div class="two-block">
         <h3>Prefer to share on your own? Here's your unique link:</h3>
-        <a href="http://primer-webapp.surge.sh/#/landing-a?utm_source={{ vm.linkSource }}">http://primer-webapp.surge.sh/#/landing-a?utm_source={{ vm.linkSource }}</a><span></span>
+        <a href="{{ vm.linkSource }}">{{ vm.linkSource }}</a><span></span>
       </div>
 
       <div class="two-block">
-        <h3>We keep track of who signs up using your link. We'll follow up with a link showing results!</h3>
+        <h3>We keep track of who signs up using your link. We'll follow up with a results link!</h3>
       </div>
 
     </div>
@@ -48,17 +48,35 @@
     <div ng-show="vm.contestEntered" class="action-block-share">
       <div class="action-block-container">
         
-        <button class="msg-btn">Give the quick pitch</button>
-        <button class="msg-btn">Your favorite part of Primer</button>
-        <button class="msg-btn">Write your own</button>
+        <button ng-click="vm.getMessage('quickPitch')"class="msg-btn">Give the quick pitch</button>
+        <button ng-click="vm.showFavorites()" class="msg-btn">Your favorite part of Primer</button>
+        <button ng-click="vm.writeMyOwn()" class="msg-btn">Write your own</button>
 
         <div class="share-form-block">
           
           <form>
 
+            <div ng-show="vm.favoriteOptions" class="favorites-options">
+
+              <h4>Select one to view message</h4>
+              <button ng-repeat="choice in vm.choices" ng-click="vm.select(choice)" ng-model="choice">{{ choice }}</button>
+
+
+           <!--    <select ng-model="vm.selectedMsg">
+                <option value="">Select one... </option>
+                <option>The Primer</option>
+                <option>Major Stories</option>
+                <option>Quick Hits</option>
+                <option>Highlight of the day</option>
+                <option>One-hit wonders</option>
+                <option>Nugget</option>
+              </select> -->
+
+            </div>
+
             <div class="form-column">
               <h4 class="form-text">Your email address</h4>
-              <input value="{{ entry.email }}" placeholder="...">
+              <input value="{{ vm.referrerEmail }}" placeholder="...">
 
               <h4 class="form-text-to">Their email addresses</h4>
               <!-- <p class="import-text" id="left-import">Import contacts:</p>  -->
@@ -75,10 +93,14 @@
             <div class="form-column">
             
               <h4 class="form-text">Your message</h4>
-              <textarea class="share-message" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"></textarea>
+              <textarea ng-model="vm.message" class="share-message">
+              </textarea>
+              <span>We'll insert your link in the message for you
+                <!-- <a href="{{ vm.linkSource }}">Sign up using my link</a> -->
+              </span>
             </div>
 
-            <button class="btn-submit-share">Click for a lifetime of happiness</button>
+            <button class="btn-submit-share">Share Primer</button>
           </form>
           
         </div>

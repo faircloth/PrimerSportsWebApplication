@@ -2909,6 +2909,22 @@ button.standalone-btn {
       border-radius: 3px; }
       .page-container-share .action-block-share .action-block-container .share-form-block form {
         padding: 5px; }
+        .page-container-share .action-block-share .action-block-container .share-form-block form .favorites-options {
+          display: block;
+          width: 100%;
+          margin: 20px auto; }
+          .page-container-share .action-block-share .action-block-container .share-form-block form .favorites-options button {
+            display: inline-block;
+            background-color: #3A3A3A;
+            color: white;
+            font-size: 1.8em;
+            padding: 15px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            margin: 15px;
+            font-weight: bold; }
+            .page-container-share .action-block-share .action-block-container .share-form-block form .favorites-options button .active {
+              background-color: #39bced; }
         .page-container-share .action-block-share .action-block-container .share-form-block form a.cs_import {
           width: 100%; }
           .page-container-share .action-block-share .action-block-container .share-form-block form a.cs_import button {
@@ -2939,13 +2955,10 @@ button.standalone-btn {
           .page-container-share .action-block-share .action-block-container .share-form-block form .form-column button.btn-contacts {
             display: inline-block;
             text-align: center;
-            padding: 10px;
-            color: white;
-            margin: 5px 0px;
-            margin-top: 0px; }
+            padding: 8px;
+            color: white; }
           .page-container-share .action-block-share .action-block-container .share-form-block form .form-column a {
-            margin-right: 5px;
-            margin-left: 5px; }
+            padding: 2.5px; }
           .page-container-share .action-block-share .action-block-container .share-form-block form .form-column p.import-text {
             padding: 3px;
             font-size: 1.8em;
