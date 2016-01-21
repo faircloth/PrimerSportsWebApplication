@@ -44,6 +44,24 @@
           // background-color: $LightGrey;
           padding: 5px;
 
+          a.cs_import {
+            width: 100%;
+
+            button {
+              color: white;
+              background-color: $BrightBlue;
+              font-size: 1em;
+              font-weight: bold;
+              padding: 5px;
+              width: 100%;
+              margin-top: 8px;
+
+              &:hover {
+                font-size: 1.2em;
+              }
+            }
+          }
+
           h4.form-text {
             padding: 8px 0px;
             padding-bottom: 6px;
@@ -110,7 +128,7 @@
               height: 200px;
               border: 2px solid $shadowGrey;
               border-radius: 4px;
-              font-size: 2.0em;
+              font-size: 1.6em;
             }
 
             textarea.share-message {
@@ -181,7 +199,8 @@
     .two-block {
       width: 42.2%;
       max-width: 550px;
-      min-height: 160px;
+      height: 160px;
+      vertical-align: top;
       margin: 2.2%;
       display: inline-block;
       background-color: $LightGrey;

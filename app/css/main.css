@@ -2909,6 +2909,18 @@ button.standalone-btn {
       border-radius: 3px; }
       .page-container-share .action-block-share .action-block-container .share-form-block form {
         padding: 5px; }
+        .page-container-share .action-block-share .action-block-container .share-form-block form a.cs_import {
+          width: 100%; }
+          .page-container-share .action-block-share .action-block-container .share-form-block form a.cs_import button {
+            color: white;
+            background-color: #39bced;
+            font-size: 1em;
+            font-weight: bold;
+            padding: 5px;
+            width: 100%;
+            margin-top: 8px; }
+            .page-container-share .action-block-share .action-block-container .share-form-block form a.cs_import button:hover {
+              font-size: 1.2em; }
         .page-container-share .action-block-share .action-block-container .share-form-block form h4.form-text {
           padding: 8px 0px;
           padding-bottom: 6px;
@@ -2957,7 +2969,7 @@ button.standalone-btn {
             height: 200px;
             border: 2px solid #C0C2C2;
             border-radius: 4px;
-            font-size: 2.0em; }
+            font-size: 1.6em; }
           .page-container-share .action-block-share .action-block-container .share-form-block form .form-column textarea.share-message {
             width: 96%;
             padding: 8px;
@@ -3005,7 +3017,8 @@ button.standalone-btn {
 .page-container-share .top-block-share .two-block {
   width: 42.2%;
   max-width: 550px;
-  min-height: 160px;
+  height: 160px;
+  vertical-align: top;
   margin: 2.2%;
   display: inline-block;
   background-color: #E7E7E4;

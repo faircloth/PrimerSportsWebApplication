@@ -4,13 +4,13 @@
 
   <div class="top-block-share">
 
-     <form ng-show="!vm.contestEntered" ng-submit="vm.enterContest(entry)" class="enter-contest-form">
+     
+     <form ng-show="!vm.contestEntered"  ng-submit="vm.enterContest(entry)" class="enter-contest-form">
         <h3>Step 1:<br>Sign up to get your unique link</h3>
         <input ng-model="entry.name" placeholder="First name">
         <input ng-model="entry.email" placeholder="Email address">
-        <button>Next step</button>
+        <button ng-click="goToUtm()">Next step</button>
       </form>
-
 
     <h3 style="width: 80%; max-width: 600px; display: block; margin: 5px auto;"  ng-show="!vm.contestEntered">Next step: Recieve your own unique share link and craft your messsage!</h3>
 
@@ -36,12 +36,11 @@
 
       <div class="two-block">
         <h3>Prefer to share on your own? Here's your unique link:</h3>
-        <a href="http://primer-webapp.surge.sh/#/landing-a?utm_source={{ entry.name }}">{{ entry.name }}'s link</a>
+        <a href="http://primer-webapp.surge.sh/#/landing-a?utm_source={{ vm.linkSource }}">http://primer-webapp.surge.sh/#/landing-a?utm_source={{ vm.linkSource }}</a><span></span>
       </div>
 
       <div class="two-block">
-        <h3>Competitive? Don't worry we're keeping score:</h3>
-        <a href="http://primer-webapp.surge.sh/#/landing-a?utm_source={{ entry.name }}">{{ entry.name }}'s score</a>
+        <h3>We keep track of who signs up using your link. We'll follow up with a link showing results!</h3>
       </div>
 
     </div>
@@ -62,9 +61,15 @@
               <input value="{{ entry.email }}" placeholder="...">
 
               <h4 class="form-text-to">Their email addresses</h4>
-              <p class="import-text" id="left-import">Import contacts:
-              <a href="#">Google</a><a href="#">Yahoo</a></p>
-              <textarea></textarea>
+              <!-- <p class="import-text" id="left-import">Import contacts:</p>  -->
+
+              <a class="cs_import">
+                <button>Import from Address Book
+                </button>
+              </a>
+
+              <!-- <a href="#">Google</a><a href="#">Yahoo</a>-->
+              <textarea id="contact_list"></textarea>
             </div>
 
             <div class="form-column">
