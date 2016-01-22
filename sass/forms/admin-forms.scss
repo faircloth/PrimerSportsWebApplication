@@ -16,6 +16,39 @@
     border: 2px solid $Navy;
     border-radius: 4px;
 
+    .form-row {
+      display: block;
+      width:  80%;
+      margin: 10px auto;
+      
+      span {
+        display: inline-block;
+        width: 200px;
+        margin: 15px auto;
+        font-size: 1.6em;
+      }
+
+      select.new-share-img {
+          display: inline-block;
+          width: 80%;
+          max-width: 200px;
+          margin: 15px auto;
+          font-size: 1.6em;
+          border-radius: none;
+          padding: 15px;
+
+        option {
+          display: inline-block;
+          width: 80%;
+          max-width: 200px;
+          margin: 15px auto;
+          font-size: 1.6em;
+          border-radius: none;
+          padding: 15px;
+        }
+      }
+    }
+
     .form-dropdown-container {
       display: block;
       padding: 0px;

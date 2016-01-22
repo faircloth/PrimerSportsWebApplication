@@ -12,7 +12,12 @@
       margin: 20px auto;
       text-align: center;
 
-      .msg-btn {
+
+      button.active {
+        background-color: $LightGrey;
+      }
+
+      button.msg-btn {
         display: inline-block;
         background-color: $Navy;
         color: white;
@@ -24,6 +29,7 @@
         margin-bottom: 25px;
         min-height: 100px;
         vertical-align: top;
+
 
         &:hover {
           background-color: white;
@@ -50,7 +56,6 @@
             margin: 20px auto;
 
 
-
               button {
                 display: inline-block;
                 background-color: $qzGrey;
@@ -61,6 +66,13 @@
                 padding-bottom: 3px;
                 margin: 15px;
                 font-weight: bold;
+
+                &:hover {
+                  background-color: white;
+                  color: $qzGrey;
+                  font-weight: bold;
+                  border: 2px solid $qzGrey;
+                }
 
                 .active {
                   background-color: $BrightBlue;

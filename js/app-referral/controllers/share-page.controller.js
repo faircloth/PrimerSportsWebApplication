@@ -1,4 +1,6 @@
-let SharePageController = function($scope, UtmGrabberService, ReferrerService, $state, $location, $window) {
+import _ from 'underscore';
+
+let SharePageController = function($scope, UtmGrabberService, ReferrerService, $state, $location, $window, AdminShareMsgsService) {
   
   console.log('PAGE URL', UtmGrabberService);
 
@@ -8,44 +10,57 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   vm.contestEntered   = true;
   vm.goToUtm          = goToUtm;
   vm.getMessage       = getMessage;
-  vm.showFavorites    = showFavorites;
   vm.favoriteOptions  = false;
   vm.writeMyOwn       = writeMyOwn;
   vm.select           = select;
 
-  vm.choices = [
-  'The Primer',
-  'Major stories',
-  'Quick hits',
-  'Highlight of the day',
-  'Graphics',
-  'ACC Basketball',
-  'One-hit wonders',
-  'Primer Nugget'
-  ]
+  
+  // TRY TO AUTOMATE
+  let favoriteLabel = "Favorite part of Primer";
+  let selectedChoice = 'Quick pitch';
 
-  let selectedChoice = {};
+  // START EMPTY
+  vm.categories    = [];
+  vm.favoriteParts = [];
 
-  function select (choice) {
-    console.log(choice);
-    selectedChoice = {};
-    selectedChoice = choice;
-    if (selectedChoice === choice) {
-      vm.active = 'active';
+  getShareMsgs();
+  function getShareMsgs () {
+    ReferrerService.getShareMsgs().then( (response) => {
+      
+      vm.shareMessages = response.data.results;
+      let quickPitch = _.findWhere(vm.shareMessages, {category: 'Quick pitch'});
+      console.log(quickPitch);
+      vm.message = quickPitch.text;
+
+      // Build category list and array of favorites messages
+      vm.shareMessages.forEach( function (message) {
+        if (message.category === favoriteLabel) {
+          vm.favoriteParts.push(message);
+          console.log('FAVORITE PARTS:', vm.favoriteParts);
+        }
+        if (!vm.categories.includes(message.category)) {
+          vm.categories.unshift(message.category);
+          console.log('CATEGORY LIST:', vm.categories);
+        }
+      });
+    });
+  }
+  
+  function getMessage (categoryName) {
+    console.log(categoryName);
+    if (categoryName === favoriteLabel) {
+      vm.favoriteOptions = true;
     } else {
-      vm.active = 'other';
+      vm.favoriteOptions = false;
+      let selectedMessage = _.findWhere(vm.shareMessages, {category: categoryName});
+      console.log('SELECTED MESSAGE:', selectedMessage );
+      vm.message = selectedMessage.text;
     }
   }
 
-
-  function getMessage (type) {
-    console.log(type);
-    vm.favoriteOptions = false;
-  }
-
-  function showFavorites () {
-    console.log('show favorites function called');
-    vm.favoriteOptions = true;
+  function select (favoritePart) {
+    console.log(favoritePart);
+    vm.message = favoritePart.text;
   }
 
 
@@ -74,7 +89,7 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   let landingPages = {
     A: 'http://primer-webapp.surge.sh/#/landing-a?utm_source=',
     B: 'http://primer-webapp.surge.sh/#/landing-b?utm_source=',
-  }
+  };
 
 
   vm.referrerEmail  = pageInfo.source;
@@ -118,6 +133,6 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
 
 };
 
-SharePageController.$inject = ['$scope', 'UtmGrabberService', 'ReferrerService', '$state', '$location', '$window'];
+SharePageController.$inject = ['$scope', 'UtmGrabberService', 'ReferrerService', '$state', '$location', '$window', 'AdminShareMsgsService'];
 
 export default SharePageController;

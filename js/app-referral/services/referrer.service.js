@@ -9,6 +9,7 @@ let ReferrerService = function($state, $http, PARSE) {
   this.shareVisit   = shareVisit;
   this.addReferrer  = addReferrer;
   this.enterContest = enterContest;
+  this.getShareMsgs = getShareMsgs;
 
   // FUNCTIONS
   function shareVisit (pageInfo) {
@@ -26,6 +27,13 @@ let ReferrerService = function($state, $http, PARSE) {
     console.log(entry);
     return $http.post(url + 'newSignUp', entry, PARSE.CONFIG);
   }
+
+  function getShareMsgs () {
+    console.log('get share msgs called');
+    return $http.get(url + 'shareMessage', PARSE.CONFIG);
+  }
+
+  getShareMsgs();
 
 };
 

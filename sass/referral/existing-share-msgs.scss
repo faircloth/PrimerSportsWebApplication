@@ -1,0 +1,67 @@
+.share-msg-edit {
+    width: 95%;
+    display: block;
+    max-width: 800px;
+    padding: 10px;
+    border: 2px solid $Navy;
+    border-radius: 4px;
+    background: $Navy;
+    margin-bottom: 40px;
+
+    h4 {
+      text-align: center;
+      color: white;
+    }
+
+  textarea {
+      display: block;
+      width: 80%;
+      margin: 15px auto;
+      font-size: 1.6em;
+      padding: 15px;
+      border: none;
+      min-height: 150px;
+  }
+
+  button {
+    background-color: white;
+    color: $Navy;
+    padding: 10px;
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+.form-row2 {
+      display: block;
+      width:  80%;
+      margin: 10px auto;
+      
+      span {
+        display: inline-block;
+        font-size: 1.6em;
+        color: white;
+        padding-right: 10px;
+      }
+
+      select.new-share-img {
+          display: inline-block;
+          width: 80%;
+          max-width: 200px;
+          margin: 15px auto;
+          font-size: 1.6em;
+          border-radius: none;
+          padding: 15px;
+          margin-right: 20px; 
+
+        option {
+          display: inline-block;
+          width: 80%;
+          max-width: 200px;
+          margin: 15px auto;
+          font-size: 1.6em;
+          border-radius: none;
+          padding: 15px;
+        }
+      }
+    }

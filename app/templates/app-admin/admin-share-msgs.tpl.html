@@ -1,0 +1,46 @@
+<h2>Admin share messages</h2>
+
+<h3>Create new</h3>
+
+<form class="admin-content-form" ng-submit="vm.createShareMsg(shareMessage)">
+  <input ng-model="shareMessage.label" placeholder="Message label">
+  <div class="form-row">
+    <span>Message category:</span>
+    <select class="new-share-img" ng-model="shareMessage.category">
+      <option value="">Select a category</option>
+      <option ng-repeat="category in vm.categories">{{ category }}</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <span>Include image?</span>
+    <select class="new-share-img" ng-model="shareMessage.hasImage">
+      <option value="">Select yes or no</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <textarea ng-model="shareMessage.text" placeholder="Text that will be emailed"></textarea>
+  <button>Add message</button>
+</form>
+
+
+<h3>Existing messages</h3>
+
+<div ng-repeat="shareMsg in vm.shareMsgs" class="share-msg-edit">
+  <h4 ng-model="shareMsg.label">{{ shareMsg.label }}</h4>
+  <div class="form-row2">
+    <span>Category:</span>
+    <select class="new-share-img" ng-model="shareMsg.category">
+      <option value="">Select a category</option>
+      <option ng-repeat="category in vm.categories">{{ category }}</option>
+    </select>
+    <span>Image</span>
+    <select class="new-share-img" ng-model="shareMsg.hasImage">
+      <option value="">Select yes or no</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <textarea ng-model="shareMsg.text">{{ shareMsg.text }}</textarea>
+  <button ng-click="vm.submitMsgEdits(shareMsg)">Save edits</button>
+</div>

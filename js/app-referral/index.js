@@ -16,5 +16,4 @@ angular
 
   .service('UtmGrabberService', UtmGrabberService)
   .service('ReferrerService', ReferrerService)
-
 ;

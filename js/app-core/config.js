@@ -118,6 +118,21 @@ let config = function($urlRouterProvider, $stateProvider) {
         }
       }
     })
+    .state('root.admin-share-msgs', {
+      url: '/admin-share-msgs',
+      views: {
+        navigation: {
+          templateUrl: 'templates/app-layout/navigation.tpl.html'
+        },
+        adminSidebar: {
+          templateUrl: 'templates/app-layout/admin-sidebar.tpl.html'
+        },
+        adminPage: {
+          controller: 'AdminShareMsgController as vm',
+          templateUrl: 'templates/app-admin/admin-share-msgs.tpl.html'
+        }
+      }
+    })
     .state('root.landing-a', {
       url: '/landing-a',
       views: {

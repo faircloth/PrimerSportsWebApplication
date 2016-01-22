@@ -48,9 +48,14 @@
     <div ng-show="vm.contestEntered" class="action-block-share">
       <div class="action-block-container">
         
-        <button ng-click="vm.getMessage('quickPitch')"class="msg-btn">Give the quick pitch</button>
-        <button ng-click="vm.showFavorites()" class="msg-btn">Your favorite part of Primer</button>
-        <button ng-click="vm.writeMyOwn()" class="msg-btn">Write your own</button>
+        <h3>We've made some easy options for you to use but of course feel free to write your own!</h3>
+
+        <button ng-repeat="category in vm.categories" ng-click="vm.getMessage(category)" class="msg-btn">
+          {{ category }}
+        </button>
+
+        <!-- <button ng-click="vm.showFavorites()" class="msg-btn">Your favorite part of Primer</button>
+        <button ng-click="vm.writeMyOwn()" class="msg-btn">Write your own</button> -->
 
         <div class="share-form-block">
           
@@ -59,18 +64,8 @@
             <div ng-show="vm.favoriteOptions" class="favorites-options">
 
               <h4>Select one to view message</h4>
-              <button ng-repeat="choice in vm.choices" ng-click="vm.select(choice)" ng-model="choice">{{ choice }}</button>
+              <button ng-repeat="favoritePart in vm.favoriteParts" ng-click="vm.select(favoritePart)">{{ favoritePart.label }}</button>
 
-
-           <!--    <select ng-model="vm.selectedMsg">
-                <option value="">Select one... </option>
-                <option>The Primer</option>
-                <option>Major Stories</option>
-                <option>Quick Hits</option>
-                <option>Highlight of the day</option>
-                <option>One-hit wonders</option>
-                <option>Nugget</option>
-              </select> -->
 
             </div>
 
@@ -92,7 +87,7 @@
 
             <div class="form-column">
             
-              <h4 class="form-text">Your message</h4>
+              <h4 class="form-text">Your message:</h4>
               <textarea ng-model="vm.message" class="share-message">
               </textarea>
               <span>We'll insert your link in the message for you
