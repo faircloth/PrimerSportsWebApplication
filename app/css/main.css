@@ -2370,6 +2370,7 @@ button.standalone-btn {
   position: relative; }
   .landing-top-a hr {
     line-height: 1.4em;
+    margin: 15px auto;
     background-color: #082c38; }
   .landing-top-a .transparent-box {
     width: 100%;
@@ -2561,23 +2562,23 @@ button.standalone-btn {
         padding-top: 6px;
         margin-bottom: 10px; }
       .landing-top-a .over-background #mc_embed_signup div.mc-field-group input {
-        padding: 3px;
+        padding: 2px;
         padding-top: 4px;
         margin: 2px auto;
-        font-size: 1.6em; }
+        font-size: 2.0em; }
         .landing-top-a .over-background #mc_embed_signup div.mc-field-group input::-webkit-input-placeholder {
           color: #qzGrey;
           font-family: 'Biryani', sans-serif;
           font-weight: normal; }
       .landing-top-a .over-background #mc_embed_signup div.mc-field-group strong {
-        font-size: 1.4em;
+        font-size: 1.6em;
         margin-top: 8px; }
       .landing-top-a .over-background #mc_embed_signup div.mc-field-group ul {
         padding: 0px; }
       .landing-top-a .over-background #mc_embed_signup div.mc-field-group li {
         padding: 0px;
         font-size: 0.85em;
-        line-height: 1.4em;
+        line-height: 1.5em;
         margin-bottom: 10px;
         vertical-align: top; }
         .landing-top-a .over-background #mc_embed_signup div.mc-field-group li input.radio {
@@ -2648,27 +2649,50 @@ button.standalone-btn {
         color: #39bced; }
 
 @media only screen and (max-width: 800px) {
-  .landing-demo-block {
-    background-color: white; }
-    .landing-demo-block .demo-container {
-      width: 90%;
-      max-width: 750px; }
-      .landing-demo-block .demo-container .demo-gif {
-        display: block;
-        width: 95%;
-        max-width: 750px;
-        margin: 20px auto;
-        margin-bottom: 50px;
-        -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
-        -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
-        -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
-        box-shadow: 2px 2px 2px 2px #C0C2C2; }
-      .landing-demo-block .demo-container h1 {
-        font-size: 4.0em; }
-      .landing-demo-block .demo-container h2 {
-        font-size: 3.0em; }
-      .landing-demo-block .demo-container h3 {
-        font-size: 3.0em; } }
+  .landing-demo-block .demo-container {
+    width: 90%;
+    max-width: 750px; }
+    .landing-demo-block .demo-container .demo-gif {
+      display: block;
+      width: 95%;
+      max-width: 750px;
+      margin: 20px auto;
+      margin-bottom: 50px;
+      -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
+      -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
+      -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
+      box-shadow: 2px 2px 2px 2px #C0C2C2; }
+    .landing-demo-block .demo-container h1 {
+      font-size: 4.0em; }
+    .landing-demo-block .demo-container h2 {
+      font-size: 3.0em; }
+    .landing-demo-block .demo-container h3 {
+      font-size: 3.0em; } }
+
+@media only screen and (max-width: 450px) {
+  .landing-demo-block .demo-container {
+    width: 95%;
+    max-width: 440px; }
+    .landing-demo-block .demo-container .demo-gif {
+      display: block;
+      width: 100%;
+      max-width: 450px;
+      margin: 12px auto;
+      margin-bottom: 30px;
+      -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
+      -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
+      -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
+      box-shadow: 2px 2px 2px 2px #C0C2C2; }
+    .landing-demo-block .demo-container h1 {
+      font-size: 3.0em;
+      padding-bottom: 0px; }
+    .landing-demo-block .demo-container h2 {
+      font-size: 2.3em;
+      padding-top: 0px;
+      padding-bottom: 0px; }
+    .landing-demo-block .demo-container h3 {
+      font-size: 2.3em;
+      padding-top: 5px; } }
 
 .landing-third-block {
   background-color: #082c38;
@@ -2696,24 +2720,25 @@ button.standalone-btn {
       .landing-third-block .third-block-container .four-blocks h2 {
         color: white;
         margin-bottom: 10px;
-        padding-bottom: 15px; }
+        padding-bottom: 15px;
+        font-size: 2.8em; }
       .landing-third-block .third-block-container .four-blocks img {
-        height: 140px; }
+        height: 100px; }
       .landing-third-block .third-block-container .four-blocks img.archive-icon {
-        height: 100px;
+        height: 80px;
         padding-bottom: 15px;
         padding-top: 15px; }
       .landing-third-block .third-block-container .four-blocks img.founder-icon {
-        height: 120px;
+        height: 90px;
         padding-bottom: 15px;
         padding-top: 15px; }
       .landing-third-block .third-block-container .four-blocks img.share-icon {
-        height: 100px;
+        height: 80px;
         padding-bottom: 15px;
         padding-top: 15px; }
     .landing-third-block .third-block-container .fa {
       display: block;
-      width: 100%;
+      width: 90%;
       color: #082c38;
       text-align: center;
       margin: 20 auto;
@@ -2723,12 +2748,106 @@ button.standalone-btn {
         cursor: pointer;
         color: #39bced; }
 
+@media only screen and (max-width: 1000px) {
+  .landing-third-block .third-block-container h1 {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: white;
+    font-size: 4.0em; }
+  .landing-third-block .third-block-container .four-blocks {
+    display: inline-block;
+    width: 21.15%;
+    margin: 1.7%;
+    margin-bottom: 60px;
+    padding-bottom: 0px;
+    text-align: center; }
+    .landing-third-block .third-block-container .four-blocks:hover {
+      cursor: pointer;
+      background-color: #39bced; }
+    .landing-third-block .third-block-container .four-blocks h2 {
+      color: white;
+      margin-bottom: 10px;
+      padding-bottom: 15px;
+      font-size: 2.8em; }
+    .landing-third-block .third-block-container .four-blocks img {
+      height: 100px; }
+    .landing-third-block .third-block-container .four-blocks img.archive-icon {
+      height: 80px;
+      padding-bottom: 15px;
+      padding-top: 15px; }
+    .landing-third-block .third-block-container .four-blocks img.founder-icon {
+      height: 90px;
+      padding-bottom: 15px;
+      padding-top: 15px; }
+    .landing-third-block .third-block-container .four-blocks img.share-icon {
+      height: 80px;
+      padding-bottom: 15px;
+      padding-top: 15px; }
+  .landing-third-block .third-block-container .fa {
+    display: block;
+    width: 90%;
+    color: #082c38;
+    text-align: center;
+    margin: 20 auto;
+    width: 100%;
+    font-size: 6.0em; }
+    .landing-third-block .third-block-container .fa:hover {
+      cursor: pointer;
+      color: #39bced; } }
+
+@media only screen and (max-width: 590px) {
+  .landing-third-block .third-block-container h1 {
+    padding-top: 30px;
+    padding-bottom: 0px;
+    text-align: center;
+    color: white;
+    font-size: 3.2em; }
+  .landing-third-block .third-block-container .four-blocks {
+    display: block;
+    width: 50%;
+    margin: 15px auto; }
+    .landing-third-block .third-block-container .four-blocks:hover {
+      cursor: pointer;
+      background-color: #39bced; }
+    .landing-third-block .third-block-container .four-blocks h2 {
+      color: white;
+      padding-bottom: 5px;
+      font-size: 2.6em;
+      margin: 0px;
+      margin-bottom: 20px; }
+    .landing-third-block .third-block-container .four-blocks img {
+      height: 100px; }
+    .landing-third-block .third-block-container .four-blocks img.archive-icon {
+      height: 80px;
+      padding-bottom: 0px;
+      padding-top: 8px; }
+    .landing-third-block .third-block-container .four-blocks img.founder-icon {
+      height: 90px;
+      padding-bottom: 0px;
+      padding-top: 8px; }
+    .landing-third-block .third-block-container .four-blocks img.share-icon {
+      height: 80px;
+      padding-bottom: 0px;
+      padding-top: 8px; }
+  .landing-third-block .third-block-container .fa {
+    display: block;
+    width: 90%;
+    color: #082c38;
+    text-align: center;
+    margin: 20 auto;
+    width: 100%;
+    font-size: 6.0em; }
+    .landing-third-block .third-block-container .fa:hover {
+      cursor: pointer;
+      color: #39bced; } }
+
 .landing-fourth-block {
   background-color: #39bced;
   padding-bottom: 70px; }
   .landing-fourth-block .top-click {
     text-align: center;
-    color: white; }
+    color: #082c38; }
     .landing-fourth-block .top-click:hover {
       cursor: pointer; }
   .landing-fourth-block .fourth-block-container {
@@ -2781,6 +2900,77 @@ button.standalone-btn {
       .landing-fourth-block .fourth-block-container .fa:hover {
         cursor: pointer;
         color: #39bced; }
+
+@media only screen and (max-width: 700px) {
+  .landing-fourth-block .fourth-block-container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 0px auto;
+    margin-top: 0px;
+    padding-bottom: 20px; }
+    .landing-fourth-block .fourth-block-container a {
+      font-size: inherit;
+      text-decoration: none; }
+    .landing-fourth-block .fourth-block-container h1 {
+      padding-top: 40px;
+      padding-bottom: 0px;
+      text-align: center;
+      color: #082c38;
+      margin-top: 0px; }
+    .landing-fourth-block .fourth-block-container .four-blocks-social {
+      display: inline-block;
+      width: 21.15%;
+      margin: 1.7%;
+      margin-bottom: 5px;
+      text-align: center; }
+      .landing-fourth-block .fourth-block-container .four-blocks-social h2 {
+        color: #082c38;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        font-size: 2.6em;
+        padding-bottom: 30px; } }
+
+@media only screen and (max-width: 590px) {
+  .landing-fourth-block .fourth-block-container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 0px auto;
+    margin-top: 0px;
+    padding-bottom: 20px; }
+    .landing-fourth-block .fourth-block-container a {
+      font-size: inherit;
+      text-decoration: none; }
+    .landing-fourth-block .fourth-block-container h1 {
+      padding-top: 40px;
+      padding-bottom: 0px;
+      text-align: center;
+      color: #082c38;
+      margin-top: 0px;
+      font-size: 3.2em; }
+    .landing-fourth-block .fourth-block-container .four-blocks-social {
+      display: block;
+      width: 80%;
+      margin: 10px auto;
+      text-align: center; }
+      .landing-fourth-block .fourth-block-container .four-blocks-social img {
+        max-width: 50px;
+        padding-bottom: 5px;
+        margin-bottom: 0px;
+        margin: 0px;
+        padding: 0px;
+        padding-top: 8px; }
+      .landing-fourth-block .fourth-block-container .four-blocks-social img.bigger-icon {
+        max-width: 60px;
+        margin: 0px;
+        padding: 0px;
+        padding-top: 8px; }
+      .landing-fourth-block .fourth-block-container .four-blocks-social h2 {
+        color: #082c38;
+        margin-bottom: 18px;
+        padding-top: 0px;
+        font-size: 2.6em;
+        padding-bottom: 5px;
+        margin-top: 5px; } }
 
 .top-home-block {
   width: 100%;

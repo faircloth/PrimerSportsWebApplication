@@ -35,24 +35,25 @@
         color: white;
         margin-bottom: 10px;
         padding-bottom: 15px;
+        font-size: 2.8em;
       }
 
       img {
-        height: 140px;
+        height: 100px;
       }
 
       img.archive-icon {
-        height: 100px;
+        height: 80px;
         padding-bottom: 15px;
         padding-top: 15px;
       }
       img.founder-icon {
-        height: 120px;
+        height: 90px;
         padding-bottom: 15px;
         padding-top: 15px;
       }
       img.share-icon {
-        height: 100px;
+        height: 80px;
         padding-bottom: 15px;
         padding-top: 15px;
       }
@@ -61,7 +62,7 @@
 
     .fa {
       display: block;
-      width: 100%;
+      width: 90%;
       color: $Navy;
       text-align: center;
       margin: 20 auto;
@@ -76,4 +77,159 @@
 
   }
 
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+  .landing-third-block {
+
+  .third-block-container {
+
+    h1 {
+      padding-top: 30px;
+      padding-bottom: 10px;
+      text-align: center;
+      color: white;
+      font-size: 4.0em;
+    }
+   
+    .four-blocks {
+      display: inline-block;
+      width: 21.15%;
+      margin: 1.7%;
+      margin-bottom: 60px;
+      padding-bottom: 0px;
+      // border: 1px solid white;
+      text-align: center;
+      
+      &:hover {
+        cursor: pointer;
+        background-color: $BrightBlue;
+      }
+
+
+      h2 {
+        color: white;
+        margin-bottom: 10px;
+        padding-bottom: 15px;
+        font-size: 2.8em;
+      }
+
+      img {
+        height: 100px;
+      }
+
+      img.archive-icon {
+        height: 80px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+      }
+      img.founder-icon {
+        height: 90px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+      }
+      img.share-icon {
+        height: 80px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+      }
+
+    }
+
+    .fa {
+      display: block;
+      width: 90%;
+      color: $Navy;
+      text-align: center;
+      margin: 20 auto;
+      width: 100%;
+      font-size: 6.0em;
+      &:hover {
+        cursor: pointer;
+        color: $BrightBlue;
+      }
+    }
+
+
+  }
+
+  }
+}
+
+
+@media only screen and (max-width: 590px) {
+
+  .landing-third-block {
+
+  .third-block-container {
+
+    h1 {
+      padding-top: 30px;
+      padding-bottom: 0px;
+      text-align: center;
+      color: white;
+      font-size: 3.2em;
+    }
+   
+    .four-blocks {
+      display: block;
+      width: 50%;
+      margin: 15px auto;
+    
+      &:hover {
+        cursor: pointer;
+        background-color: $BrightBlue;
+      }
+
+
+      h2 {
+        color: white;
+        padding-bottom: 5px;
+        font-size: 2.6em;
+        margin: 0px;
+        margin-bottom: 20px;
+      }
+
+      img {
+        height: 100px;
+      }
+
+      img.archive-icon {
+        height: 80px;
+        padding-bottom: 0px;
+        padding-top: 8px;
+      }
+      img.founder-icon {
+        height: 90px;
+        padding-bottom: 0px;
+        padding-top: 8px;
+      }
+      img.share-icon {
+        height: 80px;
+        padding-bottom: 0px;
+        padding-top: 8px;
+      }
+
+    }
+
+    .fa {
+      display: block;
+      width: 90%;
+      color: $Navy;
+      text-align: center;
+      margin: 20 auto;
+      width: 100%;
+      font-size: 6.0em;
+      &:hover {
+        cursor: pointer;
+        color: $BrightBlue;
+      }
+    }
+
+
+  }
+
+  }
 }

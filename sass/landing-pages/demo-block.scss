@@ -61,7 +61,6 @@
 @media only screen and (max-width: 800px) {
 
   .landing-demo-block {
-    background-color: white;
 
   .demo-container {
     width: 90%;
@@ -86,6 +85,46 @@
 
     h3 {
       font-size: 3.0em;
+    }
+
+
+  }
+
+}
+
+}
+
+@media only screen and (max-width: 450px) {
+
+  .landing-demo-block {
+
+  .demo-container {
+    width: 95%;
+    max-width: 440px;
+
+    .demo-gif {
+      display: block;
+      width: 100%;
+      max-width: 450px;
+      margin: 12px auto;
+      margin-bottom: 30px;
+      @include box-shadow($light-box-shadows);
+    }
+
+    h1 {
+      font-size: 3.0em;
+      padding-bottom: 0px;
+    }
+
+    h2 {
+      font-size: 2.3em;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+    h3 {
+      font-size: 2.3em;
+      padding-top: 5px;
     }
 
 
