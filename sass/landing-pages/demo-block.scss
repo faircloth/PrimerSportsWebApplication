@@ -9,7 +9,8 @@
 
     .demo-gif {
       display: block;
-      width: 80%;
+      width: 100%;
+      max-width: 800px;
       margin: 20px auto;
       margin-bottom: 50px;
       @include box-shadow($light-box-shadows);
@@ -54,5 +55,42 @@
 
 
   }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+  .landing-demo-block {
+    background-color: white;
+
+  .demo-container {
+    width: 90%;
+    max-width: 750px;
+
+    .demo-gif {
+      display: block;
+      width: 95%;
+      max-width: 750px;
+      margin: 20px auto;
+      margin-bottom: 50px;
+      @include box-shadow($light-box-shadows);
+    }
+
+    h1 {
+      font-size: 4.0em;
+    }
+
+    h2 {
+      font-size: 3.0em;
+    }
+
+    h3 {
+      font-size: 3.0em;
+    }
+
+
+  }
+
+}
 
 }

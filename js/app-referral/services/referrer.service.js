@@ -1,17 +1,27 @@
-let ReferrerService = function($state, $http, PARSE) {
+let ReferrerService = function($state, $http, PARSE, HEROKU) {
   
   console.log('referrer service');
 
   // SERVER INFO
   let url = PARSE.URL + 'classes/';
+  let mandrillURL = HEROKU.URL + 'invites';
 
   // SERVICE PROPERTIES & FUNCTIONS
   this.shareVisit   = shareVisit;
   this.addReferrer  = addReferrer;
   this.enterContest = enterContest;
   this.getShareMsgs = getShareMsgs;
+  this.sendEmail    = sendEmail;
+
+
 
   // FUNCTIONS
+  function sendEmail (email) {
+    console.log('EMAIL TO SEND', email);
+    console.log('MANDRILL URL:', mandrillURL);
+    return $http.post(mandrillURL, email, HEROKU.CONFIG);
+  }
+
   function shareVisit (pageInfo) {
     console.log('page info:', pageInfo);
     return $http.post(url + 'sharevisit', pageInfo, PARSE.CONFIG);
@@ -37,6 +47,6 @@ let ReferrerService = function($state, $http, PARSE) {
 
 };
 
-ReferrerService.$inject = ['$state', '$http', 'PARSE'];
+ReferrerService.$inject = ['$state', '$http', 'PARSE', 'HEROKU'];
 
 export default ReferrerService;

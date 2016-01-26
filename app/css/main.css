@@ -2365,15 +2365,18 @@ button.standalone-btn {
 
 .landing-top-a {
   display: block;
-  height: 800px;
+  height: 850px;
   width: 100%;
   position: relative; }
+  .landing-top-a hr {
+    line-height: 1.4em;
+    background-color: #082c38; }
   .landing-top-a .transparent-box {
     width: 100%;
     height: 100%;
     background: url(http://b-i.forbesimg.com/jasonbelzer/files/2014/01/superbowl-xlvii-at-metlife-stadium_original1.jpg);
     background-position: center;
-    opacity: .98;
+    opacity: .95;
     z-index: -1;
     -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
     -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
@@ -2389,83 +2392,90 @@ button.standalone-btn {
       display: block;
       margin: 0 auto;
       top: 2%;
-      left: 5%;
-      width: 120px; }
+      left: 2%;
+      width: 80px; }
     .landing-top-a .over-background .top-text {
       position: absolute;
-      top: 25%;
+      top: 2%;
+      left: 0%;
       display: block;
       width: 100%;
-      font-weight: 800; }
-      .landing-top-a .over-background .top-text h3 {
-        font-size: 6.0em;
+      font-weight: 800;
+      font-family: 'Biryani', sans-serif; }
+      .landing-top-a .over-background .top-text h3, .landing-top-a .over-background .top-text h4, .landing-top-a .over-background .top-text h5 {
+        text-shadow: 5px 5px 5px #000, -1px -1px #000, 1px 1px #000;
+        z-index: 3;
+        opacity: 1;
+        font-size: 3.8em;
+        line-height: 1.2em;
         width: 100%;
         max-width: 900px;
-        margin: 0 auto;
-        background-color: #082c38;
-        opacity: .7; }
-    .landing-top-a .over-background div.top-form {
+        margin: 0px auto; }
+      .landing-top-a .over-background .top-text h3 {
+        font-size: 5.6em; }
+      .landing-top-a .over-background .top-text h4 {
+        font-size: 4.4em; }
+    .landing-top-a .over-background h5.tag-line {
+      position: absolute;
+      top: 17%;
+      margin: 0px auto;
+      font-size: 2.4em;
+      padding: 10px;
+      width: 490px;
+      text-align: left;
+      background-color: #082c38; }
+    .landing-top-a .over-background #mc_embed_signup form {
       display: block;
       width: 100%;
-      max-width: 800px;
+      max-width: 480px;
       margin: 5px auto;
-      margin-top: -600px; }
-      .landing-top-a .over-background div.top-form form {
-        width: 90%;
-        display: block;
-        margin: 0 auto;
-        opacity: .95;
-        z-index: 1;
-        border-radius: 8px;
-        background-color: transparent;
-        color: #082c38; }
-        .landing-top-a .over-background div.top-form form h3 {
-          font-size: 7.0em;
-          text-shadow: 5px 5px 5px #000, -1px -1px #000, 1px 1px #000;
-          width: 100%;
-          z-index: 3;
-          opacity: 1;
-          margin: 0 auto;
-          line-height: 1.2em;
-          color: white;
-          display: block;
-          font-family: 'Biryani', sans-serif; }
-        .landing-top-a .over-background div.top-form form input {
-          padding: 12px;
-          padding-left: 18px;
-          padding-right: 18px;
-          padding-top: 15px;
-          z-index: 3;
-          font-size: 2.5em;
-          display: block;
-          margin: 15px auto;
-          color: #082c38;
-          background-color: white;
-          opacity: 1;
-          border: 4px solid #082c38;
-          border-radius: 4px;
+      margin-top: -670px;
+      padding: 15px; }
+    .landing-top-a .over-background #mc_embed_signup .button {
+      display: block;
+      margin-left: 20px;
+      font-family: 'Biryani', sans-serif;
+      background-color: #082c38;
+      color: white;
+      width: 150px;
+      font-size: 1.8em;
+      line-height: 1.8em;
+      padding: 12px;
+      padding-top: 14px;
+      height: auto;
+      vertical-align: middle; }
+      .landing-top-a .over-background #mc_embed_signup .button:hover {
+        background-color: #39bced; }
+    .landing-top-a .over-background #mc_embed_signup div.mc-field-group {
+      display: block;
+      color: #082c38;
+      margin: 10px auto;
+      text-align: left;
+      width: 100%;
+      max-width: 430px;
+      font-family: 'Biryani', sans-serif;
+      padding-bottom: 2px; }
+      .landing-top-a .over-background #mc_embed_signup div.mc-field-group .input-group {
+        padding-top: 8px; }
+      .landing-top-a .over-background #mc_embed_signup div.mc-field-group input {
+        padding: 5px;
+        padding-top: 8px;
+        margin: 2px auto; }
+        .landing-top-a .over-background #mc_embed_signup div.mc-field-group input::-webkit-input-placeholder {
+          color: #qzGrey;
           font-family: 'Biryani', sans-serif;
-          font-weight: bold;
-          text-align: center; }
-          .landing-top-a .over-background div.top-form form input::-webkit-input-placeholder {
-            color: #3A3A3A;
-            font-family: 'Biryani', sans-serif;
-            font-weight: bold; }
-        .landing-top-a .over-background div.top-form form button {
-          background-color: #39bced;
-          font-size: 2.5em;
-          font-weight: bold;
-          color: #082c38;
-          padding: 10px;
-          padding-top: 13px;
-          opacity: 1;
-          border: 4px solid #082c38;
-          border-radius: 6px;
-          font-family: 'Biryani', sans-serif; }
-          .landing-top-a .over-background div.top-form form button:hover {
-            background-color: #082c38;
-            color: white;
-            font-size: 2.8em; }
+          font-weight: normal; }
+      .landing-top-a .over-background #mc_embed_signup div.mc-field-group strong {
+        font-size: 2.0em; }
+      .landing-top-a .over-background #mc_embed_signup div.mc-field-group li {
+        font-size: 1.1em; }
+        .landing-top-a .over-background #mc_embed_signup div.mc-field-group li input.radio {
+          width: 22px;
+          height: 22px;
+          border-radius: 2px;
+          margin-right: 8px; }
+      .landing-top-a .over-background #mc_embed_signup div.mc-field-group label {
+        font-size: 1.8em; }
     .landing-top-a .over-background .fa {
       position: absolute;
       display: block;
@@ -2477,6 +2487,120 @@ button.standalone-btn {
         cursor: pointer;
         color: #39bced; }
 
+@media only screen and (max-width: 1000px) {
+  .landing-top-a .over-background img {
+    width: 60px; }
+  .landing-top-a .over-background .top-text h3 {
+    font-size: 5.4em; }
+  .landing-top-a .over-background .top-text h4 {
+    font-size: 3.4em; }
+  .landing-top-a .over-background h5.tag-line {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    font-size: 1.8em;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: #082c38; } }
+
+@media only screen and (max-width: 500px) {
+  .landing-top-a {
+    height: 650px; }
+    .landing-top-a .over-background img {
+      width: 50px; }
+    .landing-top-a .over-background .top-text {
+      left: 0%; }
+      .landing-top-a .over-background .top-text h3 {
+        position: absolute;
+        top: 10px;
+        font-size: 3.2em;
+        left: 5px; }
+      .landing-top-a .over-background .top-text h4 {
+        position: absolute;
+        display: block;
+        top: 70px;
+        left: 0%;
+        font-size: 2.0em;
+        width: 100%;
+        max-width: none; }
+    .landing-top-a .over-background h5.tag-line {
+      position: absolute;
+      top: 90px;
+      left: 0px;
+      font-size: 1.8em;
+      padding: 10px;
+      width: 100%;
+      text-align: left;
+      background-color: #082c38; }
+    .landing-top-a .over-background #mc_embed_signup form {
+      position: absolute;
+      margin-top: 0px;
+      margin-left: 0px;
+      display: block;
+      top: 130px;
+      width: 100%;
+      max-width: none;
+      margin: 5px auto;
+      padding: 5px;
+      padding-top: 20px; }
+    .landing-top-a .over-background #mc_embed_signup .button {
+      margin: 20px auto; }
+    .landing-top-a .over-background #mc_embed_signup div.mc-field-group {
+      display: block;
+      color: #082c38;
+      margin: 0px auto;
+      text-align: left;
+      width: 100%;
+      max-width: 320px;
+      font-family: 'Biryani', sans-serif;
+      padding-bottom: 2px;
+      height: 20px;
+      padding-right: 15px; }
+      .landing-top-a .over-background #mc_embed_signup div.mc-field-group div.input-group {
+        padding-top: 6px;
+        margin-bottom: 10px; }
+      .landing-top-a .over-background #mc_embed_signup div.mc-field-group input {
+        padding: 3px;
+        padding-top: 4px;
+        margin: 2px auto;
+        font-size: 1.6em; }
+        .landing-top-a .over-background #mc_embed_signup div.mc-field-group input::-webkit-input-placeholder {
+          color: #qzGrey;
+          font-family: 'Biryani', sans-serif;
+          font-weight: normal; }
+      .landing-top-a .over-background #mc_embed_signup div.mc-field-group strong {
+        font-size: 1.4em;
+        margin-top: 8px; }
+      .landing-top-a .over-background #mc_embed_signup div.mc-field-group ul {
+        padding: 0px; }
+      .landing-top-a .over-background #mc_embed_signup div.mc-field-group li {
+        padding: 0px;
+        font-size: 0.85em;
+        line-height: 1.4em;
+        margin-bottom: 10px;
+        vertical-align: top; }
+        .landing-top-a .over-background #mc_embed_signup div.mc-field-group li input.radio {
+          width: 22px;
+          height: 22px;
+          border-radius: 2px;
+          margin-right: 8px; }
+      .landing-top-a .over-background #mc_embed_signup div.mc-field-group label {
+        font-size: 1.8em; }
+    .landing-top-a .over-background .fa {
+      position: absolute;
+      display: block;
+      margin: 0 auto;
+      bottom: 3%;
+      z-index: 4;
+      width: 100%;
+      font-size: 7.0em;
+      color: white;
+      text-shadow: 3px 3px 3px #000, -1px -1px #000, 1px 1px #000; }
+      .landing-top-a .over-background .fa:hover {
+        cursor: pointer;
+        color: #39bced; } }
+
 .landing-demo-block {
   background-color: white; }
   .landing-demo-block .demo-container {
@@ -2486,7 +2610,8 @@ button.standalone-btn {
     margin-top: 0px; }
     .landing-demo-block .demo-container .demo-gif {
       display: block;
-      width: 80%;
+      width: 100%;
+      max-width: 800px;
       margin: 20px auto;
       margin-bottom: 50px;
       -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
@@ -2522,6 +2647,29 @@ button.standalone-btn {
         cursor: pointer;
         color: #39bced; }
 
+@media only screen and (max-width: 800px) {
+  .landing-demo-block {
+    background-color: white; }
+    .landing-demo-block .demo-container {
+      width: 90%;
+      max-width: 750px; }
+      .landing-demo-block .demo-container .demo-gif {
+        display: block;
+        width: 95%;
+        max-width: 750px;
+        margin: 20px auto;
+        margin-bottom: 50px;
+        -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
+        -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
+        -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
+        box-shadow: 2px 2px 2px 2px #C0C2C2; }
+      .landing-demo-block .demo-container h1 {
+        font-size: 4.0em; }
+      .landing-demo-block .demo-container h2 {
+        font-size: 3.0em; }
+      .landing-demo-block .demo-container h3 {
+        font-size: 3.0em; } }
+
 .landing-third-block {
   background-color: #082c38;
   padding-bottom: 20px; }
@@ -2550,17 +2698,17 @@ button.standalone-btn {
         margin-bottom: 10px;
         padding-bottom: 15px; }
       .landing-third-block .third-block-container .four-blocks img {
-        height: 180px; }
+        height: 140px; }
       .landing-third-block .third-block-container .four-blocks img.archive-icon {
-        height: 150px;
+        height: 100px;
         padding-bottom: 15px;
         padding-top: 15px; }
       .landing-third-block .third-block-container .four-blocks img.founder-icon {
-        height: 170px;
+        height: 120px;
         padding-bottom: 15px;
         padding-top: 15px; }
       .landing-third-block .third-block-container .four-blocks img.share-icon {
-        height: 150px;
+        height: 100px;
         padding-bottom: 15px;
         padding-top: 15px; }
     .landing-third-block .third-block-container .fa {

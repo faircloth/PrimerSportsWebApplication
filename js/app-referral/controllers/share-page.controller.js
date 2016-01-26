@@ -13,6 +13,23 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   vm.favoriteOptions  = false;
   vm.writeMyOwn       = writeMyOwn;
   vm.select           = select;
+  vm.sendEmail        = sendEmail;
+
+
+  function sendEmail (email, referrerEmail, message) {
+    console.log('TO:', email.list);
+    console.log('REFERRER EMAIL:', referrerEmail);
+    console.log('SHARE MESSAGE:', message);
+    let emailA = {
+      list: email.list,
+      email: referrerEmail,
+      text: message,
+      name: 'Andrew'
+    };
+    ReferrerService.sendEmail(emailA).then( (response) => {
+      console.log('RESPONSE', response);
+    });
+  }
 
   
   // TRY TO AUTOMATE

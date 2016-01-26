@@ -48,6 +48,13 @@ var AdminShareMsgController = function AdminShareMsgController($scope, AdminShar
 
   var vm = this;
 
+  vm.tinymce = {
+    inline: false,
+    plugins: 'advlist autolink link image lists charmap print preview',
+    skin: 'lightgray',
+    theme: 'modern'
+  };
+
   vm.createShareMsg = createShareMsg;
   vm.submitMsgEdits = submitMsgEdits;
 
@@ -218,6 +225,8 @@ var _angular = require('angular');
 
 var _angular2 = _interopRequireDefault(_angular);
 
+require('angular-ui-tinymce/src/tinymce');
+
 // CONTROLLERS
 
 var _controllersAdminSigninController = require('./controllers/admin-signin.controller');
@@ -260,9 +269,9 @@ var _servicesAdminShareMsgsService2 = _interopRequireDefault(_servicesAdminShare
 
 // RUN BLOCK ON HERE TO SET HEADERS
 
-_angular2['default'].module('app.admin', []).controller('AdminSigninController', _controllersAdminSigninController2['default']).controller('AdminSignupController', _controllersAdminSignupController2['default']).controller('CreateArticleController', _controllersCreateArticleController2['default']).controller('ManageTagsController', _controllersManageTagsController2['default']).controller('AdminHomeController', _controllersAdminHomeController2['default']).controller('AdminShareMsgController', _controllersAdminShareMsgsController2['default']).service('AdminService', _servicesAdminService2['default']).service('ContentMgmtService', _servicesContentManagementService2['default']).service('AdminShareMsgsService', _servicesAdminShareMsgsService2['default']);
+_angular2['default'].module('app.admin', ['ui.tinymce']).controller('AdminSigninController', _controllersAdminSigninController2['default']).controller('AdminSignupController', _controllersAdminSignupController2['default']).controller('CreateArticleController', _controllersCreateArticleController2['default']).controller('ManageTagsController', _controllersManageTagsController2['default']).controller('AdminHomeController', _controllersAdminHomeController2['default']).controller('AdminShareMsgController', _controllersAdminShareMsgsController2['default']).service('AdminService', _servicesAdminService2['default']).service('ContentMgmtService', _servicesContentManagementService2['default']).service('AdminShareMsgsService', _servicesAdminShareMsgsService2['default']);
 
-},{"./controllers/admin-home.controller":1,"./controllers/admin-share-msgs.controller":2,"./controllers/admin-signin.controller":3,"./controllers/admin-signup.controller":4,"./controllers/create-article.controller":5,"./controllers/manage-tags.controller":6,"./services/admin-share-msgs.service":8,"./services/admin.service":9,"./services/content-management.service":10,"angular":32}],8:[function(require,module,exports){
+},{"./controllers/admin-home.controller":1,"./controllers/admin-share-msgs.controller":2,"./controllers/admin-signin.controller":3,"./controllers/admin-signup.controller":4,"./controllers/create-article.controller":5,"./controllers/manage-tags.controller":6,"./services/admin-share-msgs.service":8,"./services/admin.service":9,"./services/content-management.service":10,"angular":33,"angular-ui-tinymce/src/tinymce":31}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -465,7 +474,7 @@ var _servicesContentService2 = _interopRequireDefault(_servicesContentService);
 
 _angular2['default'].module('app.content', []).controller('HomepageController', _controllersHomepageController2['default']).controller('ArchivesController', _controllersArchivesController2['default']).controller('AboutController', _controllersAboutController2['default']).service('ContentService', _servicesContentService2['default']);
 
-},{"./controllers/about.controller":11,"./controllers/archives.controller":12,"./controllers/homepage.controller":13,"./services/content.service":15,"angular":32}],15:[function(require,module,exports){
+},{"./controllers/about.controller":11,"./controllers/archives.controller":12,"./controllers/homepage.controller":13,"./services/content.service":15,"angular":33}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -638,16 +647,18 @@ exports['default'] = config;
 module.exports = exports['default'];
 
 },{}],17:[function(require,module,exports){
-"use strict";
+'use strict';
 
-// export default {
-//   URL: 'https://' ,
-//   CONFIG: {
-//     headers: {
-
-//     }
-//   }
-// };
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports['default'] = {
+  URL: 'http://rocky-peak-62183.herokuapp.com/',
+  CONFIG: {
+    headers: {}
+  }
+};
+module.exports = exports['default'];
 
 },{}],18:[function(require,module,exports){
 'use strict';
@@ -699,7 +710,7 @@ var _constantsParseConstant2 = _interopRequireDefault(_constantsParseConstant);
 
 _angular2['default'].module('app.core', ['ui.router', 'mm.foundation', 'ngCookies']).config(_config2['default']).constant('HEROKU', _constantsHerokuConstant2['default']).constant('PARSE', _constantsParseConstant2['default']);
 
-},{"./config":16,"./constants/heroku.constant":17,"./constants/parse.constant":18,"angular":32,"angular-cookies":28,"angular-foundation":29,"angular-ui-router":30}],20:[function(require,module,exports){
+},{"./config":16,"./constants/heroku.constant":17,"./constants/parse.constant":18,"angular":33,"angular-cookies":28,"angular-foundation":29,"angular-ui-router":30}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -752,7 +763,7 @@ var _controllersLandingPageAController2 = _interopRequireDefault(_controllersLan
 
 _angular2['default'].module('app.landing', []).controller('LandingPageAController', _controllersLandingPageAController2['default']);
 
-},{"./controllers/landing-page-a.controller":20,"angular":32}],22:[function(require,module,exports){
+},{"./controllers/landing-page-a.controller":20,"angular":33}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -778,6 +789,22 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
   vm.favoriteOptions = false;
   vm.writeMyOwn = writeMyOwn;
   vm.select = select;
+  vm.sendEmail = sendEmail;
+
+  function sendEmail(email, referrerEmail, message) {
+    console.log('TO:', email.list);
+    console.log('REFERRER EMAIL:', referrerEmail);
+    console.log('SHARE MESSAGE:', message);
+    var emailA = {
+      list: email.list,
+      email: referrerEmail,
+      text: message,
+      name: 'Andrew'
+    };
+    ReferrerService.sendEmail(emailA).then(function (response) {
+      console.log('RESPONSE', response);
+    });
+  }
 
   // TRY TO AUTOMATE
   var favoriteLabel = "Favorite part of Primer";
@@ -896,7 +923,7 @@ SharePageController.$inject = ['$scope', 'UtmGrabberService', 'ReferrerService',
 exports['default'] = SharePageController;
 module.exports = exports['default'];
 
-},{"underscore":34}],23:[function(require,module,exports){
+},{"underscore":35}],23:[function(require,module,exports){
 // Angular modules
 'use strict';
 
@@ -924,26 +951,34 @@ var _servicesReferrerService2 = _interopRequireDefault(_servicesReferrerService)
 
 _angular2['default'].module('app.referral', []).controller('SharePageController', _controllersSharePageController2['default']).service('UtmGrabberService', _servicesUtmGrabberService2['default']).service('ReferrerService', _servicesReferrerService2['default']);
 
-},{"./controllers/share-page.controller":22,"./services/referrer.service":24,"./services/utm-grabber.service":25,"angular":32}],24:[function(require,module,exports){
+},{"./controllers/share-page.controller":22,"./services/referrer.service":24,"./services/utm-grabber.service":25,"angular":33}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var ReferrerService = function ReferrerService($state, $http, PARSE) {
+var ReferrerService = function ReferrerService($state, $http, PARSE, HEROKU) {
 
   console.log('referrer service');
 
   // SERVER INFO
   var url = PARSE.URL + 'classes/';
+  var mandrillURL = HEROKU.URL + 'invites';
 
   // SERVICE PROPERTIES & FUNCTIONS
   this.shareVisit = shareVisit;
   this.addReferrer = addReferrer;
   this.enterContest = enterContest;
   this.getShareMsgs = getShareMsgs;
+  this.sendEmail = sendEmail;
 
   // FUNCTIONS
+  function sendEmail(email) {
+    console.log('EMAIL TO SEND', email);
+    console.log('MANDRILL URL:', mandrillURL);
+    return $http.post(mandrillURL, email, HEROKU.CONFIG);
+  }
+
   function shareVisit(pageInfo) {
     console.log('page info:', pageInfo);
     return $http.post(url + 'sharevisit', pageInfo, PARSE.CONFIG);
@@ -968,7 +1003,7 @@ var ReferrerService = function ReferrerService($state, $http, PARSE) {
   getShareMsgs();
 };
 
-ReferrerService.$inject = ['$state', '$http', 'PARSE'];
+ReferrerService.$inject = ['$state', '$http', 'PARSE', 'HEROKU'];
 
 exports['default'] = ReferrerService;
 module.exports = exports['default'];
@@ -1015,7 +1050,7 @@ UtmGrabberService.$inject = ['$state'];
 exports['default'] = UtmGrabberService;
 module.exports = exports['default'];
 
-},{"underscore":34}],26:[function(require,module,exports){
+},{"underscore":35}],26:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -1042,7 +1077,7 @@ require('./app-referral/index');
 
 _angular2['default'].module('app', ['app.core', 'app.content', 'app.admin', 'app.landing', 'app.referral']);
 
-},{"./app-admin/index":7,"./app-content/index":14,"./app-core/index":19,"./app-landing/index":21,"./app-referral/index":23,"angular":32,"jquery":33}],27:[function(require,module,exports){
+},{"./app-admin/index":7,"./app-content/index":14,"./app-core/index":19,"./app-landing/index":21,"./app-referral/index":23,"angular":33,"jquery":34}],27:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -9357,6 +9392,110 @@ angular.module('ui.router.state')
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
 },{}],31:[function(require,module,exports){
+/**
+ * Binds a TinyMCE widget to <textarea> elements.
+ */
+angular.module('ui.tinymce', [])
+  .value('uiTinymceConfig', {})
+  .directive('uiTinymce', ['uiTinymceConfig', function (uiTinymceConfig) {
+    uiTinymceConfig = uiTinymceConfig || {};
+    var generatedIds = 0;
+    return {
+      priority: 10,
+      require: 'ngModel',
+      link: function (scope, elm, attrs, ngModel) {
+        var expression, options, tinyInstance,
+          updateView = function () {
+            ngModel.$setViewValue(elm.val());
+            if (!scope.$root.$$phase) {
+              scope.$apply();
+            }
+          };
+
+        // generate an ID if not present
+        if (!attrs.id) {
+          attrs.$set('id', 'uiTinymce' + generatedIds++);
+        }
+
+        if (attrs.uiTinymce) {
+          expression = scope.$eval(attrs.uiTinymce);
+        } else {
+          expression = {};
+        }
+
+        // make config'ed setup method available
+        if (expression.setup) {
+          var configSetup = expression.setup;
+          delete expression.setup;
+        }
+
+        options = {
+          // Update model when calling setContent (such as from the source editor popup)
+          setup: function (ed) {
+            var args;
+            ed.on('init', function(args) {
+              ngModel.$render();
+              ngModel.$setPristine();
+            });
+            // Update model on button click
+            ed.on('ExecCommand', function (e) {
+              ed.save();
+              updateView();
+            });
+            // Update model on keypress
+            ed.on('KeyUp', function (e) {
+              ed.save();
+              updateView();
+            });
+            // Update model on change, i.e. copy/pasted text, plugins altering content
+            ed.on('SetContent', function (e) {
+              if (!e.initial && ngModel.$viewValue !== e.content) {
+                ed.save();
+                updateView();
+              }
+            });
+            ed.on('blur', function(e) {
+                elm.blur();
+            });
+            // Update model when an object has been resized (table, image)
+            ed.on('ObjectResized', function (e) {
+              ed.save();
+              updateView();
+            });
+            if (configSetup) {
+              configSetup(ed);
+            }
+          },
+          mode: 'exact',
+          elements: attrs.id
+        };
+        // extend options with initial uiTinymceConfig and options from directive attribute value
+        angular.extend(options, uiTinymceConfig, expression);
+        setTimeout(function () {
+          tinymce.init(options);
+        });
+
+        ngModel.$render = function() {
+          if (!tinyInstance) {
+            tinyInstance = tinymce.get(attrs.id);
+          }
+          if (tinyInstance) {
+            tinyInstance.setContent(ngModel.$viewValue || '');
+          }
+        };
+
+        scope.$on('$destroy', function() {
+          if (!tinyInstance) { tinyInstance = tinymce.get(attrs.id); }
+          if (tinyInstance) {
+            tinyInstance.remove();
+            tinyInstance = null;
+          }
+        });
+      }
+    };
+  }]);
+
+},{}],32:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -38375,11 +38514,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],32:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":31}],33:[function(require,module,exports){
+},{"./angular":32}],34:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.0
  * http://jquery.com/
@@ -48212,7 +48351,7 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],34:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

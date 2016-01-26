@@ -1,8 +1,15 @@
 let AdminShareMsgController = function($scope, AdminShareMsgsService, $state) {
-  
+
   console.log('admin share message controller');
 
   let vm = this;
+
+  vm.tinymce = {
+    inline: false,
+    plugins: 'advlist autolink link image lists charmap print preview',
+    skin: 'lightgray',
+    theme: 'modern'
+  };
 
   vm.createShareMsg = createShareMsg;
   vm.submitMsgEdits = submitMsgEdits;

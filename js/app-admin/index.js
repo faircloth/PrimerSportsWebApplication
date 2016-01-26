@@ -1,4 +1,5 @@
 import angular from 'angular';
+import 'angular-ui-tinymce/src/tinymce';
 
 // CONTROLLERS
 import AdminSigninController from './controllers/admin-signin.controller';
@@ -16,7 +17,7 @@ import AdminShareMsgsService from './services/admin-share-msgs.service';
 // RUN BLOCK ON HERE TO SET HEADERS
 
 angular
-  .module('app.admin', [])
+  .module('app.admin', ['ui.tinymce'])
   
   .controller('AdminSigninController', AdminSigninController)
   .controller('AdminSignupController', AdminSignupController)

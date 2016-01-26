@@ -1,29 +1,29 @@
 // Landing pages
 .landing-top-a {
   display: block;
-  height: 800px;
+  height: 850px;
   width: 100%;
   position: relative;
 
-  //SUPER BOWL -  http://b-i.forbesimg.com/jasonbelzer/files/2014/01/superbowl-xlvii-at-metlife-stadium_original1.jpg
-  // SPIETH - http://synthetic-turf.com/wp-content/uploads/2014/04/Augusta-National-HD-Wallpaper.jpg
+  hr {
+    line-height: 1.4em;
+    background-color: $Navy;
+  }
 
   .transparent-box {
     width: 100%;
     height: 100%;
     background: url(http://b-i.forbesimg.com/jasonbelzer/files/2014/01/superbowl-xlvii-at-metlife-stadium_original1.jpg);
     background-position: center;
-    opacity: .98;
+    opacity: .95;
     z-index: -1;
     @include box-shadow($light-box-shadows);
   }
 
   .over-background {
-    // POSITION
     display: block;
     margin: 0px auto;
     text-align: center;
-    // TEXT
     color: white;
 
     img {
@@ -31,104 +31,139 @@
       display: block;
       margin: 0 auto;
       top: 2%;
-      left: 5%;
-      width: 120px;
+      left: 2%;
+      width: 80px;
     }
+
 
     .top-text {
         position: absolute;
-        top: 25%;
+        top: 2%;
+        left: 0%;
         display: block;
         width: 100%;
         font-weight: 800;
+        font-family: 'Biryani', sans-serif;
 
-      h3 {
-        font-size: 6.0em;
+      
+      h3, h4, h5 {
+        text-shadow: 5px 5px 5px #000, -1px -1px #000, 1px 1px #000;
+        z-index: 3;
+        opacity: 1;
+        font-size: 3.8em;
+        line-height: 1.2em;
         width: 100%;
         max-width: 900px;
-        margin: 0 auto;
-        // OPACITY IDEA
-        background-color: $Navy;
-        opacity: .7;
+        margin: 0px auto;
+      }
+
+
+      h3 {
+        font-size: 5.6em;
+      }
+
+      h4 {
+        font-size: 4.4em;
       }
 
     }
 
-    div.top-form {
-        // position: absolute;
-        display: block;
-        width: 100%;
-        max-width: 800px;
-        margin: 5px auto;
-        margin-top: -600px;
+
+
+    h5.tag-line {
+      position: absolute;
+      top: 17%;
+      // left: 20px;
+      margin: 0px auto;
+      font-size: 2.4em;
+      padding: 10px;
+      width: 490px;
+      text-align: left;
+      background-color: $Navy;
+    }
+
+
+    // MAILCHIMP SIGN UP FORM
+    #mc_embed_signup {
 
       form {
-        width: 90%;
         display: block;
-        margin: 0 auto;
-        // OPACITY IDEA
-        opacity: .95;
-        z-index: 1;
-        border-radius: 8px;
-        background-color: transparent;
-        color: $Navy;
+        width: 100%;
+        max-width: 480px;
+        margin: 5px auto;
+        margin-top: -670px;
+        // margin-left: 20px;
+        padding: 15px;
+        // background: transparent;
+      }
 
-        h3 {
-          font-size: 7.0em;
-          text-shadow: 5px 5px 5px #000, -1px -1px #000, 1px 1px #000;
-          width: 100%;
-          z-index: 3;
-          opacity: 1;
-          margin: 0 auto;
-          line-height: 1.2em;
-          color: white;
-          display: block;
-          font-family: 'Biryani', sans-serif;
+      .button {
+        display: block;
+        // margin: 2px auto;
+        margin-left: 20px;
+        font-family: 'Biryani', sans-serif;
+        background-color: $Navy;
+        color: white;
+        width: 150px;
+        // padding: 8px;
+        font-size: 1.8em;
+        line-height: 1.8em;
+        padding: 12px;
+        padding-top: 14px;
+        height: auto;
+        vertical-align: middle;
 
+        &:hover {
+          background-color: $BrightBlue;
         }
+      }
+
+
+      div.mc-field-group {
+        display: block;
+        color: $Navy;
+        margin: 10px auto;
+        text-align: left;
+        width: 100%;
+        max-width: 430px;
+        font-family: 'Biryani', sans-serif;
+        padding-bottom: 2px;
+
+        .input-group {
+          padding-top: 8px;
+        }
+        
         input {
-          padding: 12px;
-          padding-left: 18px;
-          padding-right: 18px;
-          padding-top: 15px;
-          z-index: 3;
-          font-size: 2.5em;
-          display: block;
-          margin: 15px auto;
-          color: $Navy;
-          background-color: white;
-          opacity: 1;
-          border: 4px solid $Navy;
-          border-radius: 4px;
-          font-family: 'Biryani', sans-serif;
-          font-weight: bold;
-          text-align: center;
+          // font-weight: bold;
+          padding: 5px;
+          padding-top: 8px;
+          margin: 2px auto;
+
 
           &::-webkit-input-placeholder {
-            color: $qzGrey;
+            color: #qzGrey;
             font-family: 'Biryani', sans-serif;
-            font-weight: bold;
+            font-weight: normal;
           }
-
         }
 
-        button {
-          background-color: $BrightBlue;
-          font-size: 2.5em;
-          font-weight: bold;
-          color: $Navy;
-          padding: 10px;
-          padding-top: 13px;
-          opacity: 1;
-          border: 4px solid $Navy;
-          border-radius: 6px;
-          font-family: 'Biryani', sans-serif;
+        strong {
+          font-size: 2.0em;
+        }
 
-          &:hover {
-            background-color: $Navy;
-            color: white;
-            font-size: 2.8em;
+        li {
+         font-size: 1.1em; 
+
+          input.radio {
+            width: 22px;
+            height: 22px;
+            border-radius: 2px;
+            margin-right: 8px;
           }
+        }
+
+        label {
+          font-size: 1.8em;
         }
 
       }
@@ -149,5 +184,184 @@
 
     
   }
+
   
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+  .landing-top-a {
+
+    .over-background {
+      img {
+        width: 60px;
+      }
+
+      .top-text {
+        h3 {
+          font-size: 5.4em;
+        }
+        h4 {
+          // margin-top: 10px;
+          font-size: 3.4em;
+        }
+      }
+
+      h5.tag-line {
+        position: absolute;
+        top: 100px;
+        left: 20px;
+        font-size: 1.8em;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        background-color: $Navy;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+    
+  .landing-top-a {
+    height: 650px;
+
+    .over-background {
+      img {
+        width: 50px;
+      }
+
+      .top-text {
+          left: 0%;
+        h3 {
+          position: absolute;
+          top: 10px;
+          font-size: 3.2em;
+          left: 5px;
+        }
+        h4 {
+          // margin-top: 10px;
+          position: absolute;
+          display: block;
+          top: 70px;
+          left: 0%;
+          font-size: 2.0em;
+          width: 100%;
+          max-width: none;
+        }
+      }
+
+      h5.tag-line {
+        position: absolute;
+        top: 90px;
+        left: 0px;
+        font-size: 1.8em;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+        background-color: $Navy;
+      }
+
+      #mc_embed_signup {
+        form {
+          position: absolute;
+          margin-top: 0px;
+          margin-left: 0px;
+          display: block;
+          top: 130px;
+          width: 100%;
+          max-width: none;
+          margin: 5px auto;
+          padding: 5px;
+          padding-top: 20px;
+        }
+
+        .button {
+          margin: 20px auto;
+        }
+
+        div.mc-field-group {
+          display: block;
+          color: $Navy;
+          margin: 0px auto;
+          text-align: left;
+          width: 100%;
+          max-width: 320px;
+          font-family: 'Biryani', sans-serif;
+          padding-bottom: 2px;
+          height: 20px;
+          padding-right: 15px;
+
+          div.input-group {
+            padding-top: 6px;
+            margin-bottom: 10px;
+          }
+          
+          input {
+            // font-weight: bold;
+            padding: 3px;
+            padding-top: 4px;
+            margin: 2px auto;
+            font-size: 1.6em;
+
+              &::-webkit-input-placeholder {
+                color: #qzGrey;
+                font-family: 'Biryani', sans-serif;
+                font-weight: normal;
+              }
+          } 
+            
+            strong {
+              font-size: 1.4em;
+              margin-top: 8px;
+            }
+            
+            ul {
+              padding: 0px;
+            }
+
+            li {
+              padding: 0px;
+              font-size: 0.85em; 
+              line-height: 1.4em;
+              margin-bottom: 10px;
+              vertical-align: top;
+
+              input.radio {
+                width: 22px;
+                height: 22px;
+                border-radius: 2px;
+                margin-right: 8px;
+              }
+            }
+
+            label {
+              font-size: 1.8em;
+            }
+
+
+          }
+ 
+       }
+
+      .fa {
+      position: absolute;
+      display: block;
+      margin: 0 auto;
+      bottom: 3%;
+      z-index: 4;
+      width: 100%;
+      font-size: 7.0em;
+      color: white;
+      text-shadow: 3px 3px 3px #000, -1px -1px #000, 1px 1px #000;
+      &:hover {
+        cursor: pointer;
+        color: $BrightBlue;
+      }
+    }
+    }
+
+  }
+
 }

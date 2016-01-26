@@ -59,7 +59,7 @@
 
         <div class="share-form-block">
           
-          <form>
+          <form ng-submit="vm.sendEmail(email, vm.referrerEmail, vm.message)">
 
             <div ng-show="vm.favoriteOptions" class="favorites-options">
 
@@ -71,7 +71,8 @@
 
             <div class="form-column">
               <h4 class="form-text">Your email address</h4>
-              <input value="{{ vm.referrerEmail }}" placeholder="...">
+              <input ng-model="vm.referrerEmail" placeholder="...">
+              <!-- value="{{ vm.referrerEmail }}" -->
 
               <h4 class="form-text-to">Their email addresses</h4>
               <!-- <p class="import-text" id="left-import">Import contacts:</p>  -->
@@ -82,13 +83,13 @@
               </a>
 
               <!-- <a href="#">Google</a><a href="#">Yahoo</a>-->
-              <textarea id="contact_list"></textarea>
+              <textarea ng-model="email.list" id="contact_list"></textarea>
             </div>
 
             <div class="form-column">
             
               <h4 class="form-text">Your message:</h4>
-              <textarea ng-model="vm.message" class="share-message">
+              <textarea ng-model="vm.message" ng-model="email.text" class="share-message">
               </textarea>
               <span>We'll insert your link in the message for you
                 <!-- <a href="{{ vm.linkSource }}">Sign up using my link</a> -->
