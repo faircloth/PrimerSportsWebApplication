@@ -9,14 +9,14 @@ let HomepageController = function($scope) {
       var docScroll = $(document).scrollTop();
       console.log(docScroll);
       
-      if (docScroll < 1000) {
+      if (docScroll < 1100) {
         console.log('Not there yet');
         if ($('.category-nav').hasClass('sticky')) {
           $('.category-nav').removeClass('sticky');
         }
       }
 
-      if (docScroll >= 1000) {
+      if (docScroll >= 1130) {
         if (!$('.category-nav').hasClass('sticky')) {
           $('.category-nav').addClass('sticky');
           console.log('sticky class added');

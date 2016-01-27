@@ -449,14 +449,14 @@ var HomepageController = function HomepageController($scope) {
       var docScroll = (0, _jquery2['default'])(document).scrollTop();
       console.log(docScroll);
 
-      if (docScroll < 1000) {
+      if (docScroll < 1100) {
         console.log('Not there yet');
         if ((0, _jquery2['default'])('.category-nav').hasClass('sticky')) {
           (0, _jquery2['default'])('.category-nav').removeClass('sticky');
         }
       }
 
-      if (docScroll >= 1000) {
+      if (docScroll >= 1130) {
         if (!(0, _jquery2['default'])('.category-nav').hasClass('sticky')) {
           (0, _jquery2['default'])('.category-nav').addClass('sticky');
           console.log('sticky class added');

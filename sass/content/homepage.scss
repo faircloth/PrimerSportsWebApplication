@@ -1,6 +1,6 @@
 .top-home-block {
   width: 100%;
-  height: 550px;
+  height: 450px;
   margin: 0 auto;
   background-color: $Navy;
 
@@ -68,10 +68,50 @@
 
     li {
         display: inline-block;
-        margin: 4px 10px;
+        margin: 2px 10px;
         font-weight: bold;
         color: $BrightBlue;
         font-size: 2.2em;
+    }
+
+    @media only screen and (max-width: 600px) {
+      
+      ul.category-nav{
+        width: 100%;
+        color: white;
+        text-align: center;
+        margin: 2px auto;
+        padding: 0px;
+        display: block;
+        position: relative;
+        padding-bottom: 10px; 
+
+      p {
+        margin: 1px;
+        padding-bottom: 0px;
+        font-size: 2.2em;
+      }
+    }
+
+    ul.sticky {
+        width: 100%;
+        color: white;
+        background-color: $Navy;
+        display: block;
+        text-align: center;
+        margin: 0px auto;
+        width: 100%;
+        top: 0;
+        position: fixed;
+    }
+
+      li {
+        display: inline-block;
+        margin: 2px 10px;
+        font-weight: bold;
+        color: $BrightBlue;
+        font-size: 2.0em;
+     }
     }
   
   }
@@ -130,6 +170,7 @@
       p {
         margin-top: 15px;
         margin-bottom: 2px;
+        line-height: 1.6em;
       }
       a.read-more {
         color: $BrightBlue;
@@ -164,6 +205,7 @@
       p {
         margin-top: 15px;
         margin-bottom: 2px;
+        line-height: 1.6em;
       }
       
       a.read-more {
@@ -201,7 +243,7 @@
 
   .top-home-block {
     width: 100%;
-    height: 350px;
+    height: 400px;
     margin: 0 auto;
     background-color: $Navy;
 }
