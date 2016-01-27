@@ -852,8 +852,13 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
   vm.select = select;
   vm.sendEmail = sendEmail;
 
-  function sendEmail(contacts, referrerEmail, message, linkSource) {
+  function sendEmail(contacts, referrerEmail, message, linkSource, greeting) {
     console.log('TO:', contacts);
+
+    // either way pass an array of emails
+    // based the data on which method they use
+    // if contacts is defined, use the toField
+    // if contacts is undefined (they didn't use import), then grab the string value of the textarea
 
     var toField = [];
 
@@ -863,15 +868,23 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
 
     setTimeout(function () {
       console.log('TO FIELD', toField);
+      console.log('GREETING', greeting);
       console.log('REFERRER EMAIL:', referrerEmail);
       console.log('SHARE MESSAGE:', message);
       var emailA = {
+        greeting: greeting,
         list: toField,
         email: referrerEmail,
         text: message,
+        text2: 'text2 message',
         name: 'Andrew',
+        image: '',
         link: linkSource
       };
+
+      // vm.x = toField;
+
+      // repeat= email in toField, {{ email }},
 
       ReferrerService.sendEmail(emailA).then(function (response) {
         console.log('RESPONSE', response);

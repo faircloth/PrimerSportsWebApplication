@@ -59,7 +59,7 @@
 
         <div class="share-form-block">
           
-          <form ng-submit="vm.sendEmail(contacts, vm.referrerEmail, vm.message, vm.linkSource)">
+          <form ng-submit="vm.sendEmail(contacts, vm.referrerEmail, vm.message, vm.linkSource, vm.greeting)">
 
             <div ng-show="vm.favoriteOptions" class="favorites-options">
 
@@ -77,13 +77,21 @@
               <h4 class="form-text-to">Their email addresses <br>(separated by commas)</h4>
               <!-- <p class="import-text" id="left-import">Import contacts:</p>  -->
 
+              <h4 class="form-text-to">Two options:</h4>
+              <button ng-click="showTypeBox = true">Write my own</button>
+
+              <textarea ng-show="showTypeBox">
+                Type Box
+              </textarea>
+
               <a class="cs_import">
                 <button>Import from Address Book
                 </button>
               </a>
 
               <!-- <a href="#">Google</a><a href="#">Yahoo</a>-->
-    
+            
+
               <textarea ng-model="contacts" id="contact_list">
                 <ul>
                   <li ng-repeat="contact in contacts">{{ contact.email.address }};
@@ -93,7 +101,11 @@
             </div>
 
             <div class="form-column">
-            
+              
+              <h4 class="form-text">Add a greeting:</h4>
+              <textarea ng-model="vm.greeting" class="share-message">
+              </textarea>
+
               <h4 class="form-text">Your message:</h4>
               <textarea ng-model="vm.message" class="share-message">
               </textarea>
