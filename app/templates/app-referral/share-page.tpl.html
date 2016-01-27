@@ -12,7 +12,7 @@
         <button ng-click="goToUtm()">Next step</button>
       </form>
 
-    <h3 style="width: 80%; max-width: 600px; display: block; margin: 5px auto;"  ng-show="!vm.contestEntered">Next step: Recieve your own unique share link and craft your messsage!</h3>
+    <h3 class="next-step" ng-show="!vm.contestEntered">Next step: Recieve your own unique share link and craft your messsage!</h3>
 
     <h3 ng-show="vm.contestEntered">Great! Now it's time to put the team on your back.</h3>
 
@@ -20,10 +20,10 @@
 
     <div ng-show="vm.contestEntered" class="process-map">
       
-      <p class="share-graphic-text">Choose your message</p>
+      <p class="share-graphic-text">Choose a message</p>
       <img src="http://i.imgur.com/PymQBPL.png">
 
-      <p class="share-graphic-text">Import your contacts</p>
+      <p class="share-graphic-text">Import contacts</p>
       <img src="http://i.imgur.com/PymQBPL.png">
 
       <p class="share-graphic-text">Spread the good word</p>
@@ -74,7 +74,7 @@
               <input ng-model="vm.referrerEmail" placeholder="...">
               <!-- value="{{ vm.referrerEmail }}" -->
 
-              <h4 class="form-text-to">Their email addresses</h4>
+              <h4 class="form-text-to">Their email addresses <br>(separated by commas)</h4>
               <!-- <p class="import-text" id="left-import">Import contacts:</p>  -->
 
               <a class="cs_import">
