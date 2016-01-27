@@ -2,6 +2,30 @@ import $ from 'jquery';
 
 let HomepageController = function($scope) {
   
+  function cycleBackgrounds () {
+    var index = 0;
+
+    let $imageEls = $('.toggle-image');
+    console.log($imageEls);
+
+    // $imageEls = $('.toggle-image');
+
+
+    setInterval( function () {
+      index = index + 1 < $imageEls.length ? index + 1 : 0;
+      $imageEls.eq(index).addClass('show');
+      $imageEls.eq(index - 1).removeClass('show');
+
+    }, 3000);
+
+  }
+
+  
+  $(function () {
+    cycleBackgrounds();
+  });
+
+
   let vm = this;
 
   vm.closeBar = closeBar;

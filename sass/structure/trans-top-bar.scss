@@ -1,12 +1,13 @@
 .trans-top-bar-outer {
   background-color: transparent;
-  opacity: .9;
+  opacity: 1;
   position: absolute;
   top: 0px;
   display: block;
   width: 100%;
   margin: 0 auto;
   padding: 0px;
+  z-index: 3;
 }
 
 .trans-top-bar-nav {
@@ -78,7 +79,7 @@
     li, a {
       // display: inline-block;
       color: white;
-      width: 140px;
+      max-width: 240px;
       padding-left: 5px;
       margin: 0px;
       text-align: left;

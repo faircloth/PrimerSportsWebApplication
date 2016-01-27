@@ -11,13 +11,52 @@
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background-image: url(http://i.huffpost.com/gen/2828384/images/o-SPIETH-facebook.jpg);
-    background-position: top;
-    // top: 50%;
+    // background-image: url(http://i.huffpost.com/gen/2828384/images/o-SPIETH-facebook.jpg);
+    background-position: top center;
     background-repeat: no-repeat;
-    opacity: .85;
+    background-size: cover;
+    opacity: .95;
     z-index: -1;
+  }
+
+  .toggle-image {
     @include box-shadow($light-box-shadows);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 450px;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .first-image {
+    background-image: url('http://images.performgroup.com/di/library/sporting_news/4a/9d/stephen-curry-111614-getty-ftrjpg_1g9uniki9wquj1n6zuy6acwphl.jpg?t=-1190455351');
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .second-image {
+    background-image: url('http://i.huffpost.com/gen/2828384/images/o-SPIETH-facebook.jpg');
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .third-image {
+    background-image: url('http://s169923.gridserver.com/images/catalinaharbor.jpg');
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .first-image.show {
+    opacity: .95;
+  }
+
+  .second-image.show {
+    opacity: .95;
+  }
+
+  .third-image.show {
+    opacity: .95;
   }
 }
 

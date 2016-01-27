@@ -442,6 +442,25 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var HomepageController = function HomepageController($scope) {
 
+  function cycleBackgrounds() {
+    var index = 0;
+
+    var $imageEls = (0, _jquery2['default'])('.toggle-image');
+    console.log($imageEls);
+
+    // $imageEls = $('.toggle-image');
+
+    setInterval(function () {
+      index = index + 1 < $imageEls.length ? index + 1 : 0;
+      $imageEls.eq(index).addClass('show');
+      $imageEls.eq(index - 1).removeClass('show');
+    }, 3000);
+  }
+
+  (0, _jquery2['default'])(function () {
+    cycleBackgrounds();
+  });
+
   var vm = this;
 
   vm.closeBar = closeBar;
