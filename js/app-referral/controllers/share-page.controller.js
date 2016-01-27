@@ -2,6 +2,26 @@ import _ from 'underscore';
 
 let SharePageController = function($scope, UtmGrabberService, ReferrerService, $state, $location, $window, AdminShareMsgsService) {
   
+  $scope.contacts = [];
+  $scope.fullAddressbook = [];
+
+  window.csPageOptions = { 
+    textarea_id: "contact_list",
+    mobile_render: true,
+    inlineOauth: 'mobile',
+    beforeDisplayContacts: function (contacts, b, c) {
+      $scope.fullAddressbook = contacts;
+    },
+    afterSubmitContacts: function (contacts) {
+      $scope.contacts = contacts;
+    }
+  };
+
+  (function(u){
+    var d=document,s='script',a=d.createElement(s),m=d.getElementsByTagName(s)[0];
+    a.async=1;a.src=u;m.parentNode.insertBefore(a,m);
+  })('//api.cloudsponge.com/widget/48bc871ee2384e8458627dc574cce552f0c03907.js');
+
   console.log('PAGE URL', UtmGrabberService);
 
   let vm = this;
@@ -16,19 +36,34 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   vm.sendEmail        = sendEmail;
 
 
-  function sendEmail (email, referrerEmail, message) {
-    console.log('TO:', email.list);
-    console.log('REFERRER EMAIL:', referrerEmail);
-    console.log('SHARE MESSAGE:', message);
-    let emailA = {
-      list: email.list,
-      email: referrerEmail,
-      text: message,
-      name: 'Andrew'
-    };
-    ReferrerService.sendEmail(emailA).then( (response) => {
-      console.log('RESPONSE', response);
+  function sendEmail (contacts, referrerEmail, message, linkSource) {
+    console.log('TO:', contacts);
+
+    let toField = [];
+
+    contacts.forEach ( function (contact) {
+      toField.push(contact.email[0].address);
     });
+
+    setTimeout ( function() {
+      console.log('TO FIELD', toField);
+      console.log('REFERRER EMAIL:', referrerEmail);
+      console.log('SHARE MESSAGE:', message);
+      let emailA = {
+        list: toField,
+        email: referrerEmail,
+        text: message,
+        name: 'Andrew',
+        link: linkSource
+      };
+
+      ReferrerService.sendEmail(emailA).then( (response) => {
+        console.log('RESPONSE', response);
+      });
+
+    }, 2000);
+
+
   }
 
   
