@@ -11,7 +11,7 @@ $offWhite: #F5F5F5;
 $shadowGrey: #C0C2C2;
 
 // SHADOWS
-$light-box-shadows: 2px 2px 2px 2px $shadowGrey;
+$light-box-shadows: 0px 0px 1px 1px $shadowGrey;
 $light-box-shadows-no-top: 0px 2px 2px 2px $shadowGrey;
 $box-shadows: 3px 3px 3px 3px $shadowGrey;
 
@@ -43,6 +43,7 @@ $standard-text-margin: 8px 0px;
 // MAIN BODY STYLING
 body {
   background: white;
+  width: 100%;
 }
 
 

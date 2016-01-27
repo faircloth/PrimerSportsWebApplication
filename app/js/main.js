@@ -433,9 +433,37 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 var HomepageController = function HomepageController($scope) {
 
   console.log('HomepageController');
+
+  (0, _jquery2['default'])(function () {
+    (0, _jquery2['default'])(document).bind('ready scroll', function () {
+      var docScroll = (0, _jquery2['default'])(document).scrollTop();
+      console.log(docScroll);
+
+      if (docScroll < 1000) {
+        console.log('Not there yet');
+        if ((0, _jquery2['default'])('.category-nav').hasClass('sticky')) {
+          (0, _jquery2['default'])('.category-nav').removeClass('sticky');
+        }
+      }
+
+      if (docScroll >= 1000) {
+        if (!(0, _jquery2['default'])('.category-nav').hasClass('sticky')) {
+          (0, _jquery2['default'])('.category-nav').addClass('sticky');
+          console.log('sticky class added');
+        }
+      }
+    });
+  });
 };
 
 HomepageController.$inject = ['$scope'];
@@ -443,7 +471,7 @@ HomepageController.$inject = ['$scope'];
 exports['default'] = HomepageController;
 module.exports = exports['default'];
 
-},{}],14:[function(require,module,exports){
+},{"jquery":34}],14:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }

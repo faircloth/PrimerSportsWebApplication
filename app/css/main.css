@@ -2081,7 +2081,8 @@
   content: ""; }
 
 body {
-  background: white; }
+  background: white;
+  width: 100%; }
 
 .content-container {
   width: 100%;
@@ -2154,13 +2155,19 @@ body {
   display: block;
   max-width: 1600px; }
   .trans-top-bar-nav .top-bar-logo {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     padding: 0px;
     display: inline-block;
     position: absolute;
     top: 10px;
     right: 2.5%; }
+  @media only screen and (max-width: 800px) {
+    .trans-top-bar-nav .top-bar-logo {
+      width: 80px;
+      height: 80px; }
+    .trans-top-bar-nav li, .trans-top-bar-nav a {
+      font-size: 1.3em; } }
   .trans-top-bar-nav .top-bar-banner {
     width: 500px;
     padding: 0px;
@@ -2378,11 +2385,7 @@ button.standalone-btn {
     background: url(http://b-i.forbesimg.com/jasonbelzer/files/2014/01/superbowl-xlvii-at-metlife-stadium_original1.jpg);
     background-position: center;
     opacity: .95;
-    z-index: -1;
-    -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
-    -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
-    -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
-    box-shadow: 2px 2px 2px 2px #C0C2C2; }
+    z-index: -1; }
   .landing-top-a .over-background {
     display: block;
     margin: 0px auto;
@@ -2413,9 +2416,9 @@ button.standalone-btn {
         max-width: 900px;
         margin: 0px auto; }
       .landing-top-a .over-background .top-text h3 {
-        font-size: 5.6em; }
+        font-size: 5.7em; }
       .landing-top-a .over-background .top-text h4 {
-        font-size: 4.4em; }
+        font-size: 4.5em; }
     .landing-top-a .over-background h5.tag-line {
       position: absolute;
       top: 17%;
@@ -2427,11 +2430,12 @@ button.standalone-btn {
       background-color: #082c38; }
     .landing-top-a .over-background #mc_embed_signup form {
       display: block;
-      width: 100%;
+      width: 95%;
       max-width: 480px;
       margin: 5px auto;
       margin-top: -670px;
-      padding: 15px; }
+      padding: 15px;
+      border: 4px solid #082c38; }
     .landing-top-a .over-background #mc_embed_signup .button {
       display: block;
       margin-left: 20px;
@@ -2492,7 +2496,7 @@ button.standalone-btn {
   .landing-top-a .over-background img {
     width: 60px; }
   .landing-top-a .over-background .top-text h3 {
-    font-size: 5.4em; }
+    font-size: 5.5em; }
   .landing-top-a .over-background .top-text h4 {
     font-size: 3.4em; }
   .landing-top-a .over-background h5.tag-line {
@@ -2520,9 +2524,9 @@ button.standalone-btn {
       .landing-top-a .over-background .top-text h4 {
         position: absolute;
         display: block;
-        top: 70px;
+        top: 55px;
         left: 0%;
-        font-size: 2.0em;
+        font-size: 2.4em;
         width: 100%;
         max-width: none; }
     .landing-top-a .over-background h5.tag-line {
@@ -2537,10 +2541,10 @@ button.standalone-btn {
     .landing-top-a .over-background #mc_embed_signup form {
       position: absolute;
       margin-top: 0px;
-      margin-left: 0px;
+      margin-left: 1%;
       display: block;
       top: 130px;
-      width: 100%;
+      width: 98%;
       max-width: none;
       margin: 5px auto;
       padding: 5px;
@@ -2565,7 +2569,7 @@ button.standalone-btn {
         padding: 2px;
         padding-top: 4px;
         margin: 2px auto;
-        font-size: 2.0em; }
+        font-size: 1.5em; }
         .landing-top-a .over-background #mc_embed_signup div.mc-field-group input::-webkit-input-placeholder {
           color: #qzGrey;
           font-family: 'Biryani', sans-serif;
@@ -2615,10 +2619,10 @@ button.standalone-btn {
       max-width: 800px;
       margin: 20px auto;
       margin-bottom: 50px;
-      -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      box-shadow: 2px 2px 2px 2px #C0C2C2; }
+      -webkit-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      -moz-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      -ms-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      box-shadow: 0px 0px 1px 1px #C0C2C2; }
     .landing-demo-block .demo-container h1 {
       padding-top: 20px;
       padding-bottom: 10px;
@@ -2658,10 +2662,10 @@ button.standalone-btn {
       max-width: 750px;
       margin: 20px auto;
       margin-bottom: 50px;
-      -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      box-shadow: 2px 2px 2px 2px #C0C2C2; }
+      -webkit-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      -moz-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      -ms-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      box-shadow: 0px 0px 1px 1px #C0C2C2; }
     .landing-demo-block .demo-container h1 {
       font-size: 4.0em; }
     .landing-demo-block .demo-container h2 {
@@ -2679,10 +2683,10 @@ button.standalone-btn {
       max-width: 450px;
       margin: 12px auto;
       margin-bottom: 30px;
-      -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      box-shadow: 2px 2px 2px 2px #C0C2C2; }
+      -webkit-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      -moz-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      -ms-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      box-shadow: 0px 0px 1px 1px #C0C2C2; }
     .landing-demo-block .demo-container h1 {
       font-size: 3.0em;
       padding-bottom: 0px; }
@@ -2844,7 +2848,7 @@ button.standalone-btn {
 
 .landing-fourth-block {
   background-color: #39bced;
-  padding-bottom: 70px; }
+  padding-bottom: 40px; }
   .landing-fourth-block .top-click {
     text-align: center;
     color: #082c38; }
@@ -2974,22 +2978,77 @@ button.standalone-btn {
 
 .top-home-block {
   width: 100%;
-  height: 650px;
+  height: 550px;
   margin: 0 auto;
   background-color: #082c38; }
   .top-home-block .transparent-box {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background-image: url(http://images.performgroup.com/di/library/sporting_news/4a/9d/stephen-curry-111614-getty-ftrjpg_1g9uniki9wquj1n6zuy6acwphl.jpg?t=-1190455351);
+    background-image: url(http://i.huffpost.com/gen/2828384/images/o-SPIETH-facebook.jpg);
     background-position: top;
     background-repeat: no-repeat;
-    opacity: .7;
+    opacity: .85;
     z-index: -1;
-    -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
-    -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
-    -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
-    box-shadow: 2px 2px 2px 2px #C0C2C2; }
+    -webkit-box-shadow: 0px 0px 1px 1px #C0C2C2;
+    -moz-box-shadow: 0px 0px 1px 1px #C0C2C2;
+    -ms-box-shadow: 0px 0px 1px 1px #C0C2C2;
+    box-shadow: 0px 0px 1px 1px #C0C2C2; }
+
+.most-recent-bar {
+  width: 100%;
+  display: block;
+  margin: 0px auto;
+  background-color: #E7E7E4;
+  padding: 0px;
+  padding-left: 0%;
+  color: #082c38; }
+  .most-recent-bar .drop-down-categories {
+    display: block;
+    width: 100%;
+    background-color: #082c38;
+    padding: 0px; }
+    .most-recent-bar .drop-down-categories ul.category-nav {
+      width: 100%;
+      color: white;
+      text-align: center;
+      margin: 4px auto;
+      padding: 0px;
+      display: block;
+      position: relative;
+      padding-bottom: 15px; }
+      .most-recent-bar .drop-down-categories ul.category-nav p {
+        margin: 2px;
+        padding-bottom: 2px; }
+    .most-recent-bar .drop-down-categories ul.sticky {
+      width: 100%;
+      color: white;
+      background-color: #082c38;
+      display: block;
+      text-align: center;
+      margin: 0px auto;
+      width: 100%;
+      top: 0;
+      position: fixed; }
+    .most-recent-bar .drop-down-categories li {
+      display: inline-block;
+      margin: 4px 10px;
+      font-weight: bold;
+      color: #39bced;
+      font-size: 2.2em; }
+  .most-recent-bar .most-recent-text {
+    width: 95%;
+    max-width: 1200px;
+    display: inline-block;
+    margin: 5px auto;
+    padding-left: 20px; }
+    .most-recent-bar .most-recent-text i {
+      font-size: 2.4em;
+      margin: 0px; }
+    .most-recent-bar .most-recent-text p {
+      display: inline-block;
+      margin: 0px;
+      padding-left: 8px; }
 
 .homepage-container {
   width: 90%;
@@ -3000,7 +3059,8 @@ button.standalone-btn {
     margin-bottom: 2px;
     border-bottom: 5px solid #39bced;
     margin-top: 10px;
-    padding-bottom: 7px; }
+    padding-bottom: 7px;
+    line-height: 1.2em; }
   .homepage-container .home-med-pic-container .title-img-row {
     display: block;
     margin-top: 5px;
@@ -3011,10 +3071,10 @@ button.standalone-btn {
       margin-top: 12px;
       margin-bottom: 5px;
       width: 350px;
-      -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
-      box-shadow: 2px 2px 2px 2px #C0C2C2; }
+      -webkit-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      -moz-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      -ms-box-shadow: 0px 0px 1px 1px #C0C2C2;
+      box-shadow: 0px 0px 1px 1px #C0C2C2; }
     .homepage-container .home-med-pic-container .title-img-row p {
       margin-top: 15px;
       margin-bottom: 2px; }
@@ -3058,28 +3118,70 @@ button.standalone-btn {
     padding-bottom: 3px;
     text-transform: uppercase; }
 
-.most-recent-bar {
-  width: 100%;
-  display: block;
-  margin: 0px auto;
-  background-color: #E7E7E4;
-  padding: 4px;
-  padding-left: 2%;
-  color: #082c38; }
-  .most-recent-bar .most-recent-text {
-    width: 85%;
+@media only screen and (max-width: 800px) {
+  .top-home-block {
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    background-color: #082c38; }
+  .homepage-container {
+    width: 90%;
     max-width: 1200px;
     display: block;
-    margin: 5px auto;
-    padding: 0px; }
-    .most-recent-bar .most-recent-text i {
+    margin: 5px auto; }
+    .homepage-container h1 {
+      margin-bottom: 1px;
+      margin-top: 10px;
+      padding-bottom: 4px;
+      font-size: 3.6em; }
+    .homepage-container .home-med-pic-container .title-img-row {
+      display: block;
+      margin-top: 2px;
+      margin-bottom: 10px; }
+      .homepage-container .home-med-pic-container .title-img-row img {
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+        margin-top: 5px;
+        -webkit-box-shadow: 0px 0px 1px 1px #C0C2C2;
+        -moz-box-shadow: 0px 0px 1px 1px #C0C2C2;
+        -ms-box-shadow: 0px 0px 1px 1px #C0C2C2;
+        box-shadow: 0px 0px 1px 1px #C0C2C2; }
+      .homepage-container .home-med-pic-container .title-img-row p {
+        margin-top: 20px;
+        margin-bottom: 2px;
+        font-size: 2.3em;
+        line-height: 1.6em; }
+      .homepage-container .home-med-pic-container .title-img-row a.read-more {
+        font-size: 2.0em; }
+    .homepage-container .home-large-pic-container .title-img-row {
+      display: block;
+      margin-top: 2px;
+      margin-bottom: 10px; }
+      .homepage-container .home-large-pic-container .title-img-row img {
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+        margin-top: 5px;
+        -webkit-box-shadow: 0px 0px 1px 1px #C0C2C2;
+        -moz-box-shadow: 0px 0px 1px 1px #C0C2C2;
+        -ms-box-shadow: 0px 0px 1px 1px #C0C2C2;
+        box-shadow: 0px 0px 1px 1px #C0C2C2; }
+      .homepage-container .home-large-pic-container .title-img-row p {
+        margin-top: 20px;
+        margin-bottom: 2px;
+        font-size: 2.3em;
+        line-height: 1.6em; }
+      .homepage-container .home-large-pic-container .title-img-row a.read-more {
+        font-size: 2.0em; }
+    .homepage-container h4.subject-tag {
+      font-weight: bold;
+      text-transform: uppercase;
       font-size: 2.4em;
-      margin: 0px;
-      padding-left: 0px; }
-    .most-recent-bar .most-recent-text p {
-      display: inline-block;
-      margin: 0px;
-      padding-left: 8px; }
+      color: #39bced;
+      margin-bottom: 2px;
+      padding-bottom: 3px;
+      text-transform: uppercase; } }
 
 .archives-outer-container {
   background-color: #E7E7E4;
@@ -3407,10 +3509,10 @@ button.standalone-btn {
   background-color: #E7E7E4;
   padding: 10px;
   padding-bottom: 0px;
-  -webkit-box-shadow: 2px 2px 2px 2px #C0C2C2;
-  -moz-box-shadow: 2px 2px 2px 2px #C0C2C2;
-  -ms-box-shadow: 2px 2px 2px 2px #C0C2C2;
-  box-shadow: 2px 2px 2px 2px #C0C2C2; }
+  -webkit-box-shadow: 0px 0px 1px 1px #C0C2C2;
+  -moz-box-shadow: 0px 0px 1px 1px #C0C2C2;
+  -ms-box-shadow: 0px 0px 1px 1px #C0C2C2;
+  box-shadow: 0px 0px 1px 1px #C0C2C2; }
   .page-container-share .top-block-share .two-block h3 {
     width: 98%;
     display: block;

@@ -1,21 +1,101 @@
 .top-home-block {
   width: 100%;
-  height: 650px;
+  height: 550px;
   margin: 0 auto;
   background-color: $Navy;
+
+// http://i.huffpost.com/gen/2828384/images/o-SPIETH-facebook.jpg
+// http://images.performgroup.com/di/library/sporting_news/4a/9d/stephen-curry-111614-getty-ftrjpg_1g9uniki9wquj1n6zuy6acwphl.jpg?t=-1190455351
 
   .transparent-box {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background-image: url(http://images.performgroup.com/di/library/sporting_news/4a/9d/stephen-curry-111614-getty-ftrjpg_1g9uniki9wquj1n6zuy6acwphl.jpg?t=-1190455351);
+    background-image: url(http://i.huffpost.com/gen/2828384/images/o-SPIETH-facebook.jpg);
     background-position: top;
+    // top: 50%;
     background-repeat: no-repeat;
-    opacity: .7;
+    opacity: .85;
     z-index: -1;
     @include box-shadow($light-box-shadows);
   }
 }
+
+
+.most-recent-bar {
+  width: 100%;
+  // max-width: 1200px;
+  display: block;
+  margin: 0px auto; 
+  background-color: $LightGrey;
+  padding: 0px;
+  padding-left: 0%;
+  color: $Navy;
+
+  .drop-down-categories {
+    display: block;
+    width: 100%;
+    background-color: $Navy;
+    padding: 0px;
+    
+    ul.category-nav{
+        width: 100%;
+        color: white;
+        text-align: center;
+        margin: 4px auto;
+        padding: 0px;
+        display: block;
+        position: relative;
+        padding-bottom: 15px; 
+
+      p {
+        margin: 2px;
+        padding-bottom: 2px;
+      }
+    }
+      
+    ul.sticky {
+        width: 100%;
+        color: white;
+        background-color: $Navy;
+        display: block;
+        text-align: center;
+        margin: 0px auto;
+        width: 100%;
+        top: 0;
+        position: fixed;
+    }
+
+    li {
+        display: inline-block;
+        margin: 4px 10px;
+        font-weight: bold;
+        color: $BrightBlue;
+        font-size: 2.2em;
+    }
+  
+  }
+
+  .most-recent-text {
+    width: 95%;
+    max-width: 1200px;
+    display: inline-block;
+    margin: 5px auto;
+    padding-left: 20px;
+
+    i {
+      font-size: 2.4em;
+      margin: 0px;
+    }
+
+    p {
+      display: inline-block;
+      margin: 0px;
+      padding-left: 8px;
+    }
+  }
+}
+
 
 .homepage-container {
   width: 90%;
@@ -28,6 +108,7 @@
     border-bottom: 5px solid $BrightBlue;
     margin-top: 10px;
     padding-bottom: 7px;
+    line-height: 1.2em;
   }
 
   .home-med-pic-container {
@@ -115,33 +196,98 @@
 
 }
 
-.most-recent-bar {
-  width: 100%;
-  // max-width: 1200px;
-  display: block;
-  margin: 0px auto; 
-  background-color: $LightGrey;
-  padding: 4px;
-  padding-left: 2%;
-  color: $Navy;
 
-  .most-recent-text {
-    width: 85%;
+@media only screen and (max-width: 800px) {
+
+  .top-home-block {
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    background-color: $Navy;
+}
+  
+  .homepage-container {
+    width: 90%;
     max-width: 1200px;
     display: block;
     margin: 5px auto;
-    padding: 0px;
 
-    i {
+    h1 {
+      margin-bottom: 1px;
+      margin-top: 10px;
+      padding-bottom: 4px;
+      font-size: 3.6em;
+    }
+
+    .home-med-pic-container {
+
+      .title-img-row {
+        display: block;
+        margin-top: 2px;
+        margin-bottom: 10px;
+          
+        img {
+          display: block;
+          width: 100%;
+          margin-bottom: 12px;
+          margin-top: 5px;
+          @include box-shadow($light-box-shadows);
+        }
+
+        p {
+          margin-top: 20px;
+          margin-bottom: 2px;
+          font-size: 2.3em;
+          line-height: 1.6em;
+        }
+        a.read-more {
+          font-size: 2.0em;
+        }
+
+      }
+    }
+
+    .home-large-pic-container {
+
+      .title-img-row {
+        display: block;
+        margin-top: 2px;
+        margin-bottom: 10px;
+          
+        img {
+          display: block;
+          width: 100%;
+          margin-bottom: 12px;
+          margin-top: 5px;
+          @include box-shadow($light-box-shadows);
+        }
+
+        p {
+          margin-top: 20px;
+          margin-bottom: 2px;
+          font-size: 2.3em;
+          line-height: 1.6em;
+        }
+        a.read-more {
+          font-size: 2.0em;
+        }
+
+      }
+
+    }
+
+
+    h4.subject-tag {
+      font-weight: bold;
+      text-transform: uppercase;
       font-size: 2.4em;
-      margin: 0px;
-      padding-left: 0px;
+      color: $BrightBlue;
+      margin-bottom: 2px;
+      padding-bottom: 3px;
+      text-transform: uppercase;
     }
 
-    p {
-      display: inline-block;
-      margin: 0px;
-      padding-left: 8px;
-    }
+
+
   }
 }
