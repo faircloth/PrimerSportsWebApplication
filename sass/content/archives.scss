@@ -6,7 +6,7 @@
 }
 
 .archives-container {
-  width: 100%;
+  width: 90%;
   max-width: 900px;
   padding-bottom: 80px;
   margin: 0px auto;
@@ -16,6 +16,7 @@
     margin-top: 0px;
     padding-top: 15px;
     color: $Navy;
+    font-size: 3.6em;
   }
 
   .newsletter-block {
@@ -61,7 +62,7 @@
         vertical-align: top;
         padding-top: 0px;
         padding-bottom: 0px;
-        font-size: 3.4em;
+        font-size: 3.0em;
         white-space: nowrap;
       }
 
@@ -71,6 +72,7 @@
         text-overflow-multiline: ellipsis;
         text-overflow: '...';
         font-size: 2.4em;
+        line-height: 1.8em;
       }
     }
 
@@ -147,9 +149,318 @@
     }
 
   }
+}
+
+  @media only screen and (max-width: 900px) {
+
+    .archives-container {
+    width: 90%;
+    max-width: 900px;
+    padding-bottom: 80px;
+    margin: 0px auto;
+    z-index: 1;
+
+    h1 {
+      margin-top: 0px;
+      padding-top: 15px;
+      color: $Navy;
+      font-size: 3.4em;
+    }
+
+    .newsletter-block {
+      @include box-shadow($box-shadows);
+      background-color: white;
+      margin-bottom: 80px;
+      padding: 0px;
+      border: 3px solid $Navy;
+      border-radius: 5px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $Navy;
+        color: white;
+
+      }
+
+      .newsletter-media {
+        display: block;
+        width: 100%;
+        // margin: 5px auto;
+        overflow: hidden;
+        vertical-align: top;
+        // @include box-shadow($light-box-shadows);
+        max-height: 300px;
+        overflow-y: scroll;
+        padding: 0px;
 
 
+        img {
+          display: block;
+          margin: 12px auto;
+          width: 100%;
+        }
+
+      }
+
+      .newsletter-preview {
+        display: block;
+        width: 100%;
+        max-height: 350px;
+        overflow-y: scroll;
+
+        h2 {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          vertical-align: top;
+          padding: 12px;
+          padding-top: 15px;
+          padding-bottom: 2px;
+          font-size: 2.8em;
+          white-space: nowrap;
+        }
+
+        p {
+          margin-top: 3px;
+          overflow: hidden;
+          text-overflow-multiline: ellipsis;
+          text-overflow: '...';
+          font-size: 2.2em;
+          line-height: 1.6em;
+          padding: 12px;
+          padding-top: 4px;
+        }
+      }
+
+      h2, h4 {
+        @include padding ($standard-text-padding);
+        @include margin ($standard-text-margin);
+        font-weight: bold;
+      }
+
+      .newsletter-date {
+        color: $BrightBlue;
+        text-align: center;
+        font-size: 2.2em;
+        margin: 0px auto;
+        margin-bottom: 0px;
+        padding: 8px;
+        font-weight: bold;
+      }
 
 
+      p {
+        @include padding ($standard-text-padding);
+        @include margin ($standard-text-margin)
+      }
+
+
+      .newsletter-subjects {
+        list-style-type: none;
+        @include padding ($standard-text-padding);
+        padding: 10px 12px;
+        margin: 0px auto;
+
+        span {
+          padding-left: 5px;
+          padding-right: 10px;
+        }
+
+        li {
+          display: inline-block;
+          margin: 10px;
+          margin-left: 0px;
+
+          button {
+            background-color: $LightGrey;
+            color: $Navy;
+            padding: 10px;
+            font-size: 1.0em;
+            font-weight: bold;
+            border: none;
+            text-align: center;
+            // @include box-shadow($light-box-shadows);
+
+            &:hover {
+              background-color: $BrightBlue;
+              color: white;
+            }
+          }
+        }
+      }
+
+      .read-more-newsletter {
+        text-align: right;
+        font-size: 1.1em;
+        margin: 0px;
+        padding: 10px;
+        padding-right: 12px;
+        text-align: right;
+
+        a {
+          color: $BrightBlue;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 500px) {
+
+    .archives-container {
+    width: 90%;
+    max-width: 900px;
+    padding-bottom: 80px;
+    margin: 0px auto;
+    z-index: 1;
+
+    h1 {
+      margin-top: 0px;
+      padding-top: 15px;
+      color: $Navy;
+      font-size: 2.6em;
+    }
+
+    .newsletter-block {
+      @include box-shadow($box-shadows);
+      background-color: white;
+      margin-bottom: 80px;
+      padding: 0px;
+      border: 3px solid $Navy;
+      border-radius: 5px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $Navy;
+        color: white;
+
+      }
+
+      .newsletter-media {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        vertical-align: top;
+        // @include box-shadow($light-box-shadows);
+        max-height: 200px;
+        overflow-y: scroll;
+        padding: 0px;
+
+
+        img {
+          display: block;
+          margin: 12px auto;
+          width: 100%;
+        }
+
+      }
+
+      .newsletter-preview {
+        display: block;
+        width: 100%;
+        max-height: 350px;
+        overflow-y: scroll;
+
+        h2 {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          vertical-align: top;
+          padding: 12px;
+          padding-top: 15px;
+          padding-bottom: 2px;
+          font-size: 2.4em;
+          white-space: nowrap;
+        }
+
+        p {
+          margin-top: 3px;
+          overflow: hidden;
+          text-overflow-multiline: ellipsis;
+          text-overflow: '...';
+          font-size: 2.0em;
+          line-height: 1.5em;
+          padding: 12px;
+          padding-top: 4px;
+        }
+      }
+
+      h2, h4 {
+        @include padding ($standard-text-padding);
+        @include margin ($standard-text-margin);
+        font-weight: bold;
+      }
+
+      .newsletter-date {
+        color: $BrightBlue;
+        text-align: center;
+        font-size: 2.2em;
+        margin: 0px auto;
+        margin-bottom: 0px;
+        padding: 8px;
+        font-weight: bold;
+      }
+
+
+      p {
+        @include padding ($standard-text-padding);
+        @include margin ($standard-text-margin)
+      }
+
+
+      .newsletter-subjects {
+        list-style-type: none;
+        @include padding ($standard-text-padding);
+        padding: 10px 12px;
+        margin: 0px auto;
+
+        span {
+          padding-left: 5px;
+          padding-right: 10px;
+        }
+
+        li {
+          display: inline-block;
+          margin: 10px;
+          margin-left: 0px;
+
+          button {
+            background-color: $LightGrey;
+            color: $Navy;
+            padding: 10px;
+            font-size: 1.0em;
+            font-weight: bold;
+            border: none;
+            text-align: center;
+            // @include box-shadow($light-box-shadows);
+
+            &:hover {
+              background-color: $BrightBlue;
+              color: white;
+            }
+          }
+        }
+      }
+
+      .read-more-newsletter {
+        text-align: right;
+        font-size: 1.1em;
+        margin: 0px;
+        padding: 10px;
+        padding-right: 12px;
+        text-align: right;
+
+        a {
+          color: $BrightBlue;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+
+    }
+  }
 
 }

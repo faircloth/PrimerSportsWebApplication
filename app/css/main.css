@@ -2136,6 +2136,45 @@ body {
       .top-bar-nav ul li:hover, .top-bar-nav ul a:hover {
         background-color: #39bced; }
 
+@media only screen and (max-width: 500px) {
+  .top-bar-outer {
+    background-color: #082c38; }
+  .top-bar-nav {
+    background-color: #082c38;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 65px;
+    padding: 0px;
+    display: block; }
+    .top-bar-nav .top-bar-logo {
+      width: 55px;
+      height: 55px;
+      padding: 2px;
+      padding-top: 4px;
+      padding-left: 10px;
+      display: inline-block; }
+    .top-bar-nav ul {
+      display: inline-block;
+      list-style-type: none;
+      vertical-align: top;
+      height: 65px;
+      line-height: 65px;
+      float: right;
+      margin: 0px; }
+      .top-bar-nav ul li, .top-bar-nav ul a {
+        display: inline-block;
+        color: white;
+        width: 80px;
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+        vertical-align: top;
+        font-size: 1.3em;
+        text-decoration: none; }
+        .top-bar-nav ul li:hover, .top-bar-nav ul a:hover {
+          background-color: #39bced; } }
+
 .trans-top-bar-outer {
   background-color: transparent;
   opacity: .9;
@@ -3189,7 +3228,7 @@ button.standalone-btn {
   z-index: -1; }
 
 .archives-container {
-  width: 100%;
+  width: 90%;
   max-width: 900px;
   padding-bottom: 80px;
   margin: 0px auto;
@@ -3197,7 +3236,8 @@ button.standalone-btn {
   .archives-container h1 {
     margin-top: 0px;
     padding-top: 15px;
-    color: #082c38; }
+    color: #082c38;
+    font-size: 3.6em; }
   .archives-container .newsletter-block {
     -webkit-box-shadow: 3px 3px 3px 3px #C0C2C2;
     -moz-box-shadow: 3px 3px 3px 3px #C0C2C2;
@@ -3233,14 +3273,15 @@ button.standalone-btn {
         vertical-align: top;
         padding-top: 0px;
         padding-bottom: 0px;
-        font-size: 3.4em;
+        font-size: 3.0em;
         white-space: nowrap; }
       .archives-container .newsletter-block .newsletter-preview p {
         margin-top: 3px;
         overflow: hidden;
         text-overflow-multiline: ellipsis;
         text-overflow: '...';
-        font-size: 2.4em; }
+        font-size: 2.4em;
+        line-height: 1.8em; }
     .archives-container .newsletter-block h2, .archives-container .newsletter-block h4 {
       padding: 5px 20px 15px 20px;
       margin: 8px 0px;
@@ -3290,6 +3331,228 @@ button.standalone-btn {
         color: #39bced;
         font-weight: bold;
         text-decoration: none; }
+
+@media only screen and (max-width: 900px) {
+  .archives-container {
+    width: 90%;
+    max-width: 900px;
+    padding-bottom: 80px;
+    margin: 0px auto;
+    z-index: 1; }
+    .archives-container h1 {
+      margin-top: 0px;
+      padding-top: 15px;
+      color: #082c38;
+      font-size: 3.4em; }
+    .archives-container .newsletter-block {
+      -webkit-box-shadow: 3px 3px 3px 3px #C0C2C2;
+      -moz-box-shadow: 3px 3px 3px 3px #C0C2C2;
+      -ms-box-shadow: 3px 3px 3px 3px #C0C2C2;
+      box-shadow: 3px 3px 3px 3px #C0C2C2;
+      background-color: white;
+      margin-bottom: 80px;
+      padding: 0px;
+      border: 3px solid #082c38;
+      border-radius: 5px; }
+      .archives-container .newsletter-block:hover {
+        cursor: pointer;
+        background-color: #082c38;
+        color: white; }
+      .archives-container .newsletter-block .newsletter-media {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        vertical-align: top;
+        max-height: 300px;
+        overflow-y: scroll;
+        padding: 0px; }
+        .archives-container .newsletter-block .newsletter-media img {
+          display: block;
+          margin: 12px auto;
+          width: 100%; }
+      .archives-container .newsletter-block .newsletter-preview {
+        display: block;
+        width: 100%;
+        max-height: 350px;
+        overflow-y: scroll; }
+        .archives-container .newsletter-block .newsletter-preview h2 {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          vertical-align: top;
+          padding: 12px;
+          padding-top: 15px;
+          padding-bottom: 2px;
+          font-size: 2.8em;
+          white-space: nowrap; }
+        .archives-container .newsletter-block .newsletter-preview p {
+          margin-top: 3px;
+          overflow: hidden;
+          text-overflow-multiline: ellipsis;
+          text-overflow: '...';
+          font-size: 2.2em;
+          line-height: 1.6em;
+          padding: 12px;
+          padding-top: 4px; }
+      .archives-container .newsletter-block h2, .archives-container .newsletter-block h4 {
+        padding: 5px 20px 15px 20px;
+        margin: 8px 0px;
+        font-weight: bold; }
+      .archives-container .newsletter-block .newsletter-date {
+        color: #39bced;
+        text-align: center;
+        font-size: 2.2em;
+        margin: 0px auto;
+        margin-bottom: 0px;
+        padding: 8px;
+        font-weight: bold; }
+      .archives-container .newsletter-block p {
+        padding: 5px 20px 15px 20px;
+        margin: 8px 0px; }
+      .archives-container .newsletter-block .newsletter-subjects {
+        list-style-type: none;
+        padding: 5px 20px 15px 20px;
+        padding: 10px 12px;
+        margin: 0px auto; }
+        .archives-container .newsletter-block .newsletter-subjects span {
+          padding-left: 5px;
+          padding-right: 10px; }
+        .archives-container .newsletter-block .newsletter-subjects li {
+          display: inline-block;
+          margin: 10px;
+          margin-left: 0px; }
+          .archives-container .newsletter-block .newsletter-subjects li button {
+            background-color: #E7E7E4;
+            color: #082c38;
+            padding: 10px;
+            font-size: 1.0em;
+            font-weight: bold;
+            border: none;
+            text-align: center; }
+            .archives-container .newsletter-block .newsletter-subjects li button:hover {
+              background-color: #39bced;
+              color: white; }
+      .archives-container .newsletter-block .read-more-newsletter {
+        text-align: right;
+        font-size: 1.1em;
+        margin: 0px;
+        padding: 10px;
+        padding-right: 12px;
+        text-align: right; }
+        .archives-container .newsletter-block .read-more-newsletter a {
+          color: #39bced;
+          font-weight: bold;
+          text-decoration: none; } }
+
+@media only screen and (max-width: 500px) {
+  .archives-container {
+    width: 90%;
+    max-width: 900px;
+    padding-bottom: 80px;
+    margin: 0px auto;
+    z-index: 1; }
+    .archives-container h1 {
+      margin-top: 0px;
+      padding-top: 15px;
+      color: #082c38;
+      font-size: 2.6em; }
+    .archives-container .newsletter-block {
+      -webkit-box-shadow: 3px 3px 3px 3px #C0C2C2;
+      -moz-box-shadow: 3px 3px 3px 3px #C0C2C2;
+      -ms-box-shadow: 3px 3px 3px 3px #C0C2C2;
+      box-shadow: 3px 3px 3px 3px #C0C2C2;
+      background-color: white;
+      margin-bottom: 80px;
+      padding: 0px;
+      border: 3px solid #082c38;
+      border-radius: 5px; }
+      .archives-container .newsletter-block:hover {
+        cursor: pointer;
+        background-color: #082c38;
+        color: white; }
+      .archives-container .newsletter-block .newsletter-media {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        vertical-align: top;
+        max-height: 200px;
+        overflow-y: scroll;
+        padding: 0px; }
+        .archives-container .newsletter-block .newsletter-media img {
+          display: block;
+          margin: 12px auto;
+          width: 100%; }
+      .archives-container .newsletter-block .newsletter-preview {
+        display: block;
+        width: 100%;
+        max-height: 350px;
+        overflow-y: scroll; }
+        .archives-container .newsletter-block .newsletter-preview h2 {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          vertical-align: top;
+          padding: 12px;
+          padding-top: 15px;
+          padding-bottom: 2px;
+          font-size: 2.4em;
+          white-space: nowrap; }
+        .archives-container .newsletter-block .newsletter-preview p {
+          margin-top: 3px;
+          overflow: hidden;
+          text-overflow-multiline: ellipsis;
+          text-overflow: '...';
+          font-size: 2.0em;
+          line-height: 1.5em;
+          padding: 12px;
+          padding-top: 4px; }
+      .archives-container .newsletter-block h2, .archives-container .newsletter-block h4 {
+        padding: 5px 20px 15px 20px;
+        margin: 8px 0px;
+        font-weight: bold; }
+      .archives-container .newsletter-block .newsletter-date {
+        color: #39bced;
+        text-align: center;
+        font-size: 2.2em;
+        margin: 0px auto;
+        margin-bottom: 0px;
+        padding: 8px;
+        font-weight: bold; }
+      .archives-container .newsletter-block p {
+        padding: 5px 20px 15px 20px;
+        margin: 8px 0px; }
+      .archives-container .newsletter-block .newsletter-subjects {
+        list-style-type: none;
+        padding: 5px 20px 15px 20px;
+        padding: 10px 12px;
+        margin: 0px auto; }
+        .archives-container .newsletter-block .newsletter-subjects span {
+          padding-left: 5px;
+          padding-right: 10px; }
+        .archives-container .newsletter-block .newsletter-subjects li {
+          display: inline-block;
+          margin: 10px;
+          margin-left: 0px; }
+          .archives-container .newsletter-block .newsletter-subjects li button {
+            background-color: #E7E7E4;
+            color: #082c38;
+            padding: 10px;
+            font-size: 1.0em;
+            font-weight: bold;
+            border: none;
+            text-align: center; }
+            .archives-container .newsletter-block .newsletter-subjects li button:hover {
+              background-color: #39bced;
+              color: white; }
+      .archives-container .newsletter-block .read-more-newsletter {
+        text-align: right;
+        font-size: 1.1em;
+        margin: 0px;
+        padding: 10px;
+        padding-right: 12px;
+        text-align: right; }
+        .archives-container .newsletter-block .read-more-newsletter a {
+          color: #39bced;
+          font-weight: bold;
+          text-decoration: none; } }
 
 .top-about-block {
   width: 100%;
