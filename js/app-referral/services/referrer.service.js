@@ -14,7 +14,6 @@ let ReferrerService = function($state, $http, PARSE, HEROKU) {
   this.sendEmail    = sendEmail;
 
 
-
   // FUNCTIONS
   function sendEmail (email) {
     console.log('EMAIL TO SEND', email);

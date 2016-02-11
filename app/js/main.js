@@ -192,11 +192,20 @@ var ManageTagsController = function ManageTagsController($scope, ContentMgmtServ
   // FUNCTIONS TO DEFINE
   vm.addTag = addTag;
   vm.getTags = getTags;
+  vm.getArticles = getArticles;
+  vm.getCampaign = getCampaign;
 
   // ACTIVE ON LOAD
   getTags();
 
   // FUNCTIONS
+  function getCampaign() {
+    console.log('get campaign called in controller');
+    ContentMgmtService.getCampaign().then(function (response) {
+      console.log(response);
+    });
+  }
+
   function addTag(tag) {
     ContentMgmtService.addTag(tag).then(function (response) {
       console.log(response);
@@ -207,6 +216,13 @@ var ManageTagsController = function ManageTagsController($scope, ContentMgmtServ
     ContentMgmtService.getTags().then(function (response) {
       console.log(response);
       vm.currentTags = response.data.results;
+    });
+  }
+
+  function getArticles() {
+    console.log('get articles called');
+    ContentMgmtService.getArticles().then(function (response) {
+      console.log(response);
     });
   }
 };
@@ -362,12 +378,31 @@ var ContentMgmtService = function ContentMgmtService($state, $http, PARSE) {
   // SERVER INFO
   var url = PARSE.URL + 'classes/';
 
+  var myAPI = 'https://pure-everglades-58557.herokuapp.com/api/articles';
+  var mc = 'ca8cea917c998a43832a7ab96cf8ea87-us9';
+
+  var mcA = 'https://us9.api.mailchimp.com/';
+  var cid = '696cff045f';
+
   // SERVICE PROPERTIES & FUNCTIONS
   this.addArticle = addArticle;
   this.getTags = getTags;
   this.addTag = addTag;
+  this.getArticles = getArticles;
+  this.getCampaign = getCampaign;
 
   // FUNCTIONS
+  function getCampaign() {
+    console.log('called in service');
+    console.log('MC URL', mcA);
+    console.log('Campaign id', cid);
+    return $http({
+      method: 'GET',
+      url: mcA + 'campaigns/' + cid + '/content',
+      user: 'brent.macon@gmail.com:<' + mc + '>'
+    });
+  }
+
   function addArticle(article) {
     console.log('article in service', article);
     return $http.post(url + 'article', article, PARSE.CONFIG);
@@ -386,6 +421,15 @@ var ContentMgmtService = function ContentMgmtService($state, $http, PARSE) {
   function addTag(tag) {
     console.log('Add tag function called');
     return $http.post(url + 'tag', tag, PARSE.CONFIG);
+  }
+
+  function getArticles() {
+    console.log('get request made to api');
+    return $http({
+      method: 'GET',
+      url: myAPI,
+      headers: "Access-Control-Allow-Origin: http://localhost:8000"
+    });
   }
 };
 
@@ -442,14 +486,11 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var HomepageController = function HomepageController($scope) {
 
+  // Cycle backgrounds on homepage
   function cycleBackgrounds() {
     var index = 0;
-
     var $imageEls = (0, _jquery2['default'])('.toggle-image');
     console.log($imageEls);
-
-    // $imageEls = $('.toggle-image');
-
     setInterval(function () {
       index = index + 1 < $imageEls.length ? index + 1 : 0;
       $imageEls.eq(index).addClass('show');
@@ -460,6 +501,8 @@ var HomepageController = function HomepageController($scope) {
   (0, _jquery2['default'])(function () {
     cycleBackgrounds();
   });
+
+  // End of background cycle
 
   var vm = this;
 
@@ -835,6 +878,7 @@ var _underscore2 = _interopRequireDefault(_underscore);
 
 var SharePageController = function SharePageController($scope, UtmGrabberService, ReferrerService, $state, $location, $window, AdminShareMsgsService) {
 
+  // CLOUDSPONGE
   $scope.contacts = [];
   $scope.fullAddressbook = [];
 
@@ -842,6 +886,7 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
     textarea_id: "contact_list",
     mobile_render: true,
     inlineOauth: 'mobile',
+    // include: ["email"],
     beforeDisplayContacts: function beforeDisplayContacts(contacts, b, c) {
       $scope.fullAddressbook = contacts;
     },
@@ -858,6 +903,8 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
     a.async = 1;a.src = u;m.parentNode.insertBefore(a, m);
   })('//api.cloudsponge.com/widget/48bc871ee2384e8458627dc574cce552f0c03907.js');
 
+  // END OF CLOUDSPONGE
+
   console.log('PAGE URL', UtmGrabberService);
 
   var vm = this;
@@ -870,8 +917,14 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
   vm.writeMyOwn = writeMyOwn;
   vm.select = select;
   vm.sendEmail = sendEmail;
+  vm.typeMyOwn = typeMyOwn;
 
-  function sendEmail(contacts, referrerEmail, message, linkSource, greeting) {
+  function typeMyOwn() {
+    $scope.showTypeBox = !$scope.showTypeBox;
+    console.log($scope.showTypeBox);
+  }
+
+  function sendEmail(contacts, referrerEmail, message, linkSource, greeting, typedContacts) {
     console.log('TO:', contacts);
 
     // either way pass an array of emails
@@ -879,11 +932,47 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
     // if contacts is defined, use the toField
     // if contacts is undefined (they didn't use import), then grab the string value of the textarea
 
+    console.log(contacts.length);
+
+    var toFieldImport = [];
+
+    if (contacts.length > 0 && Array.isArray(contacts)) {
+      console.log('import was used and contacts in an array');
+      contacts.forEach(function (contact) {
+        toFieldImport.push(contact.email[0].address);
+      });
+      console.log('TO FIELD FROM IMPORT:', toField);
+    }
+
+    var toFieldTyped = [];
+
+    if (typedContacts) {
+      console.log('import not used, string was passed instead');
+      // console.log('typed contacts:', typedContacts);
+      var arrTypeYesSpace = typedContacts.split(', ');
+      // let arrTypeNoSpace = typedContacts.split(',');
+      // console.log('ARRAY OF TYPED SPACE:', arrTypeYesSpace);
+      // console.log('ARRAY OF TYPED No SP:', arrTypeNoSpace);
+      toFieldTyped = arrTypeYesSpace;
+      // console.log('toFIELD from typedContacts', toField);
+    }
+
+    console.log('toFIELD from import', toFieldImport);
+    console.log('toFIELD from typed', toFieldTyped);
+
     var toField = [];
 
-    contacts.forEach(function (contact) {
-      toField.push(contact.email[0].address);
-    });
+    if (toFieldImport.length > 0) {
+      toFieldImport.forEach(function (email) {
+        toField.push(email);
+      });
+    }
+
+    if (toFieldTyped.length > 0) {
+      toFieldTyped.forEach(function (email) {
+        toField.push(email);
+      });
+    }
 
     setTimeout(function () {
       console.log('TO FIELD', toField);
@@ -901,13 +990,11 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
         link: linkSource
       };
 
-      // vm.x = toField;
+      console.log('EMAIL TO SEND', emailA);
 
-      // repeat= email in toField, {{ email }},
-
-      ReferrerService.sendEmail(emailA).then(function (response) {
-        console.log('RESPONSE', response);
-      });
+      // ReferrerService.sendEmail(emailA).then( (response) => {
+      //   console.log('RESPONSE', response);
+      // });
     }, 2000);
   }
 
@@ -967,6 +1054,7 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
   function goToUtm(url) {
     console.log('GO TO UTM:', url);
     $window.location.hash = url;
+    // Better way to do this?
     $window.location.reload();
   }
 

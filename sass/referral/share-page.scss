@@ -1,5 +1,9 @@
 .page-container-share {
 
+  hr.mobile-only {
+    display: none;
+  }
+
   .action-block-share {
     background-color: $BrightBlue;
     padding: 20px;
@@ -9,9 +13,9 @@
     .action-block-container {
       max-width: 900px;
       display: block;  
-      margin: 20px auto;
+      margin: 10px auto;
       text-align: center;
-
+      padding-bottom: 150px;
 
       button.active {
         background-color: $LightGrey;
@@ -94,21 +98,36 @@
 
           }
 
-          a.cs_import {
-            width: 100%;
 
-            button {
+          .write-own-btn {
               color: white;
-              background-color: $BrightBlue;
-              font-size: 1em;
+              background-color: $qzGrey;
+              font-size: 1.8em;
               font-weight: bold;
-              padding: 5px;
-              width: 100%;
+              padding: 4px 8px;
+              width: 97%;
+              margin: 0 auto;
               margin-top: 8px;
 
+
               &:hover {
-                font-size: 1.2em;
+                font-size: 2.0em;
               }
+          }
+
+          a.cs_import {
+            width: 99%;
+            text-decoration: none;
+            display: block;
+            color: white;
+            background-color: $BrightBlue;
+            font-weight: bold;
+            padding: 8px;
+            margin: 0 auto;
+            margin-top: 2px;
+
+            &:hover {
+              font-size: 2.0em;
             }
           }
 
@@ -182,10 +201,29 @@
             textarea.share-message {
               width: 96%;
               padding: 8px;
-              height: 350px;
+              height: 300px;
               border: 2px solid $shadowGrey;
               border-radius: 4px;
               margin: 0px;
+            }
+
+            textarea.greeting {
+              width: 96%;
+              padding: 8px;
+              height: 50px;
+              border: 2px solid $shadowGrey;
+              border-radius: 4px;
+              margin: 0px;
+            }
+
+            textarea.type-own-box {
+              width: 97%;
+              padding: 8px;
+              height: 80px;
+              border: 2px solid $shadowGrey;
+              border-radius: 4px;
+              margin: 0px;
+              margin-top: 8px;
             }
 
 
@@ -193,12 +231,18 @@
 
           button.btn-submit-share {
             width: 80%;
-            max-width: 400px;
+            max-width: 300px;
             display: block;
             color: white;
             padding: 20px;
             margin: 25px auto;
             border: none;
+            background-color: #5AC152;
+            
+            &:hover {
+              font-size: 2.2em;
+            }          
+
           }
         }
 
@@ -304,13 +348,14 @@
         display: inline-block;
         width: 170px;
         text-align: center;
+        line-height: 1.5em;
       }
       img {
         width: 50px;
         display: inline-block;
         margin: 20px;
         vertical-align: top;
-        margin-top: 45px;
+        margin-top: 35px;
       }
     }
   }
@@ -395,6 +440,16 @@
 
   .page-container-share {
 
+    hr.mobile-only {
+      display: block;
+      margin: 15px auto;
+      line-height: 30px;
+      background-color: $qzGrey;
+      border: 2px solid $qzGrey;
+      padding: 1.2px 1.4px;
+      width: 100%;
+    }
+
     .top-block-share {
 
     
@@ -438,7 +493,7 @@
       margin: 0px auto;
       margin-bottom: 15px;
       width: 95%;
-      font-size: 2.4em;
+      font-size: 2.2em;
     }
 
     img.mail-icon {
@@ -476,21 +531,25 @@
 
         .action-block-container {
 
+          h3 {
+            font-size: 2.0em;
+          }
+
           button.active {
             background-color: $LightGrey;
           }
 
           button.msg-btn {
-            display: inline-block;
+            display: block;
             background-color: $Navy;
             color: white;
-            font-size: 1.8em;
-            padding: 15px;
+            font-size: 1.6em;
+            padding: 5px;
             border: none;
-            width: 45%;
-            margin: 1.5%;
-            margin-bottom: 25px;
-            min-height: 100px;
+            width: 100%;
+            // margin: 10px;
+            margin-bottom: 10px;
+            min-height: 30px;
             vertical-align: top;
 
 
@@ -509,15 +568,15 @@
                 padding-bottom: 6px;
                 margin: 0px;
                 text-align: left;
-                font-size: 1.8em;
+                font-size: 1.6em;
               }
 
               h4.form-text-to {
                 padding: 2px;
-                padding-top: 18px;
+                padding-top: 10px;
                 margin: 0px;
                 text-align: left;
-                font-size: 1.8em;
+                font-size: 1.6em;
               }
 
               .form-column {
@@ -563,6 +622,7 @@
                   padding: 8px;
                   border: 2px solid $shadowGrey;
                   border-radius: 4px;
+                  font-size: 1.6em;
                 }
 
                 textarea {
@@ -570,16 +630,26 @@
                   padding: 8px;
                   border: none;
                   margin-top: 10px;
-                  height: 200px;
+                  height: 70px;
                   border: 2px solid $shadowGrey;
                   border-radius: 4px;
                   font-size: 1.6em;
+                  overflow-y: scroll;
                 }
 
                 textarea.share-message {
                   width: 96%;
                   padding: 8px;
-                  height: 200px;
+                  height: 270px;
+                  border: 2px solid $shadowGrey;
+                  border-radius: 4px;
+                  margin: 0px;
+                }
+
+                textarea.greeting {
+                  width: 96%;
+                  padding: 8px;
+                  height: 20px;
                   border: 2px solid $shadowGrey;
                   border-radius: 4px;
                   margin: 0px;

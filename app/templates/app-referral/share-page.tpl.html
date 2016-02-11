@@ -4,17 +4,17 @@
 
   <div class="top-block-share">
 
-     
-     <form ng-show="!vm.contestEntered"  ng-submit="vm.enterContest(entry)" class="enter-contest-form">
-        <h3>Step 1:<br>Sign up to get your unique link</h3>
-        <input ng-model="entry.name" placeholder="First name">
-        <input ng-model="entry.email" placeholder="Email address">
-        <button ng-click="goToUtm()">Next step</button>
-      </form>
+    <form ng-show="!vm.contestEntered"  ng-submit="vm.enterContest(entry)" class="enter-contest-form">
+      <h3>Step 1:<br>Sign up to get your unique link</h3>
+      <input ng-model="entry.name" placeholder="First name">
+      <input ng-model="entry.email" placeholder="Email address">
+      <button>Next step</button>
+      <!-- ng-click="goToUtm()" -->
+    </form>
 
-    <h3 class="next-step" ng-show="!vm.contestEntered">Next step: Recieve your own unique share link and craft your messsage!</h3>
+    <h3 class="next-step" ng-show="!vm.contestEntered">Next step: Receive your own unique share link and craft your messsage!</h3>
 
-    <h3 ng-show="vm.contestEntered">Great! Now it's time to put the team on your back.</h3>
+    <h3 ng-show="vm.contestEntered">Welcome to the Primer Sports Share Contest!<br>Here's how it works:</h3>
 
     <img ng-show="vm.contestEntered" class="mail-icon" src="http://i.imgur.com/TIvscbV.png">
 
@@ -59,7 +59,7 @@
 
         <div class="share-form-block">
           
-          <form ng-submit="vm.sendEmail(contacts, vm.referrerEmail, vm.message, vm.linkSource, vm.greeting)">
+          <form ng-submit="vm.sendEmail(contacts, vm.referrerEmail, vm.message, vm.linkSource, vm.greeting, typedContacts)">
 
             <div ng-show="vm.favoriteOptions" class="favorites-options">
 
@@ -74,36 +74,34 @@
               <input ng-model="vm.referrerEmail" placeholder="...">
               <!-- value="{{ vm.referrerEmail }}" -->
 
-              <h4 class="form-text-to">Their email addresses <br>(separated by commas)</h4>
+              <h4 class="form-text-to">Their email addresses: 2 options</h4>
               <!-- <p class="import-text" id="left-import">Import contacts:</p>  -->
 
-              <h4 class="form-text-to">Two options:</h4>
-              <button ng-click="showTypeBox = true">Write my own</button>
+              <!-- <h4 class="form-text-to">Two options:</h4> -->
 
-              <textarea ng-show="showTypeBox">
-                Type Box
-              </textarea>
-
-              <a class="cs_import">
-                <button>Import from Address Book
-                </button>
+              <a class="cs_import" class="import-btn" ng-click="vm.importClicked()">(1) Import from Address Book
               </a>
 
-              <!-- <a href="#">Google</a><a href="#">Yahoo</a>-->
-            
-
-              <textarea ng-model="contacts" id="contact_list">
-                <ul>
-                  <li ng-repeat="contact in contacts">{{ contact.email.address }};
-                  </li>
-                </ul>
+              <textarea placeholder="Imported contacts only. If you prefer to type out recipient addresses, please choose option 2." ng-model="contacts" id="contact_list">
+                
+                <span ng-repeat="contact in contacts">{{ contact.primaryEmail() }}</span>
               </textarea>
+
+              
+              <div ng-click="vm.typeMyOwn()" class="write-own-btn">(2) Type out my contacts</div>
+
+
+
+              <textarea class="type-own-box" ng-model="typedContacts" placeholder="Type as many contacts as you're willing to :) ... please separate email addressed with a comma and a space."></textarea>
+
+              <hr class="mobile-only">
+
             </div>
 
             <div class="form-column">
               
-              <h4 class="form-text">Add a greeting:</h4>
-              <textarea ng-model="vm.greeting" class="share-message">
+              <h4 class="form-text">Add a greeting (optional):</h4>
+              <textarea placeholder="Hey there," ng-model="vm.greeting" class="greeting">
               </textarea>
 
               <h4 class="form-text">Your message:</h4>

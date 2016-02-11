@@ -2,6 +2,11 @@ import _ from 'underscore';
 
 let SharePageController = function($scope, UtmGrabberService, ReferrerService, $state, $location, $window, AdminShareMsgsService) {
   
+
+
+
+
+  // CLOUDSPONGE
   $scope.contacts = [];
   $scope.fullAddressbook = [];
 
@@ -9,6 +14,7 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
     textarea_id: "contact_list",
     mobile_render: true,
     inlineOauth: 'mobile',
+    // include: ["email"],
     beforeDisplayContacts: function (contacts, b, c) {
       $scope.fullAddressbook = contacts;
     },
@@ -22,6 +28,11 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
     a.async=1;a.src=u;m.parentNode.insertBefore(a,m);
   })('//api.cloudsponge.com/widget/48bc871ee2384e8458627dc574cce552f0c03907.js');
 
+  // END OF CLOUDSPONGE
+
+
+
+
   console.log('PAGE URL', UtmGrabberService);
 
   let vm = this;
@@ -34,9 +45,15 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   vm.writeMyOwn       = writeMyOwn;
   vm.select           = select;
   vm.sendEmail        = sendEmail;
+  vm.typeMyOwn        = typeMyOwn;
+
+  function typeMyOwn() {
+    $scope.showTypeBox = !$scope.showTypeBox;
+    console.log($scope.showTypeBox);
+  }
 
 
-  function sendEmail (contacts, referrerEmail, message, linkSource, greeting) {
+  function sendEmail (contacts, referrerEmail, message, linkSource, greeting, typedContacts) {
     console.log('TO:', contacts);
 
     // either way pass an array of emails
@@ -44,13 +61,48 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
     // if contacts is defined, use the toField
     // if contacts is undefined (they didn't use import), then grab the string value of the textarea
 
+    console.log(contacts.length);
+    
+    let toFieldImport = [];
+
+    if (contacts.length > 0 && Array.isArray(contacts) ) {
+      console.log('import was used and contacts in an array');
+      contacts.forEach ( function (contact) {
+        toFieldImport.push(contact.email[0].address);
+      });
+      console.log('TO FIELD FROM IMPORT:', toField);
+    } 
+
+    let toFieldTyped = [];
+
+    if (typedContacts) {
+      console.log('import not used, string was passed instead');
+      // console.log('typed contacts:', typedContacts);
+      let arrTypeYesSpace = typedContacts.split(', ');
+      // let arrTypeNoSpace = typedContacts.split(',');
+      // console.log('ARRAY OF TYPED SPACE:', arrTypeYesSpace);
+      // console.log('ARRAY OF TYPED No SP:', arrTypeNoSpace);
+      toFieldTyped = arrTypeYesSpace;
+      // console.log('toFIELD from typedContacts', toField);
+    }
+
+    console.log('toFIELD from import', toFieldImport);
+    console.log('toFIELD from typed', toFieldTyped);
 
     let toField = [];
 
-    contacts.forEach ( function (contact) {
-      toField.push(contact.email[0].address);
-    });
+    if (toFieldImport.length > 0) {
+      toFieldImport.forEach ( function (email) {
+        toField.push(email);
+      });
+    }
 
+    if (toFieldTyped.length > 0) {
+      toFieldTyped.forEach ( function (email) {
+        toField.push(email);
+      });
+    }
+    
     setTimeout ( function() {
       console.log('TO FIELD', toField);
       console.log('GREETING', greeting);
@@ -67,13 +119,11 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
         link: linkSource
       };
 
-      // vm.x = toField;
+      console.log('EMAIL TO SEND', emailA);
 
-      // repeat= email in toField, {{ email }},
-
-      ReferrerService.sendEmail(emailA).then( (response) => {
-        console.log('RESPONSE', response);
-      });
+      // ReferrerService.sendEmail(emailA).then( (response) => {
+      //   console.log('RESPONSE', response);
+      // });
 
     }, 2000);
 
@@ -139,6 +189,7 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   function goToUtm (url) {
     console.log('GO TO UTM:', url);
     $window.location.hash = url;
+    // Better way to do this?
     $window.location.reload();
   }
 

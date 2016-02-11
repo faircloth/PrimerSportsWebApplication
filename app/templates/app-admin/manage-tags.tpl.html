@@ -1,6 +1,10 @@
 
 <h3>Manage tags</h3>
 
+<button ng-click="vm.getArticles()">Get articles</button>
+
+<button ng-click="vm.getCampaign()">Get campaign</button>
+
 <form ng-submit="vm.addTag(tag)" class="admin-content-form">
 
   <input ng-model="tag.tagName" placeholder="New tag name (e.g., College Football)">
