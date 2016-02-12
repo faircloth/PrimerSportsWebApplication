@@ -638,9 +638,9 @@ var config = function config($urlRouterProvider, $stateProvider) {
   }).state('root.share-leaderboard', {
     url: '/share-leaderboard',
     views: {
-      // navigation: {
-      //   templateUrl: 'templates/app-layout/navigation.tpl.html'
-      // },
+      navigation: {
+        templateUrl: 'templates/app-layout/navigation.tpl.html'
+      },
       content: {
         templateUrl: 'templates/app-referral/share-leaderboard.tpl.html',
         controller: 'ShareLeaderboardController as vm'
@@ -970,9 +970,44 @@ Object.defineProperty(exports, '__esModule', {
 });
 var ShareLeaderboardController = function ShareLeaderboardController($scope, ReferrerService) {
 
-  console.log('ShareLeaderboardController is here');
-
+  // View model
   var vm = this;
+
+  // let allReferrers   = [];
+  // let top10Referrers = [];
+
+  var referrerEmails = [];
+
+  // On page load
+  function checkForEmail() {
+    console.log('check for email');
+
+    // Look in url and see if an email is present, if not show the form
+
+    // They may still be signed up so use form to check that
+  }
+  function getReferrers() {
+    ReferrerService.getReferrers().then(function (response) {
+      console.log('REFERRERS:', response.data.results);
+      var allReferrers = response.data.results;
+      console.log('all referrers:', allReferrers);
+
+      allReferrers.forEach(function (referrer) {
+        console.log('EACH EMAIL:', referrer.source);
+        if (!referrerEmails.includes(referrer.source)) {
+          referrerEmails.push(referrer.source);
+        }
+      });
+
+      vm.referrers = referrerEmails;
+    });
+  }
+
+  checkForEmail();
+  getReferrers();
+
+  // Function definitions
+  // those declared in view model
 };
 
 ShareLeaderboardController.$inject = ['$scope', 'ReferrerService'];
@@ -1285,8 +1320,16 @@ var ReferrerService = function ReferrerService($state, $http, PARSE, HEROKU) {
   this.enterContest = enterContest;
   this.getShareMsgs = getShareMsgs;
   this.sendEmail = sendEmail;
+  this.getReferrers = getReferrers;
 
   // FUNCTIONS
+
+  function getReferrers() {
+    console.log('get referrers called');
+    // pulling from the sharevisits. May need a table for real sends? but some people may copy link
+    return $http.get(url + 'sharevisit', PARSE.CONFIG);
+  }
+
   function sendEmail(email) {
     console.log('EMAIL TO SEND', email);
     console.log('MANDRILL URL:', mandrillURL);

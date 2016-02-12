@@ -1,1 +1,17 @@
 <h2>Share leaderboard</h2>
+
+
+<div ng-show="!vm.emailPresent">
+  <form>
+    <h3>If you have not signed up yet, please join us:<a href="/share">Sign up</a></h3>
+    <input placeholder="Your email address">
+    <button>Check my stats</button>
+  </form>
+</div>
+
+<div class="top-10-block">
+  <h2>All referrers:</h2>
+  <div class="mvp-block" ng-repeat="mvp in vm.referrers">
+    <h3>{{ mvp }}</h3>
+  </div>
+</div>

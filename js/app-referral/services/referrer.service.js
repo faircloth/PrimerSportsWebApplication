@@ -12,9 +12,18 @@ let ReferrerService = function($state, $http, PARSE, HEROKU) {
   this.enterContest = enterContest;
   this.getShareMsgs = getShareMsgs;
   this.sendEmail    = sendEmail;
+  this.getReferrers = getReferrers;
 
 
   // FUNCTIONS
+  
+  function getReferrers () {
+    console.log('get referrers called');
+    // pulling from the sharevisits. May need a table for real sends? but some people may copy link
+    return $http.get(url + 'sharevisit', PARSE.CONFIG);
+  }
+
+
   function sendEmail (email) {
     console.log('EMAIL TO SEND', email);
     console.log('MANDRILL URL:', mandrillURL);

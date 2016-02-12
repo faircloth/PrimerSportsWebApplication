@@ -46,9 +46,9 @@ let config = function($urlRouterProvider, $stateProvider) {
     .state('root.share-leaderboard', {
       url: '/share-leaderboard',
       views: {
-        // navigation: {
-        //   templateUrl: 'templates/app-layout/navigation.tpl.html'
-        // },
+        navigation: {
+          templateUrl: 'templates/app-layout/navigation.tpl.html'
+        },
         content: {
           templateUrl: 'templates/app-referral/share-leaderboard.tpl.html',
           controller: 'ShareLeaderboardController as vm'
