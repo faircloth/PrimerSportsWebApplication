@@ -43,6 +43,18 @@ let config = function($urlRouterProvider, $stateProvider) {
         }
       }
     })
+    .state('root.share-leaderboard', {
+      url: '/share-leaderboard',
+      views: {
+        // navigation: {
+        //   templateUrl: 'templates/app-layout/navigation.tpl.html'
+        // },
+        content: {
+          templateUrl: 'templates/app-referral/share-leaderboard.tpl.html',
+          controller: 'ShareLeaderboardController as vm'
+        }
+      }
+    })
     .state('root.admin-signin', {
       url: '/admin-signin',
       views: {
@@ -134,7 +146,7 @@ let config = function($urlRouterProvider, $stateProvider) {
       }
     })
     .state('root.landing-a', {
-      url: '/landing-a',
+      url: '/signup',
       views: {
         content: {
           controller: 'LandingPageAController as vm',

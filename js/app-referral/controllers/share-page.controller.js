@@ -204,7 +204,7 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   // http://primer-webapp.surge.sh/#/landing-a?utm_source=
 
   let landingPages = {
-    A: 'http://primer-webapp.surge.sh/#/landing-a?utm_source=',
+    A: 'http://primer-webapp.surge.sh/#/signup?utm_source=',
     B: 'http://primer-webapp.surge.sh/#/landing-b?utm_source=',
   };
 
