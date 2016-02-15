@@ -17,6 +17,7 @@ let AdminShareMsgController = function($scope, AdminShareMsgsService, $state) {
   vm.categories = [
     'Quick pitch',
     'Favorite part of Primer',
+    'Write my own'
   ];
 
   function getShareMsgs () {

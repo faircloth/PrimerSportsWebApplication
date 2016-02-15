@@ -58,7 +58,7 @@ var AdminShareMsgController = function AdminShareMsgController($scope, AdminShar
   vm.createShareMsg = createShareMsg;
   vm.submitMsgEdits = submitMsgEdits;
 
-  vm.categories = ['Quick pitch', 'Favorite part of Primer'];
+  vm.categories = ['Quick pitch', 'Favorite part of Primer', 'Write my own'];
 
   function getShareMsgs() {
     AdminShareMsgsService.getShareMsgs().then(function (response) {
@@ -1217,12 +1217,6 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
 
   function sendEmail(contacts, referrerEmail, text1, text2, linkSource, greeting, typedContacts, referrerName) {
     console.log('TO:', contacts);
-
-    // either way pass an array of emails
-    // based the data on which method they use
-    // if contacts is defined, use the toField
-    // if contacts is undefined (they didn't use import), then grab the string value of the textarea
-
     console.log(contacts.length);
 
     var toFieldImport = [];
@@ -1280,17 +1274,27 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
         link: linkSource
       };
 
-      ReferrerService.sendEmail(emailA).then(function (response) {
-        console.log('RESPONSE', response);
-        $state.go('root.thanks', { email: referrerEmail });
-      }, function () {
-        console.log('error called');
-        console.log('error!');
-        vm.sendError = true;
-        setTimeout(function () {
-          $window.location.reload();
-        }, 2000);
-      });
+      if (!referrerEmail.includes('@')) {
+        alert('Error: You must provide a valid email for yourself.');
+      } else if (toField.length === 0) {
+        alert('Error: Please enter at least one recipient email address.');
+      } else if (referrerName.length <= 1) {
+        alert('Error: Please enter your first name so we can add it to your message.');
+      } else if (!text1) {
+        alert('Error: Please write a short message to include in your share email.');
+      } else {
+        ReferrerService.sendEmail(emailA).then(function (response) {
+          console.log('RESPONSE', response);
+          $state.go('root.thanks', { email: referrerEmail });
+        }, function () {
+          console.log('error called');
+          console.log('error!');
+          vm.sendError = true;
+          // setTimeout( function () {
+          //   $window.location.reload();
+          // }, 2000);
+        });
+      }
     }, 2000);
   }
 
@@ -1318,11 +1322,12 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
           console.log('FAVORITE PARTS:', vm.favoriteParts);
         }
         if (!vm.categories.includes(message.category)) {
-          vm.categories.unshift(message.category);
+          vm.categories.push(message.category);
           console.log('CATEGORY LIST:', vm.categories);
         }
       });
     });
+    vm.favoriteParts = vm.favoriteParts.reverse();
   }
 
   function getMessage(categoryName) {
@@ -1394,7 +1399,7 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
 
         var startingPoint = pageInfo.pageUrl.indexOf('#/');
         var extension = pageInfo.pageUrl.substring(startingPoint + 2);
-        var newUrlExtension = extension + '?utm_source=' + entry.email + '&utm_medium=newsignup' + '&utm_campaign=' + entry.name;
+        var newUrlExtension = extension + '?utm_source=' + entry.email + '&utm_medium=newsignup' + '&utm_campaign=' + entry.name.replace(/\s+/g, '');
 
         ReferrerService.enterContest(entry).then(function (response) {
           console.log(response);

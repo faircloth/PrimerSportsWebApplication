@@ -3880,7 +3880,7 @@ button.standalone-btn {
           .page-container-share .action-block-share .action-block-container .share-form-block form .form-column textarea.share-message1 {
             width: 96%;
             padding: 8px;
-            height: 120px;
+            height: 150px;
             border: 2px solid #C0C2C2;
             border-bottom: none;
             border-radius: 0px;
@@ -3888,7 +3888,7 @@ button.standalone-btn {
           .page-container-share .action-block-share .action-block-container .share-form-block form .form-column textarea.share-message2 {
             width: 96%;
             padding: 8px;
-            height: 120px;
+            height: 150px;
             border: 2px solid #C0C2C2;
             border-top: none;
             border-radius: 0px;
