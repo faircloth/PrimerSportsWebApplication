@@ -53,7 +53,7 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   }
 
 
-  function sendEmail (contacts, referrerEmail, message, linkSource, greeting, typedContacts) {
+  function sendEmail (contacts, referrerEmail, text1, text2, linkSource, greeting, typedContacts, referrerName) {
     console.log('TO:', contacts);
 
     // either way pass an array of emails
@@ -107,34 +107,30 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
       console.log('TO FIELD', toField);
       console.log('GREETING', greeting);
       console.log('REFERRER EMAIL:', referrerEmail);
-      console.log('SHARE MESSAGE:', message);
       let emailA = {
         greeting: greeting,
         list: toField,
         email: referrerEmail,
-        text: message,
-        text2: 'text2 message',
-        name: 'Andrew',
+        text: text1,
+        text2: text2,
+        name: referrerName,
         image: '',
         link: linkSource
       };
+      
 
-      console.log('EMAIL TO SEND', emailA);
-
-      if (!ReferrerService.sendEmail(emailA).$$state.value) {
+      ReferrerService.sendEmail(emailA).then( function (response) {
+        console.log('RESPONSE', response);
+        $state.go('root.thanks', {email: referrerEmail});
+      },
+      function () {
+        console.log('error called');
         console.log('error!');
         vm.sendError = true;
         setTimeout( function () {
-           $window.location.reload();
+          $window.location.reload();
         }, 2000);
-      } else {
-        ReferrerService.sendEmail(emailA).then( (response) => {
-          console.log('RESPONSE', response);
-          if (response.statusText === "OK") {
-            $state.go('root.thanks', {email: referrerEmail});
-          } 
-        });
-      }
+      });
 
 
 
@@ -159,8 +155,8 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
       vm.shareMessages = response.data.results;
       let quickPitch = _.findWhere(vm.shareMessages, {category: 'Quick pitch'});
       console.log(quickPitch);
-      vm.message = quickPitch.text;
-
+      vm.text1 = quickPitch.text1;
+      vm.text2 = quickPitch.text2;
       // Build category list and array of favorites messages
       vm.shareMessages.forEach( function (message) {
         if (message.category === favoriteLabel) {
@@ -183,13 +179,15 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
       vm.favoriteOptions = false;
       let selectedMessage = _.findWhere(vm.shareMessages, {category: categoryName});
       console.log('SELECTED MESSAGE:', selectedMessage );
-      vm.message = selectedMessage.text;
+      vm.text1 = selectedMessage.text1;
+      vm.text2 = selectedMessage.text2;
     }
   }
 
   function select (favoritePart) {
     console.log(favoritePart);
-    vm.message = favoritePart.text;
+    vm.text1 = favoritePart.text1;
+    vm.text2 = favoritePart.text2;
   }
 
 
@@ -223,6 +221,7 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
 
 
   vm.referrerEmail  = pageInfo.source;
+  vm.referrerName   = pageInfo.campaign;
   vm.linkSource     = landingPages.A + pageInfo.source;
 
   registerPageVisit (pageInfo);
@@ -245,7 +244,7 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
 
       let startingPoint = pageInfo.pageUrl.indexOf('#/');
       let extension = pageInfo.pageUrl.substring(startingPoint + 2);
-      let newUrlExtension = extension + '?utm_source=' + entry.email + '&utm_medium=newsignup' + '&utm_campaign=0';
+      let newUrlExtension = extension + '?utm_source=' + entry.email + '&utm_medium=newsignup' + '&utm_campaign=' + entry.name;
       
       ReferrerService.enterContest(entry).then( (response) => {
         console.log(response);

@@ -1215,7 +1215,7 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
     console.log($scope.showTypeBox);
   }
 
-  function sendEmail(contacts, referrerEmail, message, linkSource, greeting, typedContacts) {
+  function sendEmail(contacts, referrerEmail, text1, text2, linkSource, greeting, typedContacts, referrerName) {
     console.log('TO:', contacts);
 
     // either way pass an array of emails
@@ -1269,34 +1269,28 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
       console.log('TO FIELD', toField);
       console.log('GREETING', greeting);
       console.log('REFERRER EMAIL:', referrerEmail);
-      console.log('SHARE MESSAGE:', message);
       var emailA = {
         greeting: greeting,
         list: toField,
         email: referrerEmail,
-        text: message,
-        text2: 'text2 message',
-        name: 'Andrew',
+        text: text1,
+        text2: text2,
+        name: referrerName,
         image: '',
         link: linkSource
       };
 
-      console.log('EMAIL TO SEND', emailA);
-
-      if (!ReferrerService.sendEmail(emailA).$$state.value) {
+      ReferrerService.sendEmail(emailA).then(function (response) {
+        console.log('RESPONSE', response);
+        $state.go('root.thanks', { email: referrerEmail });
+      }, function () {
+        console.log('error called');
         console.log('error!');
         vm.sendError = true;
         setTimeout(function () {
           $window.location.reload();
         }, 2000);
-      } else {
-        ReferrerService.sendEmail(emailA).then(function (response) {
-          console.log('RESPONSE', response);
-          if (response.statusText === "OK") {
-            $state.go('root.thanks', { email: referrerEmail });
-          }
-        });
-      }
+      });
     }, 2000);
   }
 
@@ -1315,8 +1309,8 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
       vm.shareMessages = response.data.results;
       var quickPitch = _underscore2['default'].findWhere(vm.shareMessages, { category: 'Quick pitch' });
       console.log(quickPitch);
-      vm.message = quickPitch.text;
-
+      vm.text1 = quickPitch.text1;
+      vm.text2 = quickPitch.text2;
       // Build category list and array of favorites messages
       vm.shareMessages.forEach(function (message) {
         if (message.category === favoriteLabel) {
@@ -1339,13 +1333,15 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
       vm.favoriteOptions = false;
       var selectedMessage = _underscore2['default'].findWhere(vm.shareMessages, { category: categoryName });
       console.log('SELECTED MESSAGE:', selectedMessage);
-      vm.message = selectedMessage.text;
+      vm.text1 = selectedMessage.text1;
+      vm.text2 = selectedMessage.text2;
     }
   }
 
   function select(favoritePart) {
     console.log(favoritePart);
-    vm.message = favoritePart.text;
+    vm.text1 = favoritePart.text1;
+    vm.text2 = favoritePart.text2;
   }
 
   function writeMyOwn() {
@@ -1375,6 +1371,7 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
   };
 
   vm.referrerEmail = pageInfo.source;
+  vm.referrerName = pageInfo.campaign;
   vm.linkSource = landingPages.A + pageInfo.source;
 
   registerPageVisit(pageInfo);
@@ -1397,7 +1394,7 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
 
         var startingPoint = pageInfo.pageUrl.indexOf('#/');
         var extension = pageInfo.pageUrl.substring(startingPoint + 2);
-        var newUrlExtension = extension + '?utm_source=' + entry.email + '&utm_medium=newsignup' + '&utm_campaign=0';
+        var newUrlExtension = extension + '?utm_source=' + entry.email + '&utm_medium=newsignup' + '&utm_campaign=' + entry.name;
 
         ReferrerService.enterContest(entry).then(function (response) {
           console.log(response);

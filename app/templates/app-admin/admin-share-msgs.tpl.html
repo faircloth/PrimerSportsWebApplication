@@ -19,7 +19,11 @@
       <option>No</option>
     </select>
   </div>
-  <textarea ng-model="shareMessage.text" placeholder="Text that will be emailed"></textarea>
+  <div class="form-row">
+    <input ng-model="shareMessage.imageUrl" placeholder="Image url">
+  </div>
+  <textarea ng-model="shareMessage.text1" placeholder="Paragraph 1 that will be emailed"></textarea>
+  <textarea ng-model="shareMessage.text2" placeholder="Paragraph 2 that will be emailed"></textarea>
 
 <!-- 
   <form method="post">
@@ -40,6 +44,7 @@
       <option value="">Select a category</option>
       <option ng-repeat="category in vm.categories">{{ category }}</option>
     </select>
+    <br>
     <span>Image</span>
     <select class="new-share-img" ng-model="shareMsg.hasImage">
       <option value="">Select yes or no</option>
@@ -47,6 +52,8 @@
       <option>No</option>
     </select>
   </div>
-  <textarea ng-model="shareMsg.text">{{ shareMsg.text }}</textarea>
+  <textarea ng-model="shareMsg.text1">{{ shareMsg.text1 }}</textarea>
+  <img ng-show="shareMsg.imageUrl" ng-src="shareMsg.imageUrl">
+  <textarea ng-model="shareMsg.text2">{{ shareMsg.text2 }}</textarea>
   <button ng-click="vm.submitMsgEdits(shareMsg)">Save edits</button>
 </div>

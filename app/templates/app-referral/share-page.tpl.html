@@ -63,7 +63,7 @@
             <h3>Ooops! Something went wrong. Let's try that again.</h3>
           </div>
           
-          <form ng-show="!vm.sendError" ng-submit="vm.sendEmail(contacts, vm.referrerEmail, vm.message, vm.linkSource, vm.greeting, typedContacts)">
+          <form ng-show="!vm.sendError">
 
 
             <div ng-show="vm.favoriteOptions" class="favorites-options">
@@ -75,6 +75,8 @@
             </div>
 
             <div class="form-column">
+              <h4 class="form-text">Your first name</h4>
+              <input ng-model="vm.referrerName" placeholder="...">
               <h4 class="form-text">Your email address</h4>
               <input ng-model="vm.referrerEmail" placeholder="...">
               <!-- value="{{ vm.referrerEmail }}" -->
@@ -110,14 +112,15 @@
               </textarea>
 
               <h4 class="form-text">Your message:</h4>
-              <textarea ng-model="vm.message" class="share-message">
+              <textarea ng-model="vm.text1" class="share-message1">{{ vm.text1 }}</textarea>
+              <textarea ng-show="vm.text2" ng-model="vm.text2" class="share-message2">{{ vm.text2 }}
               </textarea>
               <span>We'll insert your link in the message for you
                 <!-- <a href="{{ vm.linkSource }}">Sign up using my link</a> -->
               </span>
             </div>
 
-            <button class="btn-submit-share">Share Primer</button>
+            <button ng-click="vm.sendEmail(contacts, vm.referrerEmail, vm.text1, vm.text2, vm.linkSource, vm.greeting, typedContacts, vm.referrerName)" class="btn-submit-share">Share Primer</button>
           </form>
           
         </div>

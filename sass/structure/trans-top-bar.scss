@@ -25,12 +25,23 @@
   // top: 50px;
 
   .top-bar-logo {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     padding: 0px;
     display: inline-block;
     position: absolute;
     top: 10px;
+    // bottom: 0;
+    left: 10px;
+  }
+
+  img.primer-banner-img {
+    width: 30%;
+    min-width: 150px;
+    padding: 0px;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
     right: 2.5%;
   }
 
@@ -59,10 +70,11 @@
     // display: inline-block;
     list-style-type: none;
     vertical-align: top;
-    height: 50px;
-    line-height: 50px;
-    margin-left: 0px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 5px;
     padding-left: 10px;
+    margin-top: 110px;
     // float: right;
 
     // &.left {
@@ -80,7 +92,7 @@
       // display: inline-block;
       color: white;
       max-width: 240px;
-      padding-left: 5px;
+      padding-left: 3px;
       margin: 0px;
       text-align: left;
       vertical-align: top;
