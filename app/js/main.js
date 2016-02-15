@@ -980,14 +980,14 @@ var ShareLeaderboardController = function ShareLeaderboardController($scope, Ref
   // View model
   var vm = this;
   vm.sortByVisits = sortByVisits;
-
-  // let allReferrers   = [];
-  // let top10Referrers = [];
+  vm.sortByConversions = sortByConversions;
+  vm.sortAlpha = sortAlpha;
 
   var referrerEmails = []; // Data object to populate the table
   var referrerList = []; // Raw list of emails including duplicates for landing visits
   var uniqueReferrers = []; // Non-duplicates list
   var realReferrers = []; // Only referrers who signed up
+  var conversions = [];
 
   // On page load
   function checkForEmail() {
@@ -997,41 +997,56 @@ var ShareLeaderboardController = function ShareLeaderboardController($scope, Ref
 
     // They may still be signed up so use form to check that
   }
-  function getReferrers() {
-    ReferrerService.getReferrers().then(function (response) {
-      // DATA OBJECTS FROM PARSE SERVER
-      var allReferrers = response.data.results;
 
-      allReferrers.forEach(function (referrer) {
-        // List of emails including duplicates
-        referrerList.push(referrer.source);
-        if (referrer.source.indexOf('#') === -1) {
-          realReferrers.push(referrer.source);
-        }
-        uniqueReferrers = _underscore2['default'].uniq(realReferrers);
+  ReferrerService.getConversions().then(function (response) {
+    var allConversions = response.data.results;
+    console.log(allConversions);
+    allConversions.forEach(function (conversion) {
+      conversions.push(conversion.source);
+    });
+  });
+
+  ReferrerService.getReferrers().then(function (response) {
+    // DATA OBJECTS FROM PARSE SERVER
+    var allReferrers = response.data.results;
+
+    allReferrers.forEach(function (referrer) {
+      // List of emails including duplicates
+      referrerList.push(referrer.source);
+      if (referrer.source.indexOf('#') === -1) {
+        realReferrers.push(referrer.source);
+      }
+      uniqueReferrers = _underscore2['default'].uniq(realReferrers);
+    });
+    getReferrers();
+  });
+
+  checkForEmail();
+
+  function getReferrers() {
+    // If the page visit is coming from a referrer
+    uniqueReferrers.forEach(function (referrer) {
+      var thisReferrer = referrer;
+      var filter = _underscore2['default'].filter(realReferrers, function (referrer) {
+        return referrer === thisReferrer;
       });
 
-      // If the page visit is coming from a referrer
-      uniqueReferrers.forEach(function (referrer) {
-        var thisReferrer = referrer;
-        var filter = _underscore2['default'].filter(realReferrers, function (referrer) {
-          return referrer === thisReferrer;
-        });
+      var conversionFilter = _underscore2['default'].filter(conversions, function (converter) {
+        return referrer === converter;
+      });
 
-        referrerEmails.push({
-          email: referrer,
-          visits: filter.length
-        });
+      referrerEmails.push({
+        email: referrer,
+        visits: filter.length,
+        conversions: conversionFilter.length
       });
     });
 
-    // conversions:
-    vm.referrers = referrerEmails;
-    vm.uniqueReferrers = uniqueReferrers;
+    sortByVisits();
   }
 
-  checkForEmail();
-  getReferrers();
+  vm.referrers = referrerEmails;
+  vm.uniqueReferrers = uniqueReferrers;
 
   // Function definitions
   // those declared in view model
@@ -1040,6 +1055,16 @@ var ShareLeaderboardController = function ShareLeaderboardController($scope, Ref
     var sortedReferrers = _underscore2['default'].sortBy(referrerEmails, 'visits').reverse();
     console.log(sortedReferrers);
     vm.referrers = sortedReferrers;
+  }
+
+  function sortByConversions() {
+    var sortedConversions = _underscore2['default'].sortBy(referrerEmails, 'conversions').reverse();
+    vm.referrers = sortedConversions;
+  }
+
+  function sortAlpha() {
+    var sortedAlpha = _underscore2['default'].sortBy(referrerEmails, 'email');
+    vm.referrers = sortedAlpha;
   }
 };
 
@@ -1354,8 +1379,13 @@ var ReferrerService = function ReferrerService($state, $http, PARSE, HEROKU) {
   this.getShareMsgs = getShareMsgs;
   this.sendEmail = sendEmail;
   this.getReferrers = getReferrers;
+  this.getConversions = getConversions;
 
   // FUNCTIONS
+
+  function getConversions() {
+    return $http.get(url + 'landingConversion', PARSE.CONFIG);
+  }
 
   function getReferrers() {
     console.log('get referrers called');

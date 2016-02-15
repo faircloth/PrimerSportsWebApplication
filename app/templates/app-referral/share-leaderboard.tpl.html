@@ -11,7 +11,9 @@
   </form>
 </div>
 
+<button ng-click="vm.sortAlpha()">Sort by email</button>
 <button ng-click="vm.sortByVisits()">Sort by visits</button>
+<button ng-click="vm.sortByConversions()">Sort by conversions</button>
 
 <div class="top-10-block">
   <h2>All referrers:</h2>
@@ -20,11 +22,11 @@
       <th>Email</th>
       <th>Landing page visits</th>
       <th>Conversions</th>
-
     </tr>
     <tr ng-repeat="mvp in vm.referrers">
       <td>{{ mvp.email }}</td>
       <td>{{ mvp.visits }}</td>
+      <td>{{ mvp.conversions }}</td>
     </tr>
   </table>
 </div>

@@ -7,16 +7,22 @@ let ReferrerService = function($state, $http, PARSE, HEROKU) {
   let mandrillURL = HEROKU.URL + 'invites';
 
   // SERVICE PROPERTIES & FUNCTIONS
-  this.shareVisit   = shareVisit;
-  this.addReferrer  = addReferrer;
-  this.enterContest = enterContest;
-  this.getShareMsgs = getShareMsgs;
-  this.sendEmail    = sendEmail;
-  this.getReferrers = getReferrers;
+  this.shareVisit     = shareVisit;
+  this.addReferrer    = addReferrer;
+  this.enterContest   = enterContest;
+  this.getShareMsgs   = getShareMsgs;
+  this.sendEmail      = sendEmail;
+  this.getReferrers   = getReferrers;
+  this.getConversions = getConversions;
 
 
   // FUNCTIONS
   
+  function getConversions () {
+    return $http.get(url + 'landingConversion', PARSE.CONFIG);
+  }
+
+
   function getReferrers () {
     console.log('get referrers called');
     // pulling from the sharevisits. May need a table for real sends? but some people may copy link
