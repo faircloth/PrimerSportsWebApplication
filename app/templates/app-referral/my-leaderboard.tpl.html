@@ -1,0 +1,22 @@
+<h3>{{ vm.email }}</h3>
+<h3>Share stats:</h3>
+
+
+<div class="top-10-block">
+  <h3>All referrers:</h3>
+  <table class="mvp-block">
+    <tr>
+      <th>Landing page visits</th>
+      <th>Conversions</th>
+    </tr>
+    <tr>
+      <td>{{ vm.score.visits }}</td>
+      <td>{{ vm.score.conversions }}</td>
+    </tr>
+  </table>
+</div>
+
+<h3>See who you've converted!</h3>
+<ul>
+  <li ng-repeat="convert in vm.score.converts">{{ convert }}</li>
+</ul>

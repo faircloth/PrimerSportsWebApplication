@@ -1,12 +1,13 @@
 import _ from 'underscore';
 
-let ShareLeaderboardController = function($scope, ReferrerService) {
+let ShareLeaderboardController = function($scope, ReferrerService, $state) {
   
   // View model
   let vm = this;
   vm.sortByVisits      = sortByVisits;
   vm.sortByConversions = sortByConversions;
   vm.sortAlpha         = sortAlpha;
+  vm.goToMyPage        = goToMyPage;
 
   let referrerEmails = []; // Data object to populate the table
   let referrerList = []; // Raw list of emails including duplicates for landing visits
@@ -15,13 +16,6 @@ let ShareLeaderboardController = function($scope, ReferrerService) {
   let conversions = [];
   
   // On page load
-  function checkForEmail () {
-    console.log('check for email');
-    
-    // Look in url and see if an email is present, if not show the form
-
-    // They may still be signed up so use form to check that
-  }
   
   ReferrerService.getConversions().then( (response) => {
     let allConversions = response.data.results;
@@ -47,8 +41,6 @@ let ShareLeaderboardController = function($scope, ReferrerService) {
   });
 
 
-  checkForEmail();
-
   function getReferrers () {
     // If the page visit is coming from a referrer
     uniqueReferrers.forEach( function (referrer) {
@@ -69,7 +61,7 @@ let ShareLeaderboardController = function($scope, ReferrerService) {
 
     });    
 
-    sortByVisits();
+    sortByConversions();
     
   }
 
@@ -96,8 +88,12 @@ let ShareLeaderboardController = function($scope, ReferrerService) {
     vm.referrers = sortedAlpha;
   }
 
+  function goToMyPage (email) {
+    $state.go('root.my-leaderboard', {email: email });
+  }
+
 };
 
-ShareLeaderboardController.$inject = ['$scope', 'ReferrerService'];
+ShareLeaderboardController.$inject = ['$scope', 'ReferrerService', '$state'];
 
 export default ShareLeaderboardController;

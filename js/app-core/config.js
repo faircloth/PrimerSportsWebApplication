@@ -55,6 +55,18 @@ let config = function($urlRouterProvider, $stateProvider) {
         }
       }
     })
+    .state('root.my-leaderboard', {
+      url: '/my-leaderboard/:email',
+      views: {
+        navigation: {
+          templateUrl: 'templates/app-layout/navigation.tpl.html'
+        },
+        content: {
+          templateUrl: 'templates/app-referral/my-leaderboard.tpl.html',
+          controller: 'MyLeaderboard as vm'
+        }
+      }
+    })
     .state('root.admin-signin', {
       url: '/admin-signin',
       views: {

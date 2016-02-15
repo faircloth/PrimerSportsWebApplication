@@ -5,6 +5,7 @@ import angular from 'angular';
 // CONTROLLERS
 import SharePageController from './controllers/share-page.controller';
 import ShareLeaderboardController from './controllers/share-leaderboard.controller';
+import MyLeaderboard from './controllers/my-leaderboard.controller';
 
 // SERVICES
 import UtmGrabberService from './services/utm-grabber.service';
@@ -15,6 +16,7 @@ angular
 
   .controller('SharePageController', SharePageController)
   .controller('ShareLeaderboardController', ShareLeaderboardController)
+  .controller('MyLeaderboard', MyLeaderboard)
 
   .service('UtmGrabberService', UtmGrabberService)
   .service('ReferrerService', ReferrerService)

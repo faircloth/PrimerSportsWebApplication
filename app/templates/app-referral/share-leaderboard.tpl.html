@@ -2,11 +2,12 @@
 
 
 <div ng-show="!vm.emailPresent">
-  <form>
-    <h3>If you have not signed up yet, please join us:<a href="#/share">Sign up</a></h3>
+  <form class="leader-form" ng-submit="vm.goToMyPage(email)">
+    <h4>If you have not signed up yet, please join us:<a href="#/share">Sign up</a></h4>
 
-    <h3>If you are signed up, check out how you are doing:</h3>
-    <input placeholder="Your email address">
+    <h4>If you are signed up, check out how you are doing:</h4>
+    <input ng-model="email" type="email" placeholder="Your email address">
+    <br>
     <button>Check my stats</button>
   </form>
 </div>

@@ -18,6 +18,7 @@ let ReferrerService = function($state, $http, PARSE, HEROKU) {
 
   // FUNCTIONS
   
+
   function getConversions () {
     return $http.get(url + 'landingConversion', PARSE.CONFIG);
   }
