@@ -287,7 +287,7 @@ var _servicesAdminShareMsgsService2 = _interopRequireDefault(_servicesAdminShare
 
 _angular2['default'].module('app.admin', ['ui.tinymce']).controller('AdminSigninController', _controllersAdminSigninController2['default']).controller('AdminSignupController', _controllersAdminSignupController2['default']).controller('CreateArticleController', _controllersCreateArticleController2['default']).controller('ManageTagsController', _controllersManageTagsController2['default']).controller('AdminHomeController', _controllersAdminHomeController2['default']).controller('AdminShareMsgController', _controllersAdminShareMsgsController2['default']).service('AdminService', _servicesAdminService2['default']).service('ContentMgmtService', _servicesContentManagementService2['default']).service('AdminShareMsgsService', _servicesAdminShareMsgsService2['default']);
 
-},{"./controllers/admin-home.controller":1,"./controllers/admin-share-msgs.controller":2,"./controllers/admin-signin.controller":3,"./controllers/admin-signup.controller":4,"./controllers/create-article.controller":5,"./controllers/manage-tags.controller":6,"./services/admin-share-msgs.service":8,"./services/admin.service":9,"./services/content-management.service":10,"angular":36,"angular-ui-tinymce/src/tinymce":34}],8:[function(require,module,exports){
+},{"./controllers/admin-home.controller":1,"./controllers/admin-share-msgs.controller":2,"./controllers/admin-signin.controller":3,"./controllers/admin-signup.controller":4,"./controllers/create-article.controller":5,"./controllers/manage-tags.controller":6,"./services/admin-share-msgs.service":8,"./services/admin.service":9,"./services/content-management.service":10,"angular":37,"angular-ui-tinymce/src/tinymce":35}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -543,7 +543,7 @@ HomepageController.$inject = ['$scope'];
 exports['default'] = HomepageController;
 module.exports = exports['default'];
 
-},{"jquery":37}],14:[function(require,module,exports){
+},{"jquery":38}],14:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -574,7 +574,7 @@ var _servicesContentService2 = _interopRequireDefault(_servicesContentService);
 
 _angular2['default'].module('app.content', []).controller('HomepageController', _controllersHomepageController2['default']).controller('ArchivesController', _controllersArchivesController2['default']).controller('AboutController', _controllersAboutController2['default']).service('ContentService', _servicesContentService2['default']);
 
-},{"./controllers/about.controller":11,"./controllers/archives.controller":12,"./controllers/homepage.controller":13,"./services/content.service":15,"angular":36}],15:[function(require,module,exports){
+},{"./controllers/about.controller":11,"./controllers/archives.controller":12,"./controllers/homepage.controller":13,"./services/content.service":15,"angular":37}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -655,6 +655,17 @@ var config = function config($urlRouterProvider, $stateProvider) {
       content: {
         templateUrl: 'templates/app-referral/my-leaderboard.tpl.html',
         controller: 'MyLeaderboard as vm'
+      }
+    }
+  }).state('root.thanks', {
+    url: '/thank-you/:email',
+    views: {
+      navigation: {
+        templateUrl: 'templates/app-layout/navigation.tpl.html'
+      },
+      content: {
+        templateUrl: 'templates/app-referral/thank-you.tpl.html',
+        controller: 'ThankYouController as vm'
       }
     }
   }).state('root.admin-signin', {
@@ -832,7 +843,7 @@ var _constantsParseConstant2 = _interopRequireDefault(_constantsParseConstant);
 
 _angular2['default'].module('app.core', ['ui.router', 'mm.foundation', 'ngCookies']).config(_config2['default']).constant('HEROKU', _constantsHerokuConstant2['default']).constant('PARSE', _constantsParseConstant2['default']);
 
-},{"./config":16,"./constants/heroku.constant":17,"./constants/parse.constant":18,"angular":36,"angular-cookies":31,"angular-foundation":32,"angular-ui-router":33}],20:[function(require,module,exports){
+},{"./config":16,"./constants/heroku.constant":17,"./constants/parse.constant":18,"angular":37,"angular-cookies":32,"angular-foundation":33,"angular-ui-router":34}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -923,7 +934,7 @@ var _servicesConversionService2 = _interopRequireDefault(_servicesConversionServ
 
 _angular2['default'].module('app.landing', []).controller('LandingPageAController', _controllersLandingPageAController2['default']).service('ConversionService', _servicesConversionService2['default']);
 
-},{"./controllers/landing-page-a.controller":20,"./services/conversion.service":22,"angular":36}],22:[function(require,module,exports){
+},{"./controllers/landing-page-a.controller":20,"./services/conversion.service":22,"angular":37}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1036,7 +1047,7 @@ MyLeaderboard.$inject = ['$scope', '$state', '$stateParams', 'ReferrerService'];
 exports['default'] = MyLeaderboard;
 module.exports = exports['default'];
 
-},{"underscore":38}],24:[function(require,module,exports){
+},{"underscore":39}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1143,7 +1154,7 @@ ShareLeaderboardController.$inject = ['$scope', 'ReferrerService', '$state'];
 exports['default'] = ShareLeaderboardController;
 module.exports = exports['default'];
 
-},{"underscore":38}],25:[function(require,module,exports){
+},{"underscore":39}],25:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1272,9 +1283,20 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
 
       console.log('EMAIL TO SEND', emailA);
 
-      // ReferrerService.sendEmail(emailA).then( (response) => {
-      //   console.log('RESPONSE', response);
-      // });
+      if (!ReferrerService.sendEmail(emailA).$$state.value) {
+        console.log('error!');
+        vm.sendError = true;
+        setTimeout(function () {
+          $window.location.reload();
+        }, 2000);
+      } else {
+        ReferrerService.sendEmail(emailA).then(function (response) {
+          console.log('RESPONSE', response);
+          if (response.statusText === "OK") {
+            $state.go('root.thanks', { email: referrerEmail });
+          }
+        });
+      }
     }, 2000);
   }
 
@@ -1396,7 +1418,38 @@ SharePageController.$inject = ['$scope', 'UtmGrabberService', 'ReferrerService',
 exports['default'] = SharePageController;
 module.exports = exports['default'];
 
-},{"underscore":38}],26:[function(require,module,exports){
+},{"underscore":39}],26:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var ThankYouController = function ThankYouController($scope, $stateParams, $state) {
+
+  console.log('yo');
+
+  var vm = this;
+
+  vm.goToLeaderboard = goToLeaderboard;
+  vm.goToMyScore = goToMyScore;
+
+  vm.email = $stateParams.email;
+
+  function goToLeaderboard() {
+    $state.go('root.share-leaderboard');
+  }
+
+  function goToMyScore(email) {
+    $state.go('root.my-leaderboard', { email: email });
+  }
+};
+
+ThankYouController.$inject = ['$scope', '$stateParams', '$state'];
+
+exports['default'] = ThankYouController;
+module.exports = exports['default'];
+
+},{}],27:[function(require,module,exports){
 // Angular modules
 'use strict';
 
@@ -1420,6 +1473,10 @@ var _controllersMyLeaderboardController = require('./controllers/my-leaderboard.
 
 var _controllersMyLeaderboardController2 = _interopRequireDefault(_controllersMyLeaderboardController);
 
+var _controllersThankYouController = require('./controllers/thank-you.controller');
+
+var _controllersThankYouController2 = _interopRequireDefault(_controllersThankYouController);
+
 // SERVICES
 
 var _servicesUtmGrabberService = require('./services/utm-grabber.service');
@@ -1430,9 +1487,9 @@ var _servicesReferrerService = require('./services/referrer.service');
 
 var _servicesReferrerService2 = _interopRequireDefault(_servicesReferrerService);
 
-_angular2['default'].module('app.referral', []).controller('SharePageController', _controllersSharePageController2['default']).controller('ShareLeaderboardController', _controllersShareLeaderboardController2['default']).controller('MyLeaderboard', _controllersMyLeaderboardController2['default']).service('UtmGrabberService', _servicesUtmGrabberService2['default']).service('ReferrerService', _servicesReferrerService2['default']);
+_angular2['default'].module('app.referral', []).controller('SharePageController', _controllersSharePageController2['default']).controller('ShareLeaderboardController', _controllersShareLeaderboardController2['default']).controller('MyLeaderboard', _controllersMyLeaderboardController2['default']).controller('ThankYouController', _controllersThankYouController2['default']).service('UtmGrabberService', _servicesUtmGrabberService2['default']).service('ReferrerService', _servicesReferrerService2['default']);
 
-},{"./controllers/my-leaderboard.controller":23,"./controllers/share-leaderboard.controller":24,"./controllers/share-page.controller":25,"./services/referrer.service":27,"./services/utm-grabber.service":28,"angular":36}],27:[function(require,module,exports){
+},{"./controllers/my-leaderboard.controller":23,"./controllers/share-leaderboard.controller":24,"./controllers/share-page.controller":25,"./controllers/thank-you.controller":26,"./services/referrer.service":28,"./services/utm-grabber.service":29,"angular":37}],28:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1503,7 +1560,7 @@ ReferrerService.$inject = ['$state', '$http', 'PARSE', 'HEROKU'];
 exports['default'] = ReferrerService;
 module.exports = exports['default'];
 
-},{}],28:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1545,7 +1602,7 @@ UtmGrabberService.$inject = ['$state'];
 exports['default'] = UtmGrabberService;
 module.exports = exports['default'];
 
-},{"underscore":38}],29:[function(require,module,exports){
+},{"underscore":39}],30:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -1572,7 +1629,7 @@ require('./app-referral/index');
 
 _angular2['default'].module('app', ['app.core', 'app.content', 'app.admin', 'app.landing', 'app.referral']);
 
-},{"./app-admin/index":7,"./app-content/index":14,"./app-core/index":19,"./app-landing/index":21,"./app-referral/index":26,"angular":36,"jquery":37}],30:[function(require,module,exports){
+},{"./app-admin/index":7,"./app-content/index":14,"./app-core/index":19,"./app-landing/index":21,"./app-referral/index":27,"angular":37,"jquery":38}],31:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -1895,11 +1952,11 @@ angular.module('ngCookies').provider('$$cookieWriter', function $$CookieWriterPr
 
 })(window, window.angular);
 
-},{}],31:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 require('./angular-cookies');
 module.exports = 'ngCookies';
 
-},{"./angular-cookies":30}],32:[function(require,module,exports){
+},{"./angular-cookies":31}],33:[function(require,module,exports){
 /*
  * angular-mm-foundation
  * http://pineconellc.github.io/angular-foundation/
@@ -5515,7 +5572,7 @@ angular.module("template/typeahead/typeahead-popup.html", []).run(["$templateCac
     "");
 }]);
 
-},{}],33:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.15
@@ -9886,7 +9943,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],34:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 /**
  * Binds a TinyMCE widget to <textarea> elements.
  */
@@ -9990,7 +10047,7 @@ angular.module('ui.tinymce', [])
     };
   }]);
 
-},{}],35:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -39009,11 +39066,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],36:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":35}],37:[function(require,module,exports){
+},{"./angular":36}],38:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.0
  * http://jquery.com/
@@ -48846,7 +48903,7 @@ if ( !noGlobal ) {
 return jQuery;
 }));
 
-},{}],38:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -50396,7 +50453,7 @@ return jQuery;
   }
 }.call(this));
 
-},{}]},{},[29])
+},{}]},{},[30])
 
 
 //# sourceMappingURL=main.js.map

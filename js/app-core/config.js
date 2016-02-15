@@ -67,6 +67,18 @@ let config = function($urlRouterProvider, $stateProvider) {
         }
       }
     })
+    .state('root.thanks', {
+      url: '/thank-you/:email',
+      views: {
+        navigation: {
+          templateUrl: 'templates/app-layout/navigation.tpl.html'
+        },
+        content: {
+          templateUrl: 'templates/app-referral/thank-you.tpl.html',
+          controller: 'ThankYouController as vm'
+        }
+      }
+    })
     .state('root.admin-signin', {
       url: '/admin-signin',
       views: {

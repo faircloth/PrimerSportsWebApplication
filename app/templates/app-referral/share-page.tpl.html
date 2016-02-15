@@ -50,7 +50,7 @@
         
         <h3>We've made some easy options for you to use but of course feel free to write your own!</h3>
 
-        <button ng-repeat="category in vm.categories" ng-click="vm.getMessage(category)" class="msg-btn">
+        <button ng-show="!vm.sendError" ng-repeat="category in vm.categories" ng-click="vm.getMessage(category)" class="msg-btn">
           {{ category }}
         </button>
 
@@ -58,8 +58,13 @@
         <button ng-click="vm.writeMyOwn()" class="msg-btn">Write your own</button> -->
 
         <div class="share-form-block">
+
+          <div class="send-error" ng-show="vm.sendError">
+            <h3>Ooops! Something went wrong. Let's try that again.</h3>
+          </div>
           
-          <form ng-submit="vm.sendEmail(contacts, vm.referrerEmail, vm.message, vm.linkSource, vm.greeting, typedContacts)">
+          <form ng-show="!vm.sendError" ng-submit="vm.sendEmail(contacts, vm.referrerEmail, vm.message, vm.linkSource, vm.greeting, typedContacts)">
+
 
             <div ng-show="vm.favoriteOptions" class="favorites-options">
 

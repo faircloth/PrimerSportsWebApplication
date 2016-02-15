@@ -1,0 +1,35 @@
+div.thank-you-page-container {
+  display: block;
+  margin: 10px auto;
+  width: 95%;
+  max-width: 800px;
+  padding: 10px;
+
+
+  p {
+    line-height: 1.4em;
+  }
+}
+
+ul.thank-you-links {
+  li {
+    color: $BrightBlue;
+    text-decoration: underline;
+    // list-style-type: none;
+    font-size: 2.4em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  div.thank-you-page-container {
+    p {
+      font-size: 2.1em;
+    }
+
+    ul.thank-you-links {
+      li {
+        font-size: 2.1em;
+      }
+    }
+  }
+}

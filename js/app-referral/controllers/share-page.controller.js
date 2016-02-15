@@ -121,9 +121,22 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
 
       console.log('EMAIL TO SEND', emailA);
 
-      // ReferrerService.sendEmail(emailA).then( (response) => {
-      //   console.log('RESPONSE', response);
-      // });
+      if (!ReferrerService.sendEmail(emailA).$$state.value) {
+        console.log('error!');
+        vm.sendError = true;
+        setTimeout( function () {
+           $window.location.reload();
+        }, 2000);
+      } else {
+        ReferrerService.sendEmail(emailA).then( (response) => {
+          console.log('RESPONSE', response);
+          if (response.statusText === "OK") {
+            $state.go('root.thanks', {email: referrerEmail});
+          } 
+        });
+      }
+
+
 
     }, 2000);
 
