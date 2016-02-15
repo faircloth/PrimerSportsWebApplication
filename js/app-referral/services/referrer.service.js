@@ -20,7 +20,8 @@ let ReferrerService = function($state, $http, PARSE, HEROKU) {
   function getReferrers () {
     console.log('get referrers called');
     // pulling from the sharevisits. May need a table for real sends? but some people may copy link
-    return $http.get(url + 'sharevisit', PARSE.CONFIG);
+    return $http.get(url + 'landingVisit', PARSE.CONFIG);
+    // return $http.get(url + 'sharevisit', PARSE.CONFIG);
   }
 
 

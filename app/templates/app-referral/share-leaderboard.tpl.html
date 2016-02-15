@@ -3,15 +3,28 @@
 
 <div ng-show="!vm.emailPresent">
   <form>
-    <h3>If you have not signed up yet, please join us:<a href="/share">Sign up</a></h3>
+    <h3>If you have not signed up yet, please join us:<a href="#/share">Sign up</a></h3>
+
+    <h3>If you are signed up, check out how you are doing:</h3>
     <input placeholder="Your email address">
     <button>Check my stats</button>
   </form>
 </div>
 
+<button ng-click="vm.sortByVisits()">Sort by visits</button>
+
 <div class="top-10-block">
   <h2>All referrers:</h2>
-  <div class="mvp-block" ng-repeat="mvp in vm.referrers">
-    <h3>{{ mvp }}</h3>
-  </div>
+  <table class="mvp-block">
+    <tr>
+      <th>Email</th>
+      <th>Landing page visits</th>
+      <th>Conversions</th>
+
+    </tr>
+    <tr ng-repeat="mvp in vm.referrers">
+      <td>{{ mvp.email }}</td>
+      <td>{{ mvp.visits }}</td>
+    </tr>
+  </table>
 </div>

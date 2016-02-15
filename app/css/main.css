@@ -4242,4 +4242,16 @@ button.standalone-btn {
       border-radius: none;
       padding: 15px; }
 
+table {
+  display: block;
+  margin: 20px auto;
+  max-width: 800px;
+  font-size: 1.5em; }
+  table th {
+    font-weight: bold;
+    text-align: left; }
+  table td {
+    width: 300px;
+    text-align: left; }
+
 /*# sourceMappingURL=main.css.map */

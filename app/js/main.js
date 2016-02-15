@@ -968,15 +968,26 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _underscore = require('underscore');
+
+var _underscore2 = _interopRequireDefault(_underscore);
+
 var ShareLeaderboardController = function ShareLeaderboardController($scope, ReferrerService) {
 
   // View model
   var vm = this;
+  vm.sortByVisits = sortByVisits;
 
   // let allReferrers   = [];
   // let top10Referrers = [];
 
-  var referrerEmails = [];
+  var referrerEmails = []; // Data object to populate the table
+  var referrerList = []; // Raw list of emails including duplicates for landing visits
+  var uniqueReferrers = []; // Non-duplicates list
+  var realReferrers = []; // Only referrers who signed up
 
   // On page load
   function checkForEmail() {
@@ -988,19 +999,35 @@ var ShareLeaderboardController = function ShareLeaderboardController($scope, Ref
   }
   function getReferrers() {
     ReferrerService.getReferrers().then(function (response) {
-      console.log('REFERRERS:', response.data.results);
+      // DATA OBJECTS FROM PARSE SERVER
       var allReferrers = response.data.results;
-      console.log('all referrers:', allReferrers);
 
       allReferrers.forEach(function (referrer) {
-        console.log('EACH EMAIL:', referrer.source);
-        if (!referrerEmails.includes(referrer.source)) {
-          referrerEmails.push(referrer.source);
+        // List of emails including duplicates
+        referrerList.push(referrer.source);
+        if (referrer.source.indexOf('#') === -1) {
+          realReferrers.push(referrer.source);
         }
+        uniqueReferrers = _underscore2['default'].uniq(realReferrers);
       });
 
-      vm.referrers = referrerEmails;
+      // If the page visit is coming from a referrer
+      uniqueReferrers.forEach(function (referrer) {
+        var thisReferrer = referrer;
+        var filter = _underscore2['default'].filter(realReferrers, function (referrer) {
+          return referrer === thisReferrer;
+        });
+
+        referrerEmails.push({
+          email: referrer,
+          visits: filter.length
+        });
+      });
     });
+
+    // conversions:
+    vm.referrers = referrerEmails;
+    vm.uniqueReferrers = uniqueReferrers;
   }
 
   checkForEmail();
@@ -1008,6 +1035,12 @@ var ShareLeaderboardController = function ShareLeaderboardController($scope, Ref
 
   // Function definitions
   // those declared in view model
+
+  function sortByVisits() {
+    var sortedReferrers = _underscore2['default'].sortBy(referrerEmails, 'visits').reverse();
+    console.log(sortedReferrers);
+    vm.referrers = sortedReferrers;
+  }
 };
 
 ShareLeaderboardController.$inject = ['$scope', 'ReferrerService'];
@@ -1015,7 +1048,7 @@ ShareLeaderboardController.$inject = ['$scope', 'ReferrerService'];
 exports['default'] = ShareLeaderboardController;
 module.exports = exports['default'];
 
-},{}],24:[function(require,module,exports){
+},{"underscore":37}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -1327,7 +1360,8 @@ var ReferrerService = function ReferrerService($state, $http, PARSE, HEROKU) {
   function getReferrers() {
     console.log('get referrers called');
     // pulling from the sharevisits. May need a table for real sends? but some people may copy link
-    return $http.get(url + 'sharevisit', PARSE.CONFIG);
+    return $http.get(url + 'landingVisit', PARSE.CONFIG);
+    // return $http.get(url + 'sharevisit', PARSE.CONFIG);
   }
 
   function sendEmail(email) {
