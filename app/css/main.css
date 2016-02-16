@@ -2430,7 +2430,7 @@ button.standalone-btn {
 
 .landing-top-a {
   display: block;
-  height: 850px;
+  height: 950px;
   width: 100%;
   position: relative; }
   .landing-top-a hr {
@@ -2441,8 +2441,8 @@ button.standalone-btn {
     width: 100%;
     height: 100%;
     background: url(http://b-i.forbesimg.com/jasonbelzer/files/2014/01/superbowl-xlvii-at-metlife-stadium_original1.jpg);
-    background-position: center;
-    opacity: .95;
+    background-position: top center;
+    opacity: .99;
     z-index: -1; }
   .landing-top-a .over-background {
     display: block;
@@ -2464,6 +2464,19 @@ button.standalone-btn {
       width: 100%;
       font-weight: 800;
       font-family: 'Biryani', sans-serif; }
+      .landing-top-a .over-background .top-text .img-container {
+        display: block;
+        width: 73%;
+        max-width: 800px;
+        margin: 6px auto;
+        margin-top: 20px;
+        min-height: 200px;
+        overflow: hidden; }
+        .landing-top-a .over-background .top-text .img-container img.banner-landing {
+          position: relative;
+          display: block;
+          width: 90%;
+          z-index: 4; }
       .landing-top-a .over-background .top-text h3, .landing-top-a .over-background .top-text h4, .landing-top-a .over-background .top-text h5 {
         text-shadow: 5px 5px 5px #000, -1px -1px #000, 1px 1px #000;
         z-index: 3;
@@ -2487,35 +2500,47 @@ button.standalone-btn {
       text-align: left;
       background-color: #082c38; }
     .landing-top-a .over-background #mc_embed_signup form {
+      background-color: #0E181C;
       display: block;
-      width: 95%;
-      max-width: 480px;
+      color: white;
+      max-width: 560px;
       margin: 5px auto;
-      margin-top: -630px;
-      padding: 15px;
-      border: 4px solid #082c38; }
+      margin-top: -700px;
+      padding: 14px;
+      padding-right: 12px; }
+      .landing-top-a .over-background #mc_embed_signup form h4 {
+        display: block;
+        text-align: left;
+        width: 90%;
+        max-width: 500px;
+        padding: 12px;
+        padding-right: 12px;
+        padding-top: 2px;
+        margin: 3px auto;
+        font-size: 2.6em; }
     .landing-top-a .over-background #mc_embed_signup .button {
       display: block;
-      margin-left: 20px;
+      margin: 10px auto;
       font-family: 'Biryani', sans-serif;
-      background-color: #082c38;
-      color: white;
-      width: 150px;
+      background-color: #39bced;
+      color: #082c38;
+      width: 100%;
+      max-width: 410px;
       font-size: 1.8em;
-      line-height: 1.8em;
-      padding: 12px;
-      padding-top: 14px;
+      line-height: 1.9em;
+      padding-top: 5px;
       height: auto;
-      vertical-align: middle; }
+      vertical-align: middle;
+      border: 2px solid white; }
       .landing-top-a .over-background #mc_embed_signup .button:hover {
-        background-color: #39bced; }
+        font-size: 1.9em;
+        color: white; }
     .landing-top-a .over-background #mc_embed_signup div.mc-field-group {
       display: block;
       color: #082c38;
       margin: 10px auto;
       text-align: left;
-      width: 100%;
-      max-width: 430px;
+      max-width: 500px;
       font-family: 'Biryani', sans-serif;
       padding-bottom: 2px; }
       .landing-top-a .over-background #mc_embed_signup div.mc-field-group .input-group {
@@ -2525,18 +2550,21 @@ button.standalone-btn {
         padding-top: 8px;
         margin: 2px auto; }
         .landing-top-a .over-background #mc_embed_signup div.mc-field-group input::-webkit-input-placeholder {
-          color: #qzGrey;
+          color: grey;
           font-family: 'Biryani', sans-serif;
           font-weight: normal; }
       .landing-top-a .over-background #mc_embed_signup div.mc-field-group strong {
-        font-size: 2.0em; }
+        font-size: 2.0em;
+        color: white; }
       .landing-top-a .over-background #mc_embed_signup div.mc-field-group li {
-        font-size: 1.1em; }
+        font-size: 1.0em;
+        color: white; }
         .landing-top-a .over-background #mc_embed_signup div.mc-field-group li input.radio {
           width: 22px;
           height: 22px;
           border-radius: 2px;
-          margin-right: 8px; }
+          margin-right: 8px;
+          color: white; }
       .landing-top-a .over-background #mc_embed_signup div.mc-field-group label {
         font-size: 1.8em; }
     .landing-top-a .over-background .fa {
@@ -2553,6 +2581,13 @@ button.standalone-btn {
 @media only screen and (max-width: 1000px) {
   .landing-top-a .over-background img {
     width: 60px; }
+  .landing-top-a .over-background #mc_embed_signup form h4 {
+    width: 90%;
+    padding: 12px;
+    padding-right: 12px;
+    padding-top: 2px;
+    margin: 3px auto;
+    font-size: 2.2em; }
   .landing-top-a .over-background .top-text h3 {
     font-size: 5.5em; }
   .landing-top-a .over-background .top-text h4 {
@@ -2571,9 +2606,11 @@ button.standalone-btn {
   .landing-top-a {
     height: 650px; }
     .landing-top-a .over-background img {
-      width: 50px; }
+      width: 45px; }
     .landing-top-a .over-background .top-text {
       left: 0%; }
+      .landing-top-a .over-background .top-text .img-container {
+        margin-top: 55px; }
       .landing-top-a .over-background .top-text h3 {
         position: absolute;
         top: 10px;
@@ -2584,7 +2621,7 @@ button.standalone-btn {
         display: block;
         top: 55px;
         left: 0%;
-        font-size: 2.4em;
+        font-size: 2.2em;
         width: 100%;
         max-width: none; }
     .landing-top-a .over-background h5.tag-line {
@@ -2599,27 +2636,27 @@ button.standalone-btn {
     .landing-top-a .over-background #mc_embed_signup form {
       position: absolute;
       margin-top: 0px;
-      margin-left: 1%;
+      margin-left: 4%;
       display: block;
       top: 130px;
-      width: 98%;
+      width: 90%;
       max-width: none;
-      margin: 5px auto;
       padding: 5px;
-      padding-top: 20px; }
+      padding-top: 15px; }
     .landing-top-a .over-background #mc_embed_signup .button {
-      margin: 20px auto; }
+      margin: 20px auto;
+      width: 92%; }
     .landing-top-a .over-background #mc_embed_signup div.mc-field-group {
       display: block;
       color: #082c38;
       margin: 0px auto;
       text-align: left;
-      width: 100%;
+      width: 90%;
       max-width: 320px;
       font-family: 'Biryani', sans-serif;
       padding-bottom: 2px;
       height: 20px;
-      padding-right: 15px; }
+      padding-right: 10px; }
       .landing-top-a .over-background #mc_embed_signup div.mc-field-group div.input-group {
         padding-top: 6px;
         margin-bottom: 10px; }

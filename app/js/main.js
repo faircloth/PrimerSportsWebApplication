@@ -485,7 +485,7 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var HomepageController = function HomepageController($scope) {
+var HomepageController = function HomepageController($scope, ContentService) {
 
   // Cycle backgrounds on homepage
   function cycleBackgrounds() {
@@ -507,39 +507,52 @@ var HomepageController = function HomepageController($scope) {
 
   var vm = this;
 
-  vm.closeBar = closeBar;
+  // on page pageload
 
-  function closeBar() {
-    console.log('x was clicked');
-    // $('xBtn').addClass('hideX');
-    (0, _jquery2['default'])('category-nav').addClass('hideX');
+  function getArticles() {
+    ContentService.getArticles().then(function (response) {
+      console.log(response);
+      vm.articles = response.data.results;
+    });
   }
 
-  console.log('HomepageController');
+  getArticles();
 
-  (0, _jquery2['default'])(function () {
-    (0, _jquery2['default'])(document).bind('ready scroll', function () {
-      var docScroll = (0, _jquery2['default'])(document).scrollTop();
-      // console.log(docScroll);
+  // used for sticky category bar
 
-      if (docScroll < 980) {
-        // console.log('Not there yet');
-        if ((0, _jquery2['default'])('.category-nav').hasClass('sticky')) {
-          (0, _jquery2['default'])('.category-nav').removeClass('sticky');
-        }
-      }
+  // vm.closeBar = closeBar;
 
-      if (docScroll >= 1000) {
-        if (!(0, _jquery2['default'])('.category-nav').hasClass('sticky')) {
-          (0, _jquery2['default'])('.category-nav').addClass('sticky');
-          console.log('sticky class added');
-        }
-      }
-    });
-  });
+  // function closeBar () {
+  //   console.log('x was clicked');
+  //   // $('xBtn').addClass('hideX');
+  //   $('category-nav').addClass('hideX');
+  // }
+
+  // console.log('HomepageController');
+
+  // $(function () {
+  //   $(document).bind('ready scroll', function (){
+  //     var docScroll = $(document).scrollTop();
+  //     // console.log(docScroll);
+
+  //     if (docScroll < 980) {
+  //       // console.log('Not there yet');
+  //       if ($('.category-nav').hasClass('sticky')) {
+  //         $('.category-nav').removeClass('sticky');
+  //       }
+  //     }
+
+  //     if (docScroll >= 1000) {
+  //       if (!$('.category-nav').hasClass('sticky')) {
+  //         $('.category-nav').addClass('sticky');
+  //         console.log('sticky class added');
+  //       }
+  //     }
+  //   });
+  // });
 };
 
-HomepageController.$inject = ['$scope'];
+HomepageController.$inject = ['$scope', 'ContentService'];
 
 exports['default'] = HomepageController;
 module.exports = exports['default'];
@@ -581,12 +594,20 @@ _angular2['default'].module('app.content', []).controller('HomepageController', 
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var ContentService = function ContentService($scope, $http) {
+var ContentService = function ContentService($state, $http, PARSE) {
 
   console.log('content service here');
+
+  this.getArticles = getArticles;
+
+  var url = PARSE.URL + 'classes/';
+
+  function getArticles() {
+    return $http.get(url + 'article', PARSE.CONFIG);
+  }
 };
 
-ContentService.$inject = ['$scope', '$http'];
+ContentService.$inject = ['$state', '$http', 'PARSE'];
 
 exports['default'] = ContentService;
 module.exports = exports['default'];

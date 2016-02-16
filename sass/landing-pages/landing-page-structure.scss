@@ -1,7 +1,7 @@
 // Landing pages
 .landing-top-a {
   display: block;
-  height: 850px;
+  height: 950px;
   width: 100%;
   position: relative;
 
@@ -15,8 +15,10 @@
     width: 100%;
     height: 100%;
     background: url(http://b-i.forbesimg.com/jasonbelzer/files/2014/01/superbowl-xlvii-at-metlife-stadium_original1.jpg);
-    background-position: center;
-    opacity: .95;
+    background-position: top center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    opacity: .99;
     z-index: -1;
     // @include box-shadow($light-box-shadows);
   }
@@ -52,6 +54,25 @@
         width: 100%;
         font-weight: 800;
         font-family: 'Biryani', sans-serif;
+
+        .img-container {
+          display: block;
+          width: 73%;
+          max-width: 800px;
+          margin: 6px auto;
+          margin-top: 20px;
+          // border: 1px solid white;
+          min-height: 200px;
+          overflow: hidden;
+
+          img.banner-landing {
+            position: relative;
+            display: block;
+            width: 90%;   
+            z-index: 4;
+            // @include box-shadow($light-box-shadows);
+          }
+        }
 
       
       h3, h4, h5 {
@@ -95,35 +116,54 @@
     #mc_embed_signup {
 
       form {
+        background-color: #0E181C;
         display: block;
-        width: 95%;
-        max-width: 480px;
+        color: white;
+        // width: 95%;
+        max-width: 560px;
         margin: 5px auto;
-        margin-top: -630px;
+        margin-top: -700px;
         // margin-left: 20px;
-        padding: 15px;
-        border: 4px solid $Navy;
+        padding: 14px;
+        padding-right: 12px;
+        // border: .5px solid $LightGrey;
+        // @include box-shadow($light-box-shadows);
         // background: transparent;
+        h4 {
+          display: block;
+          text-align: left;
+          width: 90%;
+          max-width: 500px;
+          padding: 12px;
+          padding-right: 12px;
+          padding-top: 2px;
+          margin: 3px auto;
+          font-size: 2.6em;
+        }
       }
 
       .button {
         display: block;
         // margin: 2px auto;
-        margin-left: 20px;
+        margin: 10px auto;
         font-family: 'Biryani', sans-serif;
-        background-color: $Navy;
-        color: white;
-        width: 150px;
+        background-color: $BrightBlue;
+        color: $Navy;
+        width: 100%;
+        max-width: 410px;
         // padding: 8px;
         font-size: 1.8em;
-        line-height: 1.8em;
-        padding: 12px;
-        padding-top: 14px;
+        line-height: 1.9em;
+        // padding: 10px;
+        padding-top: 5px;
         height: auto;
         vertical-align: middle;
+        border: 2px solid white;
 
         &:hover {
-          background-color: $BrightBlue;
+          font-size: 1.9em;
+          // background-color: white;
+          color: white;
         }
       }
 
@@ -133,8 +173,8 @@
         color: $Navy;
         margin: 10px auto;
         text-align: left;
-        width: 100%;
-        max-width: 430px;
+        // width: 100%;
+        max-width: 500px;
         font-family: 'Biryani', sans-serif;
         padding-bottom: 2px;
 
@@ -150,7 +190,7 @@
 
 
           &::-webkit-input-placeholder {
-            color: #qzGrey;
+            color: grey;
             font-family: 'Biryani', sans-serif;
             font-weight: normal;
           }
@@ -158,16 +198,19 @@
 
         strong {
           font-size: 2.0em;
+          color: white;
         }
 
         li {
-         font-size: 1.1em; 
+         font-size: 1.0em; 
+         color: white;
 
           input.radio {
             width: 22px;
             height: 22px;
             border-radius: 2px;
             margin-right: 8px;
+            color: white;
           }
         }
 
@@ -207,6 +250,22 @@
         width: 60px;
       }
 
+       #mc_embed_signup {
+
+      form {
+        h4 {
+          width: 90%;
+          // max-width: 320px;
+          padding: 12px;
+          padding-right: 12px;
+          padding-top: 2px;
+          margin: 3px auto;
+          font-size: 2.2em;
+        }
+      }
+    }
+
+
       .top-text {
         h3 {
           font-size: 5.5em;
@@ -238,11 +297,14 @@
 
     .over-background {
       img {
-        width: 50px;
+        width: 45px;
       }
 
       .top-text {
           left: 0%;
+          .img-container {
+          margin-top: 55px;
+        }
         h3 {
           position: absolute;
           top: 10px;
@@ -255,7 +317,7 @@
           display: block;
           top: 55px;
           left: 0%;
-          font-size: 2.4em;
+          font-size: 2.2em;
           width: 100%;
           max-width: none;
         }
@@ -276,18 +338,19 @@
         form {
           position: absolute;
           margin-top: 0px;
-          margin-left: 1%;
+          margin-left: 4%;
           display: block;
           top: 130px;
-          width: 98%;
+          width: 90%;
           max-width: none;
-          margin: 5px auto;
+          // margin: 5px auto;
           padding: 5px;
-          padding-top: 20px;
+          padding-top: 15px;
         }
 
         .button {
           margin: 20px auto;
+          width: 92%;
         }
 
         div.mc-field-group {
@@ -295,12 +358,12 @@
           color: $Navy;
           margin: 0px auto;
           text-align: left;
-          width: 100%;
+          width: 90%;
           max-width: 320px;
           font-family: 'Biryani', sans-serif;
           padding-bottom: 2px;
           height: 20px;
-          padding-right: 15px;
+          padding-right: 10px;
 
           div.input-group {
             padding-top: 6px;

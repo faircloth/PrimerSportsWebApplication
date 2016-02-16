@@ -46,27 +46,23 @@
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='radio';fnames[4]='MMERGE4';ftypes[4]='radio';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 
 
+<!-- <div class="home-med-pic-container"> -->
 
 <div class="homepage-container">
-
   
-  <div class="home-med-pic-container">
-      
-      <h4 class="subject-tag">Top Story</h4>
-
-      <h1>Football has diversity issues</h1>
-
+  <div ng-repeat="article in vm.articles" class="home-med-pic-container">
+      <h4 class="subject-tag">{{ article.tagName }}</h4>
+      <h1>{{ article.title }}</h1>
       <div class="title-img-row">
-        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRCbMiGFNhzX1xN2uFlV0BgMhOH8TE6DPVFdNh5VwFDSPOY-DMd">
-        
-        <p>There will be just 12 African-American college football coaches next year, down from 17 in 2011. Because the NCAA does not govern university hiring practices, it is powerless to implement a rule to address the decline.  An advocacy group is asking schools to voluntarily commit to interviewing at least one minority candidate for coaching vacancies. </p>
-
-        <a class="read-more" href="#">Read more</a>
-
+        <img src="{{ article.imgUrl }}">
+        <p>{{ article.content }}</p>
+        <!-- <a class="read-more" href="#">Read more</a> -->
       </div>
-
-
+      <br>
+      <br>
+      <br>
   </div>
+
   
   
 </div>
@@ -95,62 +91,5 @@
 <!--     </ul>
   </div>
 </div> -->
-
-<div class="homepage-container">
-  
-  <div class="home-med-pic-container">
-
-  <h4 class="subject-tag">Football</h4>
-
-      <h1>Football has diversity issues</h1>
-
-      <div class="title-img-row">
-        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRCbMiGFNhzX1xN2uFlV0BgMhOH8TE6DPVFdNh5VwFDSPOY-DMd">
-        
-        <p>There will be just 12 African-American college football coaches next year, down from 17 in 2011. Because the NCAA does not govern university hiring practices, it is powerless to implement a rule to address the decline.  An advocacy group is asking schools to voluntarily commit to interviewing at least one minority candidate for coaching vacancies. </p>
-
-        <a class="read-more" href="#">Read more</a>
-
-      </div>
-
-  </div>
-
-  <div class="home-med-pic-container">
-
-    <h4 class="subject-tag">Football</h4>
-      
-      <h1>Football has diversity issues</h1>
-
-      <div class="title-img-row">
-        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRCbMiGFNhzX1xN2uFlV0BgMhOH8TE6DPVFdNh5VwFDSPOY-DMd">
-        
-        <p>There will be just 12 African-American college football coaches next year, down from 17 in 2011. Because the NCAA does not govern university hiring practices, it is powerless to implement a rule to address the decline.  An advocacy group is asking schools to voluntarily commit to interviewing at least one minority candidate for coaching vacancies. </p>
-
-        <a class="read-more" href="#">Read more</a>
-
-      </div>
-
-  </div>
-
-
-  <div class="home-med-pic-container">
-
-    <h4 class="subject-tag">Football</h4>
-      
-      <h1>Football has diversity issues</h1>
-
-      <div class="title-img-row">
-        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRCbMiGFNhzX1xN2uFlV0BgMhOH8TE6DPVFdNh5VwFDSPOY-DMd">
-        
-        <p>There will be just 12 African-American college football coaches next year, down from 17 in 2011. Because the NCAA does not govern university hiring practices, it is powerless to implement a rule to address the decline.  An advocacy group is asking schools to voluntarily commit to interviewing at least one minority candidate for coaching vacancies. </p>
-
-        <a class="read-more" href="#">Read more</a>
-
-      </div>
-
-  </div>
-
-
-</div>
 
 
