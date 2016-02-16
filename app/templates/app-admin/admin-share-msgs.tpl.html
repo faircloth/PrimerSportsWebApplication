@@ -37,7 +37,7 @@
 <h3>Existing messages</h3>
 
 <div ng-repeat="shareMsg in vm.shareMsgs" class="share-msg-edit">
-  <h4 ng-model="shareMsg.label">{{ shareMsg.label }}</h4>
+  <input style="display: block; width: 90%; margin: 10px auto;text-align: center; font-size: 2.4em; padding: 10px;" ng-model="shareMsg.label">
   <div class="form-row2">
     <span>Category:</span>
     <select class="new-share-img" ng-model="shareMsg.category">
@@ -51,9 +51,11 @@
       <option>Yes</option>
       <option>No</option>
     </select>
+    <br>
+    <input style="padding: 8px; width: 500px;" ng-model="shareMsg.imageUrl" placeholder="Add image url">
   </div>
   <textarea ng-model="shareMsg.text1">{{ shareMsg.text1 }}</textarea>
-  <img ng-show="shareMsg.imageUrl" ng-src="shareMsg.imageUrl">
   <textarea ng-model="shareMsg.text2">{{ shareMsg.text2 }}</textarea>
+  <img style="display: block; margin: 15px auto; width: 90%;" ng-show="shareMsg.imageUrl" src="{{ shareMsg.imageUrl }}">
   <button ng-click="vm.submitMsgEdits(shareMsg)">Save edits</button>
 </div>

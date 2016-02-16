@@ -73,6 +73,7 @@ var AdminShareMsgController = function AdminShareMsgController($scope, AdminShar
     console.log(shareMessage);
     AdminShareMsgsService.createShareMsg(shareMessage).then(function (response) {
       console.log(response.data);
+      $state.reload();
       // vm.shareMsgs.push()
     });
   }
@@ -1215,7 +1216,7 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
     console.log($scope.showTypeBox);
   }
 
-  function sendEmail(contacts, referrerEmail, text1, text2, linkSource, greeting, typedContacts, referrerName) {
+  function sendEmail(contacts, referrerEmail, text1, text2, linkSource, greeting, typedContacts, referrerName, imageUrl) {
     console.log('TO:', contacts);
     console.log(contacts.length);
 
@@ -1259,6 +1260,14 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
       });
     }
 
+    var image = {};
+
+    if (imageUrl) {
+      image = imageUrl;
+    } else {
+      image = '';
+    }
+
     setTimeout(function () {
       console.log('TO FIELD', toField);
       console.log('GREETING', greeting);
@@ -1270,7 +1279,7 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
         text: text1,
         text2: text2,
         name: referrerName,
-        image: '',
+        image: image,
         link: linkSource
       };
 
@@ -1328,10 +1337,12 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
       });
     });
     vm.favoriteParts = vm.favoriteParts.reverse();
+    vm.selectedMessageTag = 'Quick pitch';
   }
 
   function getMessage(categoryName) {
     console.log(categoryName);
+    vm.selectedMessageTag = categoryName;
     if (categoryName === favoriteLabel) {
       vm.favoriteOptions = true;
     } else {
@@ -1347,6 +1358,8 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
     console.log(favoritePart);
     vm.text1 = favoritePart.text1;
     vm.text2 = favoritePart.text2;
+    vm.selectedMessageTag = favoritePart.label;
+    vm.imageUrl = favoritePart.imageUrl;
   }
 
   function writeMyOwn() {

@@ -27,9 +27,9 @@
       text-align: center;
       padding-bottom: 150px;
 
-      button.active {
-        background-color: $LightGrey;
-      }
+      // button.active {
+      //   background-color: $LightGrey;
+      // }
 
       button.msg-btn {
         display: inline-block;
@@ -45,10 +45,16 @@
         vertical-align: top;
 
 
+
         &:hover {
           background-color: white;
           color: $Navy;
           font-weight: bold;
+        }
+
+        button.active {
+          background-color: white;
+          color: $Navy;
         }
       }
 
@@ -575,6 +581,11 @@
             margin-bottom: 10px;
             min-height: 30px;
             vertical-align: top;
+
+            .active {
+              background-color: white;
+              color: $Navy;
+            }
 
 
             &:hover {

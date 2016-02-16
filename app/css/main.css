@@ -2226,8 +2226,8 @@ body {
   .trans-top-bar-nav ul {
     list-style-type: none;
     vertical-align: top;
-    height: 40px;
-    line-height: 40px;
+    height: 45px;
+    line-height: 45px;
     margin-left: 5px;
     padding-left: 10px;
     margin-top: 110px; }
@@ -2238,11 +2238,20 @@ body {
       margin: 0px;
       text-align: left;
       vertical-align: top;
-      font-size: 1.4em;
+      font-size: 1.5em;
       text-decoration: none;
       font-weight: bold; }
       .trans-top-bar-nav ul li:hover, .trans-top-bar-nav ul a:hover {
         background-color: #39bced; }
+  @media only screen and (max-width: 500px) {
+    .trans-top-bar-nav ul {
+      height: 35px;
+      line-height: 35px;
+      margin-left: 0px;
+      margin-top: 160px; }
+      .trans-top-bar-nav ul li, .trans-top-bar-nav ul a {
+        font-size: 1.4em;
+        color: white; } }
 
 .admin-sidebar {
   display: inline-block;
@@ -2488,7 +2497,7 @@ button.standalone-btn {
       width: 95%;
       max-width: 480px;
       margin: 5px auto;
-      margin-top: -670px;
+      margin-top: -630px;
       padding: 15px;
       border: 4px solid #082c38; }
     .landing-top-a .over-background #mc_embed_signup .button {
@@ -3033,7 +3042,7 @@ button.standalone-btn {
 
 .top-home-block {
   width: 100%;
-  height: 450px;
+  height: 700px;
   margin: 0 auto;
   background-color: #082c38; }
   .top-home-block .transparent-box {
@@ -3046,15 +3055,11 @@ button.standalone-btn {
     opacity: .95;
     z-index: -1; }
   .top-home-block .toggle-image {
-    -webkit-box-shadow: 0px 0px 1px 1px #C0C2C2;
-    -moz-box-shadow: 0px 0px 1px 1px #C0C2C2;
-    -ms-box-shadow: 0px 0px 1px 1px #C0C2C2;
-    box-shadow: 0px 0px 1px 1px #C0C2C2;
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
-    max-height: 450px;
+    max-height: 700px;
     transition: opacity 1s ease-in-out; }
   .top-home-block .first-image {
     background-image: url("http://images.performgroup.com/di/library/sporting_news/4a/9d/stephen-curry-111614-getty-ftrjpg_1g9uniki9wquj1n6zuy6acwphl.jpg?t=-1190455351");
@@ -3074,6 +3079,82 @@ button.standalone-btn {
     opacity: .95; }
   .top-home-block .third-image.show {
     opacity: .95; }
+
+div.signupbar {
+  background-color: #39bced;
+  margin: 0px;
+  border-top: 2px solid #082c38;
+  border-bottom: 2px solid #082c38; }
+  div.signupbar div {
+    display: block;
+    margin: 0px auto;
+    width: 90%;
+    max-width: 900px;
+    padding: 10px 0px; }
+    div.signupbar div form {
+      background-color: inherit;
+      padding: inherit; }
+    div.signupbar div h4 {
+      display: inline-block;
+      margin: 0px;
+      font-size: 2.5em;
+      padding-right: 15px; }
+    div.signupbar div input {
+      padding: 8px;
+      border: 2px solid #082c38;
+      margin-right: 10px;
+      width: 35%; }
+    div.signupbar div button {
+      background-color: #082c38;
+      color: white;
+      font-weight: bold;
+      padding: 8px;
+      border: none; }
+
+@media only screen and (max-width: 850px) {
+  div.signupbar div {
+    display: block;
+    margin: 0px auto;
+    width: 100%;
+    padding: 10px 6px; }
+    div.signupbar div h4 {
+      font-size: 2.1em; }
+    div.signupbar div input {
+      padding: 8px;
+      border: 2px solid #082c38;
+      margin-right: 10px;
+      width: 30%; }
+    div.signupbar div button {
+      background-color: #082c38;
+      color: white;
+      font-weight: bold;
+      padding: 8px;
+      border: none; } }
+
+@media only screen and (max-width: 620px) {
+  div.signupbar div {
+    display: block;
+    margin: 0px auto;
+    width: 100%;
+    padding: 10px 6px; }
+    div.signupbar div h4 {
+      font-size: 2.4em;
+      display: block;
+      text-align: center;
+      padding-bottom: 12px; }
+    div.signupbar div input {
+      padding: 8px;
+      border: 2px solid #082c38;
+      margin-right: 3%;
+      width: 50%;
+      margin-left: 3%; }
+    div.signupbar div button {
+      background-color: #082c38;
+      color: white;
+      font-weight: bold;
+      padding: 8px;
+      border: none;
+      font-size: 1.8em; } }
 
 .most-recent-bar {
   width: 100%;
@@ -3249,6 +3330,15 @@ button.standalone-btn {
     margin-bottom: 2px;
     padding-bottom: 3px;
     text-transform: uppercase; }
+
+@media only screen and (max-width: 1200px) {
+  .top-home-block {
+    width: 100%;
+    height: 450px;
+    margin: 0 auto;
+    background-color: #082c38; }
+    .top-home-block .toggle-image {
+      max-height: 450px; } }
 
 @media only screen and (max-width: 750px) {
   .top-home-block {
@@ -3760,8 +3850,6 @@ button.standalone-btn {
     margin: 10px auto;
     text-align: center;
     padding-bottom: 150px; }
-    .page-container-share .action-block-share .action-block-container button.active {
-      background-color: #E7E7E4; }
     .page-container-share .action-block-share .action-block-container button.msg-btn {
       display: inline-block;
       background-color: #082c38;
@@ -3778,6 +3866,9 @@ button.standalone-btn {
         background-color: white;
         color: #082c38;
         font-weight: bold; }
+      .page-container-share .action-block-share .action-block-container button.msg-btn button.active {
+        background-color: white;
+        color: #082c38; }
     .page-container-share .action-block-share .action-block-container .share-form-block {
       width: 100%;
       max-width: 1400px;
@@ -4146,6 +4237,9 @@ button.standalone-btn {
         margin-bottom: 10px;
         min-height: 30px;
         vertical-align: top; }
+        .page-container-share .top-block-share .action-block-share .action-block-container button.msg-btn .active {
+          background-color: white;
+          color: #082c38; }
         .page-container-share .top-block-share .action-block-share .action-block-container button.msg-btn:hover {
           background-color: white;
           color: #082c38;

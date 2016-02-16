@@ -111,16 +111,18 @@
               <textarea placeholder="Hey there," ng-model="vm.greeting" class="greeting">
               </textarea>
 
-              <h4 class="form-text">Your message:</h4>
+              <h4 class="form-text">Your message: {{ vm.selectedMessageTag }}</h4>
               <textarea ng-model="vm.text1" class="share-message1" placeholder="Your custom message">{{ vm.text1 }}</textarea>
               <textarea ng-model="vm.text2" class="share-message2" placeholder="Additional paragraph (optional)">{{ vm.text2 }}
               </textarea>
-              <span>We'll insert your link in the message for you
+              <input style="padding: 0px; margin: 0px; height: 0px;" ng-show="false" ng-model="vm.imageUrl">
+              <img ng-show="vm.imageUrl" src="{{ vm.imageUrl }}">
+              <span style="padding-top: 20px;">We'll insert your link in the message for you
                 <!-- <a href="{{ vm.linkSource }}">Sign up using my link</a> -->
               </span>
             </div>
 
-            <button ng-click="vm.sendEmail(contacts, vm.referrerEmail, vm.text1, vm.text2, vm.linkSource, vm.greeting, typedContacts, vm.referrerName)" class="btn-submit-share">Share Primer</button>
+            <button ng-click="vm.sendEmail(contacts, vm.referrerEmail, vm.text1, vm.text2, vm.linkSource, vm.greeting, typedContacts, vm.referrerName, vm.imageUrl)" class="btn-submit-share">Share Primer</button>
           </form>
           
         </div>

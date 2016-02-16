@@ -53,7 +53,7 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   }
 
 
-  function sendEmail (contacts, referrerEmail, text1, text2, linkSource, greeting, typedContacts, referrerName) {
+  function sendEmail (contacts, referrerEmail, text1, text2, linkSource, greeting, typedContacts, referrerName, imageUrl) {
     console.log('TO:', contacts);
     console.log(contacts.length);
     
@@ -96,6 +96,14 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
         toField.push(email);
       });
     }
+
+    let image = {};
+
+    if (imageUrl) {
+      image = imageUrl;
+    } else {
+      image = '';
+    }
     
     setTimeout ( function() {
       console.log('TO FIELD', toField);
@@ -108,7 +116,7 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
         text: text1,
         text2: text2,
         name: referrerName,
-        image: '',
+        image: image,
         link: linkSource
       };
       
@@ -170,10 +178,12 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
       });
     });
     vm.favoriteParts = vm.favoriteParts.reverse();
+    vm.selectedMessageTag = 'Quick pitch';
   }
   
   function getMessage (categoryName) {
     console.log(categoryName);
+    vm.selectedMessageTag = categoryName;
     if (categoryName === favoriteLabel) {
       vm.favoriteOptions = true;
     } else {
@@ -181,7 +191,7 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
       let selectedMessage = _.findWhere(vm.shareMessages, {category: categoryName});
       console.log('SELECTED MESSAGE:', selectedMessage );
       vm.text1 = selectedMessage.text1;
-      vm.text2 = selectedMessage.text2;
+      vm.text2 = selectedMessage.text2;    
     }
   }
 
@@ -189,6 +199,8 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
     console.log(favoritePart);
     vm.text1 = favoritePart.text1;
     vm.text2 = favoritePart.text2;
+    vm.selectedMessageTag = favoritePart.label;
+    vm.imageUrl = favoritePart.imageUrl;
   }
 
 

@@ -1,8 +1,12 @@
+
+
 .top-home-block {
   width: 100%;
-  height: 450px;
+  height: 700px;
   margin: 0 auto;
   background-color: $Navy;
+  // border-bottom: 2px solid $Navy;
+
 
 // http://i.huffpost.com/gen/2828384/images/o-SPIETH-facebook.jpg
 // http://images.performgroup.com/di/library/sporting_news/4a/9d/stephen-curry-111614-getty-ftrjpg_1g9uniki9wquj1n6zuy6acwphl.jpg?t=-1190455351
@@ -20,12 +24,12 @@
   }
 
   .toggle-image {
-    @include box-shadow($light-box-shadows);
+    // @include box-shadow($light-box-shadows);
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
-    max-height: 450px;
+    max-height: 700px;
     transition: opacity 1s ease-in-out;
   }
 
@@ -57,6 +61,118 @@
 
   .third-image.show {
     opacity: .95;
+  }
+}
+
+div.signupbar{
+  background-color: $BrightBlue;
+  margin: 0px;
+  border-top: 2px solid $Navy;
+  border-bottom: 2px solid $Navy;
+  
+  div {
+    display: block;
+    margin: 0px auto;
+    width: 90%;
+    max-width: 900px;
+    padding: 10px 0px;
+    
+    
+    form {
+      background-color: inherit;
+      padding: inherit;
+    }
+    
+    h4 {
+      display: inline-block;
+      margin: 0px;
+      font-size: 2.5em;
+      padding-right: 15px;
+    }
+
+    input {
+      padding: 8px;
+      border: 2px solid $Navy;
+      margin-right: 10px;
+      width: 35%;
+    }
+
+    button {
+      background-color: $Navy;
+      color: white;
+      font-weight: bold;
+      padding: 8px;
+      border: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  div.signupbar{
+    
+    div {
+      display: block;
+      margin: 0px auto;
+      width: 100%;
+      padding: 10px 6px;
+
+      h4 {
+        font-size: 2.1em;
+      }
+
+      input {
+        padding: 8px;
+        border: 2px solid $Navy;
+        margin-right: 10px;
+        width: 30%;
+
+      }
+
+      button {
+        background-color: $Navy;
+        color: white;
+        font-weight: bold;
+        padding: 8px;
+        border: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  div.signupbar{
+    
+    div {
+      display: block;
+      margin: 0px auto;
+      width: 100%;
+      padding: 10px 6px;
+
+      h4 {
+        font-size: 2.4em;
+        display: block;
+        text-align: center;
+        padding-bottom: 12px;
+      }
+
+      input {
+        padding: 8px;
+        border: 2px solid $Navy;
+        margin-right: 3%;
+        width: 50%;
+        margin-left: 3%;
+
+      }
+
+      button {
+        background-color: $Navy;
+        color: white;
+        font-weight: bold;
+        padding: 8px;
+        border: none;
+        font-size: 1.8em;
+      }
+    }
   }
 }
 
@@ -308,6 +424,21 @@
 
 }
 
+
+
+@media only screen and (max-width: 1200px) {
+
+  .top-home-block {
+    width: 100%;
+    height: 450px;
+    margin: 0 auto;
+    background-color: $Navy;
+
+    .toggle-image {
+      max-height: 450px;
+    }
+  }
+}
 
 @media only screen and (max-width: 750px) {
 

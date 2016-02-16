@@ -34,6 +34,7 @@ let AdminShareMsgController = function($scope, AdminShareMsgsService, $state) {
     console.log(shareMessage);
     AdminShareMsgsService.createShareMsg(shareMessage).then( (response) => {
       console.log(response.data);
+      $state.reload();
       // vm.shareMsgs.push()
     });
   }
