@@ -1,22 +1,35 @@
-<h3>{{ vm.email }}</h3>
-<h3>Share stats:</h3>
+<div class="leader-container">
+  <h3 style="margin-bottom: 2px;">Share stats for:<br><h4 style="margin-top: 3px;">{{vm.email}}</h4></h3>
 
 
-<div class="top-10-block">
-  <h3>All referrers:</h3>
-  <table class="mvp-block">
-    <tr>
-      <th>Landing page visits</th>
-      <th>Conversions</th>
-    </tr>
-    <tr>
-      <td>{{ vm.score.visits }}</td>
-      <td>{{ vm.score.conversions }}</td>
-    </tr>
-  </table>
+  <div class="top-10-block">
+    
+    <table style="padding: 0px;" class="mvp-block">
+        <tr style="font-size: 1.0em;">
+          <th style="width: 150px;" class="short">Landing page visits</th>
+          <th style="width: 150px;" class="short">Conversions</th>
+        </tr>
+        <tr style="font-size: 1.4em;">
+          <td style="text-align: center; padding: 15px;">{{ vm.score.visits }}</td>
+          <td style="text-align: center; padding: 15px;">{{ vm.score.conversions }}</td>
+        </tr>
+      </table>
+
+
+  <!--   <table class="mvp-block">
+      <tr>
+        <th>Landing page visits</th>
+        <th>Conversions</th>
+      </tr>
+      <tr>
+        <td>{{ vm.score.visits }}</td>
+        <td>{{ vm.score.conversions }}</td>
+      </tr>
+    </table> -->
+  </div>
+
+  <h4>{{ vm.score.converts.length}} people have subscribed using your link so far!</h4>
+  <ol>
+    <li ng-repeat="convert in vm.score.converts">{{ convert }}</li>
+  </ol>
 </div>
-
-<h3>See who you've converted!</h3>
-<ul>
-  <li ng-repeat="convert in vm.score.converts">{{ convert }}</li>
-</ul>

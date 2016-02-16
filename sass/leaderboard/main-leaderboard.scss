@@ -1,18 +1,123 @@
+div.leader-container {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
+  margin: 0px auto;
+
+
+  div {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+      
+      form.leader-form {
+      display: block;
+      width: 90%;
+      margin: 0px;
+      background-color: $Navy;
+      color: white;
+      padding: 5px;
+      padding-left: 15px;
+
+      h4 {
+        margin: 0px;
+        padding: 5px;
+
+        a {
+          color: white;
+          font-size: 1.0em;
+          margin-left: 10px;
+          color: $BrightBlue;
+        }
+      }
+
+      input {
+        padding: 8px;
+        margin: 15px 0px;
+        margin-right: 15px;
+        display: inline-block;
+        color: $Navy;
+        min-width: 300px;
+      }
+
+      button {
+        background-color: $BrightBlue;
+        margin: 10px 0px;
+        margin-right: 15px;
+        padding: 8px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+div.sort-btns {
+  display: block;
+  width: 90%;
+  max-width: 800px;
+  margin: 10px 0px;
+  padding: 5px;
+  padding-top: 5px;
+
+  h4 {
+    margin: 5px 0px;
+    margin-top: 15px;
+  }
+
+  button {
+    margin-right: 20px;
+    margin-top: 15px;
+    padding: 12px;
+    background-color: $LightGrey;
+    color: $qzGrey;
+    border: none;
+    width: 140px;
+  }
+}
+
 table {
   display: block;
-  margin: 20px auto;
+  width: 100%;
   max-width: 800px;
-  font-size: 1.5em;
+  font-size: 1.8em;
+  // border: 2px solid $qzGrey;
+  overflow-x: scroll;
 
-  th {
+
+    th {
     font-weight: bold;
-    text-align: left;
+    background-color: $qzGrey;
+    color: white;
+    padding: 10px;
+    min-width: 60px;
+
+
+  }
+    th.ss {
+      min-width: 30px;
+    }
+
+  tr.data {
+      td {
+        padding: 10px;
+        border-bottom: 1px dashed $qzGrey;
+        border-left: 1px dashed $qzGrey;
+
+        .last {
+          border-right: 1px dashed $qzGrey;
+        }
+        
+        .short {
+          display: block;
+          text-align: center;
+        }
+      }
+    
   }
 
-  td {
-    width: 300px;
-    text-align: left;
-  }
 
 
 }

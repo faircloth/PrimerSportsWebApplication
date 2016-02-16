@@ -2386,12 +2386,6 @@ form {
       .admin-container .admin-form button:hover {
         background-color: #39bced; }
 
-form.leader-form {
-  display: block;
-  width: 90%;
-  max-width: 600px;
-  margin: 20px auto; }
-
 body {
   font-size: 62.5%;
   color: #3A3A3A;
@@ -4395,16 +4389,89 @@ ul.thank-you-links li {
   div.thank-you-page-container ul.thank-you-links li {
     font-size: 2.1em; } }
 
+div.leader-container {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
+  margin: 0px auto; }
+  div.leader-container div {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    width: 100%;
+    max-width: 1000px; }
+    div.leader-container div form.leader-form {
+      display: block;
+      width: 90%;
+      margin: 0px;
+      background-color: #082c38;
+      color: white;
+      padding: 5px;
+      padding-left: 15px; }
+      div.leader-container div form.leader-form h4 {
+        margin: 0px;
+        padding: 5px; }
+        div.leader-container div form.leader-form h4 a {
+          color: white;
+          font-size: 1.0em;
+          margin-left: 10px;
+          color: #39bced; }
+      div.leader-container div form.leader-form input {
+        padding: 8px;
+        margin: 15px 0px;
+        margin-right: 15px;
+        display: inline-block;
+        color: #082c38;
+        min-width: 300px; }
+      div.leader-container div form.leader-form button {
+        background-color: #39bced;
+        margin: 10px 0px;
+        margin-right: 15px;
+        padding: 8px;
+        display: inline-block; }
+
+div.sort-btns {
+  display: block;
+  width: 90%;
+  max-width: 800px;
+  margin: 10px 0px;
+  padding: 5px;
+  padding-top: 5px; }
+  div.sort-btns h4 {
+    margin: 5px 0px;
+    margin-top: 15px; }
+  div.sort-btns button {
+    margin-right: 20px;
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #E7E7E4;
+    color: #3A3A3A;
+    border: none;
+    width: 140px; }
+
 table {
   display: block;
-  margin: 20px auto;
+  width: 100%;
   max-width: 800px;
-  font-size: 1.5em; }
+  font-size: 1.8em;
+  overflow-x: scroll; }
   table th {
     font-weight: bold;
-    text-align: left; }
-  table td {
-    width: 300px;
-    text-align: left; }
+    background-color: #3A3A3A;
+    color: white;
+    padding: 10px;
+    min-width: 60px; }
+  table th.ss {
+    min-width: 30px; }
+  table tr.data td {
+    padding: 10px;
+    border-bottom: 1px dashed #3A3A3A;
+    border-left: 1px dashed #3A3A3A; }
+    table tr.data td .last {
+      border-right: 1px dashed #3A3A3A; }
+    table tr.data td .short {
+      display: block;
+      text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

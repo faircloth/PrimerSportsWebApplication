@@ -1,33 +1,40 @@
-<h2>Share leaderboard</h2>
+<div class="leader-container">
+  <h3>Share leaderboard</h3>
 
 
-<div ng-show="!vm.emailPresent">
-  <form class="leader-form" ng-submit="vm.goToMyPage(email)">
-    <h4>If you have not signed up yet, please join us:<a href="#/share">Sign up</a></h4>
+  <div ng-show="!vm.emailPresent">
+    <form class="leader-form" ng-submit="vm.goToMyPage(email)">
+      <h4>If you are not signed up yet, please join us:<a href="#/share">Sign up</a></h4>
+      <br>
+      <h4>If you are signed up, check out more detail on how you are doing:</h4>
+      <input ng-model="email" type="email" placeholder="Your email address">
+      <button>Check my stats</button>
+    </form>
+  </div>
 
-    <h4>If you are signed up, check out how you are doing:</h4>
-    <input ng-model="email" type="email" placeholder="Your email address">
-    <br>
-    <button>Check my stats</button>
-  </form>
-</div>
+  <div class="sort-btns">
+    <h4>Use buttons to sort data:</h4>
+    <button ng-click="vm.sortAlpha()">Email</button>
+    <button ng-click="vm.sortByVisits()">Visits</button>
+    <button ng-click="vm.sortByConversions()">Conversions</button>
+  </div>
 
-<button ng-click="vm.sortAlpha()">Sort by email</button>
-<button ng-click="vm.sortByVisits()">Sort by visits</button>
-<button ng-click="vm.sortByConversions()">Sort by conversions</button>
-
-<div class="top-10-block">
-  <h2>All referrers:</h2>
-  <table class="mvp-block">
-    <tr>
-      <th>Email</th>
-      <th>Landing page visits</th>
-      <th>Conversions</th>
-    </tr>
-    <tr ng-repeat="mvp in vm.referrers">
-      <td>{{ mvp.email }}</td>
-      <td>{{ mvp.visits }}</td>
-      <td>{{ mvp.conversions }}</td>
-    </tr>
-  </table>
+  <div class="top-10-block">
+    <hr style="margin-top: 35px; border: 1px dashed black; max-width: 920px; padding: 0px; margin-left: 0px; margin-right: 0px;">
+    <h4>All referrers:</h4>
+    <table class="mvp-block">
+      <tr>
+        <th style="width: 30px;" class="ss">#</th>
+        <th style="text-align: left;" class="long">Email</th>
+        <th style="width: 180px;" class="short">Landing page visits</th>
+        <th style="width: 180px;" class="short">Conversions</th>
+      </tr>
+      <tr class="data" ng-repeat="mvp in vm.referrers">
+        <td style="text-align: center;">{{ vm.referrers.indexOf(mvp) + 1 }}</td>
+        <td class="long">{{ mvp.email }}</td>
+        <td style="text-align: center;">{{ mvp.visits }}</td>
+        <td style="text-align: center; border-right: 1px dashed #3A3A3A;">{{ mvp.conversions }}</td>
+      </tr>
+    </table>
+  </div>
 </div>
