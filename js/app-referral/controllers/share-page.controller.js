@@ -10,6 +10,8 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   $scope.contacts = [];
   $scope.fullAddressbook = [];
 
+
+
   window.csPageOptions = { 
     textarea_id: "contact_list",
     mobile_render: true,
@@ -20,6 +22,8 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
     },
     afterSubmitContacts: function (contacts) {
       $scope.contacts = contacts;
+      // vm.formClicked = true;
+      $scope.formClicked = true;
     }
   };
 
@@ -46,6 +50,32 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
   vm.select           = select;
   vm.sendEmail        = sendEmail;
   vm.typeMyOwn        = typeMyOwn;
+  vm.importClicked    = importClicked;
+
+
+  let textarea = document.getElementById('contact_list');
+
+  vm.formClick = formClick;
+
+
+  function importClicked() {
+    console.log('import clicked');
+    vm.formClicked = true;
+  }
+
+  function formClick (contacts) {
+    console.log(textarea);
+    vm.emailsImported = textarea.value;
+    let contactList = [];
+    contacts.forEach ( function (contact) {
+      contactList.push(contact.email[0].address);
+    });
+    vm.contactString = contactList.toString(', ');
+    console.log(vm.contactString);
+    console.log(vm.emailsImported);
+    console.log(textarea.value);
+    vm.formClicked = true;
+  }
 
   function typeMyOwn() {
     $scope.showTypeBox = !$scope.showTypeBox;
@@ -180,9 +210,16 @@ let SharePageController = function($scope, UtmGrabberService, ReferrerService, $
     vm.favoriteParts = vm.favoriteParts.reverse();
     vm.selectedMessageTag = 'Quick pitch';
   }
+
+  vm.active = ['active', 'inactive', 'inactive'];
   
-  function getMessage (categoryName) {
+  function getMessage (categoryName, categoryIndex) {
     console.log(categoryName);
+    console.log(categoryIndex);
+    // vm.active = !vm.active;
+    vm.active = ['inactive', 'inactive', 'inactive'];
+    categoryIndex === vm.categories.indexOf(categoryName) ? vm.active[categoryIndex] = 'active' : vm.active[categoryIndex] = 'inactive';
+    console.log(vm.active);
     vm.selectedMessageTag = categoryName;
     if (categoryName === favoriteLabel) {
       vm.favoriteOptions = true;

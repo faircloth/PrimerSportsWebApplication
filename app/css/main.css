@@ -2085,8 +2085,10 @@ body {
   width: 100%; }
 
 .content-container {
+  display: block;
+  max-width: 5000px;
   width: 100%;
-  background-color: white; }
+  margin: 0px; }
 
 .page-container-large {
   width: 100%;
@@ -3074,7 +3076,9 @@ button.standalone-btn {
 .top-home-block {
   width: 100%;
   height: 700px;
+  display: block;
   margin: 0 auto;
+  padding: 0px;
   background-color: #082c38; }
   .top-home-block .transparent-box {
     width: 100%;
@@ -3090,6 +3094,7 @@ button.standalone-btn {
     width: 100%;
     top: 0;
     left: 0;
+    right: 0;
     max-height: 700px;
     transition: opacity 1s ease-in-out; }
   .top-home-block .first-image {
@@ -3892,14 +3897,14 @@ div.signupbar {
       margin: 1.5%;
       margin-bottom: 25px;
       min-height: 100px;
-      vertical-align: top; }
+      vertical-align: top;
+      font-weight: bold; }
       .page-container-share .action-block-share .action-block-container button.msg-btn:hover {
         background-color: white;
-        color: #082c38;
-        font-weight: bold; }
-      .page-container-share .action-block-share .action-block-container button.msg-btn button.active {
-        background-color: white;
         color: #082c38; }
+    .page-container-share .action-block-share .action-block-container button.active {
+      background-color: white;
+      color: #082c38; }
     .page-container-share .action-block-share .action-block-container .share-form-block {
       width: 100%;
       max-width: 1400px;

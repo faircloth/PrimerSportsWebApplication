@@ -1205,6 +1205,8 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
     },
     afterSubmitContacts: function afterSubmitContacts(contacts) {
       $scope.contacts = contacts;
+      // vm.formClicked = true;
+      $scope.formClicked = true;
     }
   };
 
@@ -1231,6 +1233,30 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
   vm.select = select;
   vm.sendEmail = sendEmail;
   vm.typeMyOwn = typeMyOwn;
+  vm.importClicked = importClicked;
+
+  var textarea = document.getElementById('contact_list');
+
+  vm.formClick = formClick;
+
+  function importClicked() {
+    console.log('import clicked');
+    vm.formClicked = true;
+  }
+
+  function formClick(contacts) {
+    console.log(textarea);
+    vm.emailsImported = textarea.value;
+    var contactList = [];
+    contacts.forEach(function (contact) {
+      contactList.push(contact.email[0].address);
+    });
+    vm.contactString = contactList.toString(', ');
+    console.log(vm.contactString);
+    console.log(vm.emailsImported);
+    console.log(textarea.value);
+    vm.formClicked = true;
+  }
 
   function typeMyOwn() {
     $scope.showTypeBox = !$scope.showTypeBox;
@@ -1361,8 +1387,15 @@ var SharePageController = function SharePageController($scope, UtmGrabberService
     vm.selectedMessageTag = 'Quick pitch';
   }
 
-  function getMessage(categoryName) {
+  vm.active = ['active', 'inactive', 'inactive'];
+
+  function getMessage(categoryName, categoryIndex) {
     console.log(categoryName);
+    console.log(categoryIndex);
+    // vm.active = !vm.active;
+    vm.active = ['inactive', 'inactive', 'inactive'];
+    categoryIndex === vm.categories.indexOf(categoryName) ? vm.active[categoryIndex] = 'active' : vm.active[categoryIndex] = 'inactive';
+    console.log(vm.active);
     vm.selectedMessageTag = categoryName;
     if (categoryName === favoriteLabel) {
       vm.favoriteOptions = true;

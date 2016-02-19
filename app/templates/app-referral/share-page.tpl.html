@@ -50,7 +50,7 @@
         
         <h3>We've made some easy options for you to use but of course feel free to write your own!</h3>
 
-        <button ng-show="!vm.sendError" ng-repeat="category in vm.categories" ng-click="vm.getMessage(category)" class="msg-btn">
+        <button ng-show="!vm.sendError" ng-repeat="category in vm.categories" ng-click="vm.getMessage(category, vm.categories.indexOf(category))" class="msg-btn {{ vm.active[vm.categories.indexOf(category)] }}">
           {{ category }}
         </button>
 
@@ -63,7 +63,7 @@
             <h3>Ooops! Something went wrong. Let's try that again.</h3>
           </div>
           
-          <form ng-show="!vm.sendError">
+          <form ng-show="!vm.sendError" ng-click="vm.formClick(contacts)">
 
 
             <div ng-show="vm.favoriteOptions" class="favorites-options">
@@ -89,15 +89,13 @@
               <a class="cs_import" class="import-btn" ng-click="vm.importClicked()">(1) Import from Address Book
               </a>
 
-              <textarea placeholder="Imported contacts only. If you prefer to type out recipient addresses, please choose option 2." ng-model="contacts" id="contact_list">
-                
-                <span ng-repeat="contact in contacts">{{ contact.primaryEmail() }}</span>
-              </textarea>
+              <textarea ng-show="!formClicked" placeholder="Imported contacts only. If you prefer to type out recipient addresses, please choose option 2." ng-model="contacts"  id="contact_list">{{ vm.contactString }}</textarea>
 
+              <textarea ng-show="formClicked" placeholder="Imported contacts only. If you prefer to type out recipient addresses, please choose option 2." id="contact_list">{{ vm.contactString }}</textarea>
+
+    
               
               <div ng-click="vm.typeMyOwn()" class="write-own-btn">(2) Type out my contacts</div>
-
-
 
               <textarea class="type-own-box" ng-model="typedContacts" type="email" placeholder="Type as many contacts as you're willing to :) ... please separate email addressed with a comma and a space."></textarea>
 
