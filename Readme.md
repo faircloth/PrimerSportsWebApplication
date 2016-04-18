@@ -1,4 +1,4 @@
-## Welcome to My Project
+## New front-end website for Primer Sports content
 
-``` deployment link: http://primer-webapp.surge.sh/#/
+Deployment link: http://primer-webapp.surge.sh/#/
 
